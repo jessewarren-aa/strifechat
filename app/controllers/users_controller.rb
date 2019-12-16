@@ -9,10 +9,14 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
-      # success!
+    if User.find_by(email: @user.email)
+      render json: {status:"fail", message:"Email address already in use!"}, status: 409
     else
-      # fail!
+      if @user.save
+        # success!
+      else
+        # fail!
+      end
     end
   end
 

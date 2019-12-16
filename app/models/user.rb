@@ -1,5 +1,3 @@
-require 'bcrypt'
-
 class User < ApplicationRecord
   attr_accessor :password
 
@@ -7,7 +5,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   
   validates :password, length: {minimum: 6}, allow_nil: true
-  # validates :password_digest, :session_token, presence: true
+  validates :password_digest, :session_token, presence: true
 
   validates :image_url, presence: true
   validates :friend_code, presence: true, uniqueness: true
@@ -23,8 +21,12 @@ class User < ApplicationRecord
     user.is_password?(password) ? user : nil
   end
 
+  def self.generate_session_token
+    SecureRandom.urlsafe_base64
+  end
+
   def ensure_session_token
-    self.session_token ||= SecureRandom.urlsafe_base64
+    self.session_token ||= self.class.generate_session_token
   end
 
   def generate_default_avatar
@@ -32,10 +34,15 @@ class User < ApplicationRecord
   end
 
   def generate_friend_code
+    counter = 0
     while not(self.valid?)
       p self
       random_code = Array.new(5) {rand(5)}.join("")
       self.friend_code ||= "#{self.username}##{random_code}"
+      counter += 1
+      if counter > 15 # [DEV] should be removeable with user_controller logic
+        break
+      end
     end
   end
 
@@ -49,14 +56,12 @@ class User < ApplicationRecord
   end
 
   def reset_session_token!
-    self.session_token = SecureRandom.urlsafe_base64
+    self.session_token = self.class.generate_session_token
     self.save
     self.session_token
   end
 
   def set_last_server
-    self.last_server_id = nil
+    self.last_server_id = -1
   end
-
-
 end
