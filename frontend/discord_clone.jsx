@@ -5,7 +5,7 @@ import createStore from './store/store'
 import Root from './components/root'
 
 document.addEventListener('DOMContentLoaded', function () {
-  const root = $('#root')
+  const root = document.getElementById("root")
 
   let preloadedState = undefined;
   if (window.currentUser) {
@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   }
   const store = createStore(preloadedState)
+
+  window.store = store // [DEV] RFP
 
   ReactDOM.render(<Root store={store} />, root)
 })

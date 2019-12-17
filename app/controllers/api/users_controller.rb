@@ -10,12 +10,15 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if User.find_by(email: @user.email)
-      render json: {status:"fail", message:"Email address already in use!"}, status: 409
+      render json: {status: "fail", message: "Email address already in use!"}, status: 409
     else
       if @user.save
         # success!
+        p "[DEBUG] SUCCESS"
+        render :show
       else
         # fail!
+        render json: {status: "fail", message: "Please be sure to fill out all the forms!"}
       end
     end
   end
