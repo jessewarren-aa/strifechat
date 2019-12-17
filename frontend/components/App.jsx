@@ -12,7 +12,7 @@ import { login } from '../actions/session_actions';
 class App extends React.Component {
   constructor (props) {
     super(props)
-    this.store = store
+    this.store = this.props.store
   }
 
   render () {
