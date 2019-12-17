@@ -15,6 +15,7 @@ class Api::UsersController < ApplicationController
       if @user.save
         # success!
         p "[DEBUG] SUCCESS"
+        login!(@user)
         render :show
       else
         # fail!

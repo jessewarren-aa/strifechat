@@ -5,3 +5,182 @@
 .hidden {
   display: none;
 }
+
+.session-form-landing {
+  background: #445761;
+
+  border-radius: 5px;
+
+  margin-top:150px;
+  padding-top:37px;
+  margin-bottom:auto;
+  padding-bottom:30px;
+  padding-left:27px;
+  padding-right:27px;
+
+  box-shadow: 0px 0px 7px;
+}
+
+.logo-sizer {
+  height: 32px;
+  // box-shadow: 0px 0px 7px;
+}
+
+.shadowed {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(3px 3px 3px #222);
+}
+
+.session-form-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-left: 100px;
+  font-size: 24px;
+  color: white;
+}
+
+.session-form-landing a {
+  color: #0295D4;
+}
+
+.session-form-landing small {
+  color: rgb(180, 180, 180);
+  font-weight: 500;
+  padding-bottom: 15px;
+}
+
+.session-form-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.session-form-input {
+  background: #2b373d;
+  border: 1.5px solid rgba(0,0,0,0.2);
+  width: 100%;
+  flex-grow: 1;
+  margin-top:7px;
+  margin-bottom:7px;
+  border-radius: 3px;
+  height:2.5rem;
+
+  caret-color: whitesmoke;
+  color: whitesmoke;
+
+  padding-left: 7px;
+}
+
+.session-form-input:hover {
+  border: 1.5px solid #000000;
+}
+
+.session-form-input:focus {
+  border: 1px solid #0295D4;
+}
+
+.session-form-button {
+  background: #0295D4;
+  border-radius: 3px;
+  border: none;
+  color: whitesmoke;
+  width: 100%;
+  height: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.session-form-button:hover {
+  background: rgb(6, 129, 182);
+}
+
+.session-form-disclaimer {
+  margin-top: 10px;
+}
+
+.session-form-disclaimer small {
+  color: #799BAD;
+  font-size: 10px;
+}
+
+.input-flex-grow {
+  display: flex;
+}
+
+.registration-header {
+  font-size: 25px;
+  color: whitesmoke;
+  font-weight: 300;
+}
+
+.session-form-forgot-password {
+  top: -13px;
+  position: relative;
+}
+
+.session-form-forgot-password small {
+  color: #0295D4;
+}
+
+.login-smaller-header {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgb(123, 148, 161);
+}
+
+.vl {
+  border-left: 2px solid rgba(0,0,0,0.1);
+  height: 100%;
+  float:left;
+}
+
+.session-form-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-image: url('background.jpg'); 
+  background-position: left 0px bottom 0px;
+  margin: auto;
+  min-height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
+.session-form-qr-code-section {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.session-form-qr-code-text {
+
+}
+
+.session-form-qr-code-col {
+  height: 100%;
+  margin: auto;
+  
+}
+
+.session-form-qr-code-text h3 {
+  font-weight: 300;
+  color: whitesmoke;
+}
+
+.session-form-qr-code-text small {
+  // font-weight: 300;
+  color: rgb(123, 148, 161);
+}
+
+
+.session-form-qr-code {
+  width: 180px;
+  height: 180px;
+  background: white;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background-image: url('discord.png');
+  background-size: 100%;
+}

@@ -1,16 +1,30 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 
-export default ({ currentUser, logout }) => {
-  const display = currentUser ? (
-    <div>
-      <p>Hello, {currentUser.username}</p>
-      <button onClick={logout}>Log Out!</button>
-    </div>
-  ) : (
+class UserCard extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+
+  componentDidMount () {
+    // this.props.login(this.props.currentUser)
+  }
+
+  render () {
+    const display = this.props.currentUser ? (
       <div>
-        Hey, no one's home!
+        <p>Hello, {this.props.currentUser.username}</p>
+        <button onClick={this.props.logout}>Log Out!</button>
       </div>
-    );
-  return display
+    ) : (
+        <div>
+          Hey, no one's home!
+      </div>
+      );
+    return display
+  }
+
+  
 }
+
+export default UserCard
