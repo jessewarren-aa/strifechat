@@ -4,7 +4,7 @@ import { login, logout } from '../../actions/session_actions';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.entities.users[state.session.currentUser] // [DEV] should revert to state.entities.users[state.session.currentUser] and have currentUser be just the ID
+    currentUser: state.entities.users[state.session.currentUser]
   }
 };
 
