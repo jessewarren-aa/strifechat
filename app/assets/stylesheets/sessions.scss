@@ -4,30 +4,6 @@
 //= depend_on_asset "discord.png"
 //= depend_on_asset "background.jpg"
 
-:root {
-  --primary-color: #a5ebf7;
-  --secondary-color: #1e72a1;
-  --warning-color: #f1bf6a;
-  --background-color: #445761;
-  --dark-font: #113a56;
-  --medium-font: #bdbdbd;
-  --light-font: whitesmoke;
-}
-
-
-
-.hidden {
-  display: none;
-}
-
-// div {
-//   border: 1px solid black;
-// }
-
-// .row {
-//   border: 1px solid red !important;
-// }
-
 .session-form-landing {
   background: var(--background-color);
 

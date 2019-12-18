@@ -1,4 +1,8 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
+
+import CTAContainer from './cta/cta_container';
+import SplashArtContainer from './splash_art/splash_art_container';
 
 class SplashBody extends React.Component {
   constructor(props) {
@@ -6,9 +10,13 @@ class SplashBody extends React.Component {
   }
 
   render() {
-    return <div>
-      Hey, I'm the splash body! Wow!
-    </div>
+    return (
+      <div 
+        className="splash-body">
+          <Route exact path="/" component={CTAContainer} />
+          <Route exact path="/" component={SplashArtContainer} />
+      </div>
+    )
   }
 }
 

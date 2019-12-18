@@ -1,0 +1,98 @@
+// div { // [DEV] CFP
+//   border: 1px var(--dark-font) solid;
+//   margin: 5px;
+//   padding: 10px;
+// }
+
+.marginify {
+  // border: 1px var(--dark-font) solid; // [DEV] CFP
+  margin: 2px;
+  padding: 3px;
+}
+
+.splash-page-master {
+  background: var(--background-color);
+  color: var(--light-font);
+}
+
+.splash-body {
+  // color: var(--medium-font);
+}
+
+.splash-nav {
+  display:flex; 
+  justify-content: space-between;
+}
+
+.splash-logo-size {
+  font-size: 24px;
+}
+
+.splash-logo {
+  display: flex;
+  align-items: center;
+  padding-top: 7px;
+  margin-left: 30px;
+}
+
+.splash-nav-left {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-left: 15px;
+}
+
+.splash-nav-login-button {
+  background: var(--background-color);
+  border: 2px var(--light-font) solid;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  display: flex;
+  align-items: center;
+  color: var(--light-font);
+
+  margin-top: 5px;
+}
+
+
+.splash-nav-dyslexic-button  {
+  background: var(--background-color);
+  border: 2px var(--light-font) solid;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  display: flex;
+  align-items: center;
+  color: var(--light-font);
+
+  margin-top: 5px;
+}
+
+.splash-nav-right {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.splash-vl {
+  border-left: 3px solid rgba(0, 0, 0, 0.2);
+  height: 30%;
+  border-radius: 20px;
+  margin-left: 20px;
+  position: relative;
+  top: 2px;
+}
+
+
+// [DEV] Make a hamburger boi after ~726px width
+
+// @media only screen and (max-width: 726px) {
+
+// }

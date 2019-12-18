@@ -5,3 +5,17 @@
 .logo-font {
   font-family: 'Girassol', cursive;
 }
+
+:root {
+  --primary-color: #a5ebf7;
+  --secondary-color: #1e72a1;
+  --warning-color: #f1bf6a;
+  --background-color: #445761;
+  --dark-font: #113a56;
+  --medium-font: #b6b6b6;
+  --light-font: whitesmoke;
+}
+
+.hidden {
+  display: none;
+}
