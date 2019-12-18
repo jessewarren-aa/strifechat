@@ -96,17 +96,19 @@ class SessionForm extends React.Component {
                         </div>
                       </div>
 
-                      <div className={this.props.formType === "signup" ? "row" : "row hidden"}>
-                        <div className="col-md-12">
-                          <small>USERNAME</small>
-                          <label className="input-flex-grow">
-                            <input
-                              className="session-form-input"
-                              type="text"
-                              value={this.state.username}
-                              onChange={this.handleInput("username")}
-                            />
-                          </label>
+                      <div className={this.props.formType === "signup" ? "" : "hidden"}>
+                        <div className="row">
+                          <div className="col-md-12">
+                            <small>USERNAME</small>
+                            <label className="input-flex-grow">
+                              <input
+                                className="session-form-input"
+                                type="text"
+                                value={this.state.username}
+                                onChange={this.handleInput("username")}
+                              />
+                            </label>
+                          </div>
                         </div>
                       </div>
 
