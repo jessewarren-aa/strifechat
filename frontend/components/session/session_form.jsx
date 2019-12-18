@@ -51,20 +51,20 @@ class SessionForm extends React.Component {
     const verbiage = this.props.formType === "signup" ? "Already have an account?" : "Register";
     return (
       <div className="row session-form-background">
-        <div className={this.props.formType === "signup" ? "col-md-4" : "col-md-2"}>
+        <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-2"}>
           <div className="row">
-            <div className={this.props.formType === "signup" ? "col-md-6" : "col-md-12"}>
+            <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-8"}>
               <div className="session-form-logo logo-font">
-                <img className="logo-sizer shadowed" src={window.logoImageUrl}></img>&nbsp;&nbsp;STRIFE
+                <img className="logo-sizer shadowed" src={window.logoImageUrl}></img>&nbsp;&nbsp;<span className="logo-text">STRIFE</span>
                 
               </div>
             </div>
-            <div className={this.props.formType === "signup" ? "col-md-6" : "col-md-0"}></div>
+            <div className={this.props.formType === "signup" ? "col-lg-8" : "col-lg-0"}></div>
           </div>
         </div>
-        <div className={this.props.formType === "signup" ? "col-md-4 session-form-landing animate bounceIn" : "col-md-8 session-form-landing animate bounceIn"} style={this.props.formType === "signup" ? lowerMargin : {}}>
+        <div className={this.props.formType === "signup" ? "col-lg-4 session-form-landing animate bounceIn" : "col-lg-8 session-form-landing animate bounceIn"} style={this.props.formType === "signup" ? lowerMargin : {}}>
           <div className="row">
-            <div className={this.props.formType === "signup" ? "col-md-12" : "col-md-7"}>
+            <div className={this.props.formType === "signup" ? "col-lg-12" : "col-lg-7"}>
 
               <div className="text-center registration-header">
                 <div>
@@ -81,9 +81,9 @@ class SessionForm extends React.Component {
               <div className="session-form-form">
                 <form onSubmit={this.handleSubmit}>
                   <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-lg-12">
                       <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-lg-12">
                           <small>EMAIL</small>
                           <label className="input-flex-grow">
                             <input
@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
 
                       <div className={this.props.formType === "signup" ? "" : "hidden"}>
                         <div className="row">
-                          <div className="col-md-12">
+                          <div className="col-lg-12">
                             <small>USERNAME</small>
                             <label className="input-flex-grow">
                               <input
@@ -113,7 +113,7 @@ class SessionForm extends React.Component {
                       </div>
 
                       <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-lg-12">
                           <small>PASSWORD</small>
                           <label className="input-flex-grow">
                             <input
@@ -133,7 +133,7 @@ class SessionForm extends React.Component {
                       </div>
 
                       <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-lg-12">
                           <button className="session-form-button" onClick={this.handleSubmit}>
                             {this.props.formType === "signup" ? "Continue" : "Login"}
                           </button>
@@ -150,7 +150,7 @@ class SessionForm extends React.Component {
                 <div className={this.props.formType === "signup" ? "session-form-disclaimer" : "session-form-disclaimer hidden"}><small>By registering, you agree to Strife's <Link to="">Terms of Service</Link> and <Link to="">Privacy Policy</Link>.</small></div>
               </div>
             </div> { /* end of inner session-form-landing column */ }
-            <div className={this.props.formType === "signup" ? "hidden" : "col-md-5"}>
+            <div className={this.props.formType === "signup" ? "hidden session-form-qr-code-control" : "col-lg-5 session-form-qr-code-control"}>
               
               <div className="session-form-qr-code-col">
                 <div className="vl"></div>
@@ -169,7 +169,7 @@ class SessionForm extends React.Component {
             </div>
           </div>
         </div> { /* end of session-form-landing row */}
-        <div className={this.props.formType === "signup" ? "col-md-4" : "col-md-2"}></div>
+        <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-2"}></div>
 
         { /* end of session-form-background row */ }
       </div>
