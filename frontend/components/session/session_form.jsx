@@ -13,6 +13,27 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.setBounceOut = this.setBounceOut.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
+  }
+
+  handleGuest(e) {
+    e.preventDefault()
+    this.state = {
+      username: "guest_account",
+      email: "guest@gmail.com",
+      password: "password"
+    }
+
+    $("#session-form-email-input").val(this.state.email)
+    $("#session-form-username-input").val(this.state.username)
+    $("#session-form-password-input").val(this.state.password)
+
+    setTimeout(() => {
+      this.handleSubmit(e)
+    }, 400);
+
+
+    
   }
 
   handleSubmit(e) {
@@ -37,7 +58,6 @@ class SessionForm extends React.Component {
       $(".session-form-landing").addClass("hidden") 
     }, 700);
     setTimeout(() => { 
-      console.log('HEY WHOA THERE BUDDY')
       this.props.history.push(redirectURL) 
     }, 1200);
   }
@@ -73,10 +93,10 @@ class SessionForm extends React.Component {
                 <div className="login-smaller-header">
                   {{ "Register": "We're so excited to see you again!" }[verbiage]}
                 </div>
+
                 
-                <ul>
-                  {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
-                </ul>
+                
+                
               </div>
               <div className="session-form-form">
                 <form onSubmit={this.handleSubmit}>
@@ -87,6 +107,7 @@ class SessionForm extends React.Component {
                           <small>EMAIL</small>
                           <label className="input-flex-grow">
                             <input
+                              id="session-form-email-input"
                               className="session-form-input"
                               type="text"
                               value={this.state.email}
@@ -102,6 +123,7 @@ class SessionForm extends React.Component {
                             <small>USERNAME</small>
                             <label className="input-flex-grow">
                               <input
+                                id="session-form-username-input"
                                 className="session-form-input"
                                 type="text"
                                 value={this.state.username}
@@ -117,6 +139,7 @@ class SessionForm extends React.Component {
                           <small>PASSWORD</small>
                           <label className="input-flex-grow">
                             <input
+                              id="session-form-password-input"
                               className="session-form-input"
                               type="password"
                               value={this.state.password}
@@ -132,6 +155,15 @@ class SessionForm extends React.Component {
                         
                       </div>
 
+                      <div className="session-form-errors">
+                        <small>
+                          {this.props.errors.length > 0 ? "Error signing in:" : ""}
+                          <ul>
+                            {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+                          </ul>
+                        </small>
+                      </div>
+
                       <div className="row">
                         <div className="col-lg-12">
                           <button className="session-form-button" onClick={this.handleSubmit}>
@@ -144,7 +176,7 @@ class SessionForm extends React.Component {
                 </form>
               </div>
               <div>
-                <small>{{ "Register": "Need an account? " }[verbiage]}<Link onClick={this.setBounceOut} to={redirectURL}>{verbiage}</Link></small>
+                <small>{{ "Register": "Need an account? " }[verbiage]}<Link onClick={this.setBounceOut} to={redirectURL}>{verbiage}</Link> <span className={this.props.formType === "signup" ? "hidden" : ""}>or <a onClick={this.handleGuest} href="#">sign in as a guest</a></span></small>
               </div>
               <div>
                 <div className={this.props.formType === "signup" ? "session-form-disclaimer" : "session-form-disclaimer hidden"}><small>By registering, you agree to Strife's <Link to="">Terms of Service</Link> and <Link to="">Privacy Policy</Link>.</small></div>
