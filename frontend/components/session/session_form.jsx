@@ -69,7 +69,18 @@ class SessionForm extends React.Component {
 
     const redirectURL = this.props.formType === "login" ? "/signup" : "/login";
     const verbiage = this.props.formType === "signup" ? "Already have an account?" : "Register";
+
+
     return (
+      // [DEV] refactor notes
+      // logo header
+      // session form
+      // // header
+      // // inputs
+      // // submit button
+      // // footer
+      // // // sidebar with qr code
+
       <div className="row session-form-background">
         <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-2"}>
           <div className="row">
