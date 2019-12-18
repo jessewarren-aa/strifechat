@@ -56,8 +56,7 @@ class SessionForm extends React.Component {
             <div className={this.props.formType === "signup" ? "col-md-6" : "col-md-12"}>
               <div className="session-form-logo logo-font">
                 <img className="logo-sizer shadowed" src={window.logoImageUrl}></img>&nbsp;&nbsp;STRIFE
-                <img className="logo-sizer shadowed" src={window.backgroundImageUrl}></img>
-                <img className="logo-sizer shadowed" src={window.discordQRCodeUrl}></img>
+                
               </div>
             </div>
             <div className={this.props.formType === "signup" ? "col-md-6" : "col-md-0"}></div>
