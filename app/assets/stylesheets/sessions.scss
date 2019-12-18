@@ -140,7 +140,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background-image: url('background.jpg'); 
+  background-image: url(asset_path('background.jpg')); 
   background-position: left 0px bottom 0px;
   margin: auto;
   min-height: 100%;
@@ -183,6 +183,6 @@
   margin-top: 40px;
   margin-bottom: 30px;
   border-radius: 5px;
-  background-image: url('discord.png');
+  background-image: url(asset_path('discord.png'));
   background-size: 100%;
 }
