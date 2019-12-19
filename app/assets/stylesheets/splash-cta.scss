@@ -1,0 +1,62 @@
+.splash-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.empty-space-enforcer {
+  min-height: 80px;
+}
+
+.cta-header h2 {
+  font-weight: 800;
+}
+
+.cta-body {
+  color: var(--medium-font);
+  z-index: 2;
+}
+
+.cta-button {
+  background: var(--secondary-color);
+  border-radius: 3px;
+  border: none;
+  display: inline-block;
+  color: var(--light-font);
+  height: 2.5rem;
+  margin-bottom: 5px;
+
+  margin-right: 45px;
+  padding-left: 25px;
+  padding-right: 25px;
+  z-index: 2;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes ctaButton {
+  from {transform: translate(0px);}
+  to {transform: translate(0px, 2px);}
+}
+
+/* Standard syntax */
+@keyframes ctaButton {
+  from {transform: translate(0px);}
+  to {transform: translate(0px, 2px);}
+}
+
+.cta-button-white {
+  background: var(--light-font);
+  color: var(--dark-font);
+}
+
+.cta-button:hover {
+  -webkit-animation-name: ctaButton; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+  animation-name: ctaButton;
+  animation-duration: 1s;
+}
+
+.cta-button-centering {
+  display: flex;
+  justify-content: center;
+}

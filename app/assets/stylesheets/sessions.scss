@@ -141,6 +141,21 @@ div {
   margin-bottom: 5px;
 }
 
+.not-a-link {
+  background: rgba(0,0,0,0);
+  border: none;
+  color: var(--light-color)
+}
+
+.not-a-link:focus {
+  outline: none;
+}
+
+// .not-a-link:hover {
+//   color: var(--light-font);
+//   text-decoration: none;
+// }
+
 .session-form-button:hover {
   background: var(--secondary-color);
   color: var(--primary-color);

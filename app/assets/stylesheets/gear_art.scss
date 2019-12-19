@@ -1,0 +1,175 @@
+
+.gear-art {
+  position: absolute;
+}
+
+.drop-shadow {
+  width: 98%;
+  height: 60px;
+  background: black;
+  opacity: 0.1;
+  position: absolute;
+  top: 885px;
+  left: 10px;
+  border-radius: 50px;
+}
+
+.art-potion {
+  top: 710px;
+  left: 30px;
+}
+
+.art-smartphone {
+  top: 660px;
+  left: 90px;
+}
+
+.art-phone {
+  top: 665px;
+  left: 240px;
+}
+
+.art-desktop {
+  top: 445px;
+  left: 350px;
+}
+
+.art-controller {
+  top: 810px;
+  left: 380px;
+}
+
+.art-laptop {
+  top: 565px;
+  left: 635px;
+}
+
+.art-disc {
+  top: 800px;
+  left: 1060px;
+}
+
+.art-coin-1 {
+  top: 350px;
+  left: 710px;
+}
+
+.art-coin-2 {
+  top: 570px;
+  left: 210px;
+}
+
+.art-bomb {
+  top: 535px;
+  left: 160px;
+}
+
+.art-cartridge {
+  top: 440px;
+  left: 880px;
+}
+
+.art-block {
+  top: 270px;
+  left: 400px;
+  z-index: 1;
+}
+
+.art-block:hover {
+  cursor: pointer;
+}
+
+
+
+#coin-1 {
+  animation: shakeSlowly 2s infinite;
+}
+
+#coin-2 {
+  animation: shakeSlowly 2s infinite;
+}
+
+#bomb-1 {
+  animation: shakeSlowly 3s infinite;
+}
+
+#cartridge-1 {
+  animation: shakeSlowly 2s infinite;
+}
+
+@keyframes shakeSlowly {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: translate3d(10px, 0px, 0px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+.go-mushroom-go {
+  animation: goMushroomGo 2s infinite;
+}
+
+@keyframes goMushroomGo {
+    0% {
+        transform: translate3d(0px, 0px, 0px);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: translate3d(0px, 15px, 0px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate3d(0px, 0px, 0px);
+    }
+}
+
+.go-flower-go {
+  animation-name: goFlowerGo;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  transform: rotate(0.25turn);
+}
+
+@keyframes goFlowerGo {
+  32%, 82% {
+    transform: rotate(0.25turn) translate3d(0px, -75px, 0px);
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    transform: rotate(0.25turn);
+  }
+}
+
+.go-star-go {
+  animation-name: goStarGo;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+}
+
+@keyframes goStarGo {
+  16%, 32% {
+    transform: translate3d(0px, 95px, 0px);
+    animation-timing-function: ease-in;
+  }
+
+  42%, 62% {
+    transform: rotate3d(0, 1, 0, 0.1turn) translate3d(0px, 95px, 0px);
+    // animation-timing-function: ease-out;
+  }
+
+  72%, 82% {
+    transform: rotate3d(0, 1, 0, 0turn) translate3d(0px, 95px, 0px);
+    // animation-timing-function: ease-out;
+  }
+
+  100% {
+    transform: rotate3d(0, 1, 0, 0turn) rotateZ(160deg) translate3d(-800px, 95px, 0px);
+  }
+}

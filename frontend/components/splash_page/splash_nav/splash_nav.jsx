@@ -52,7 +52,7 @@ class SplashNav extends React.Component {
           </div>
 
           <div 
-            className="marginify nav-left-developer nav-item">
+            className="marginify nav-left-developers nav-item">
               Developers&nbsp;<span className="caret"></span>
           </div>
 
@@ -67,35 +67,35 @@ class SplashNav extends React.Component {
           </div>
         </div>
 
-        <div className="splash-nav-right marginify">
+        <div className="splash-nav-right nav-right-item marginify">
           <a href="">
             <img
-              className="icon-sizer nav-item marginify"
+              className="icon-sizer nav-item nav-right-item marginify"
               src={window.twitterIcon} />
           </a>
           
           <a href="">
             <img
-              className="icon-sizer nav-item marginify"
+              className="icon-sizer nav-item nav-right-item marginify"
               src={window.facebookIcon} />
           </a>
           
           <a href="">
             <img
-              className="icon-sizer nav-item marginify"
+              className="icon-sizer nav-item nav-right-item marginify"
               src={window.instagramIcon} />
           </a>
 
           <button
-            className="splash-nav-login-button marginify nav-item"
+            className="splash-nav-login-button nav-right-item marginify nav-item"
             onClick={this.sendToLogin}>
               <small>Login</small>
           </button>
 
-          <div className="splash-vl"></div>
+          <div className="splash-vl nav-right-item"></div>
 
           <button
-            className="splash-nav-dyslexic-button marginify nav-item"
+            className="splash-nav-dyslexic-button nav-right-item marginify nav-item"
             onClick={this.changeToEnglish}>
             <small>English</small>
           </button>

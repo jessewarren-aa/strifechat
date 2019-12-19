@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.setBounceOut = this.setBounceOut.bind(this);
     this.handleGuest = this.handleGuest.bind(this);
+    this.headHome = this.headHome.bind(this);
   }
 
   handleGuest(e) {
@@ -47,6 +48,12 @@ class SessionForm extends React.Component {
     return (e) => {
       this.setState({ [type]: e.target.value });
     };
+  }
+
+  headHome(e) {
+    e.preventDefault();
+    this.props.history.push("/");
+    // return <Redirect to="/"/>
   }
 
   setBounceOut (e) {
@@ -86,8 +93,16 @@ class SessionForm extends React.Component {
           <div className="row">
             <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-8"}>
               <div className="session-form-logo logo-font">
-                <img className="logo-sizer shadowed" src={window.logoImageUrl}></img>&nbsp;&nbsp;<span className="logo-text">STRIFE</span>
-                
+                  <img
+                    className="logo-sizer shadowed"
+                    src={window.logoImageUrl}>
+                  </img>&nbsp;&nbsp;
+                    <button className="not-a-link" onClick={this.headHome}>
+                      <span className="logo-text">
+                        STRIFE
+                      </span>
+                    </button>
+                  
               </div>
             </div>
             <div className={this.props.formType === "signup" ? "col-lg-8" : "col-lg-0"}></div>

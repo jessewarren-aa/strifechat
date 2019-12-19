@@ -19,6 +19,20 @@
   // color: var(--medium-font);
 }
 
+.splash-shape-sizer {
+  opacity: 0.05;
+}
+
+.splash-cta {
+  height: 150px;
+}
+
+
+.splash-art {
+  height: 750px;
+}
+
+
 .splash-nav {
   display:flex; 
   justify-content: space-between;
@@ -78,7 +92,7 @@
   width: 30%;
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: right;
 }
 
 .splash-vl {
@@ -90,9 +104,49 @@
   top: 2px;
 }
 
+@media only screen and (max-width: 1241px) {
+  .first-boxes-hidden {
+    display:none;
+  }
+}
 
-// [DEV] Make a hamburger boi after ~726px width
+@media only screen and (max-width: 1106px) {
+  .second-boxes-hidden, .splash-nav-right {
+    display:none;
+  }
+}
 
-// @media only screen and (max-width: 726px) {
+@media only screen and (max-width: 1067) {
+  .nav-right-item {
+    display: none; // temp fix until I build a hamburger boi
+  }
+}
 
-// }
+@media only screen and (max-width: 971px) {
+  .third-boxes-hidden {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 836px) {
+  .fourth-boxes-hidden {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 701px) {
+  .fifth-boxes-hidden, .nav-left-support  {
+    display:none;
+  }
+}
+@media only screen and (max-width: 604px) {
+  .nav-left-community {
+    display:none;
+  }
+}
+
+@media only screen and (max-width: 566px) {
+  .sixth-boxes-hidden, .nav-left-developers {
+    display:none;
+  }
+}
