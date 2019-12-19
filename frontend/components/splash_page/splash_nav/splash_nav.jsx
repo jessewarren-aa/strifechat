@@ -64,18 +64,43 @@ class SplashNav extends React.Component {
           </div>
 
           <div 
-            className="marginify nav-left-developers nav-item">
+            className="marginify nav-left-developers nav-left-developers-hide nav-item">
+            <div className="splash-nav-developers-dropdown">
               Developers&nbsp;<span className="caret"></span>
+              <div className="splash-nav-developers-dropdown-content">
+                <div>Sell Your Game</div>
+                <div>Rich Presence</div>
+                <div>Verification</div>
+                <div>Developer Portal</div>
+                <div>Documentation</div>
+              </div>
+            </div>
           </div>
 
           <div 
-            className="marginify nav-left-community nav-item">
+            className="marginify nav-left-community nav-left-community-hide nav-item">
+            <div className="splash-nav-community-dropdown">
               Community&nbsp;<span className="caret"></span>
+              <div className="splash-nav-community-dropdown-content">
+                <div>Open Source</div>
+                <div>Partners</div>
+                <div>Hype Squad</div>
+                <div>Guidelines</div>
+              </div>
+            </div>
           </div>
 
           <div 
-            className="marginify nav-left-support nav-item">
+            className="marginify nav-left-support nav-left-support-hide nav-item">
+            <div className="splash-nav-support-dropdown">
               Support&nbsp;<span className="caret"></span>
+              <div className="splash-nav-support-dropdown-content">
+                <div>Help & Support</div>
+                <div>Status</div>
+                <div>Parent's Guide</div>
+                <div>Security</div>
+              </div>
+            </div>
           </div>
         </div>
 
