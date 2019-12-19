@@ -1,0 +1,105 @@
+.cta-footer-right {
+  display: flex;
+  justify-content: space-around;
+  // align-items: center;
+  width: 100%;
+}
+
+.cta-footer-left {
+  display: flex;
+  justify-content: space-around;
+  // align-items: center;
+  width: 100%;
+}
+
+.cta-index-push {
+  z-index: 1;
+}
+
+.splash-footer-cta {
+  display: flex;
+  justify-content: space-between;
+  width: 75%;
+}
+
+.splash-footer-cta-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.splash-footer-cta-container {
+  padding-bottom: 49px;
+}
+
+// .splash-footer-cta-container div {
+//   border: 2px solid black;
+// }
+
+.footer-cta-hr {
+  border-color: var(--light-font);
+  width: 75%;
+  opacity: 0.1;
+}
+
+.footerBackgroundPrimary-3ouTtT { // Big thanks, Discord page!
+  position:absolute;
+  top:140vh;
+  // transform:translateY(-100%);
+  height: 50%;
+  width: 100%;
+}
+
+.footer-cta-small-text {
+  color: var(--medium-font);
+  position: relative;
+  top:-10px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.splash-footer-cta-button-div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cta-footer-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.cta-footer-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-cta-button {
+  background: var(--secondary-color);
+  border-radius: 3px;
+  border: none;
+  // display: inline-block;
+  color: var(--light-font);
+  height: 2.5rem;
+  margin-bottom: 5px;
+
+  // margin-right: 45px;
+  padding-left: 25px;
+  padding-right: 25px;
+  // z-index: 2;
+}
+
+.cta-footer-container div {
+  margin: 3px;
+  // border: 2px solid black;
+}
+
+.cta-footer-container ul {
+  list-style: none;
+}
+
+.cta-footer-logo {
+  
+}

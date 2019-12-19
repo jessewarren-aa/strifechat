@@ -4,6 +4,14 @@ class SplashNav extends React.Component {
   constructor(props) {
     super(props)
     this.sendToLogin = this.sendToLogin.bind(this)
+
+    this.headHome = this.headHome.bind(this)
+  }
+
+  headHome(e) {
+    e.preventDefault();
+    this.props.history.push("/");
+    // return <Redirect to="/"/>
   }
 
   sendToLogin (e) {
@@ -26,14 +34,18 @@ class SplashNav extends React.Component {
 
           <div 
             className="logo-font splash-logo marginify">
-            <img 
-              className="logo-sizer" 
-              src={window.logoImageUrl} />
+            <a
+              href="#"
+              onClick={this.headHome}>
+              <img
+                className="logo-sizer"
+                src={window.logoImageUrl} />
+            </a>
             &nbsp;&nbsp;
-            <span 
-              className="splash-logo-size">
+            <button 
+              className="splash-logo-size not-a-link">
                 STRIFE
-            </span>
+            </button>
           </div>
 
           <div 

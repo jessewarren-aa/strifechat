@@ -98,6 +98,7 @@ class SessionForm extends React.Component {
                     src={window.logoImageUrl}>
                   </img>&nbsp;&nbsp;
                     <button className="not-a-link" onClick={this.headHome}>
+                      {/* [DEV] Has weird displacement issue? */}
                       <span className="logo-text">
                         STRIFE
                       </span>

@@ -19,8 +19,9 @@ class GearArt extends React.Component {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  objectHandle(selectionId) {
+  objectHandle(selection, selectionId) {
 
+    $(".gear-container").append(`<img id="${selectionId}" class="hidden marginify gear-art art-${selection} animated-art" src = ${this.objects[selection][1]} />`);
 
     const object = document.getElementById(`${selectionId}`)
     object.style.top = "275px"; 
@@ -30,19 +31,23 @@ class GearArt extends React.Component {
 
     if (jObject.hasClass("art-flower")) {
       jObject.removeClass('hidden');
-      jObject.addClass('go-flower-go')
+      jObject.addClass('go-flower-go');
     } else if (jObject.hasClass("art-star")) {
       jObject.removeClass('hidden');
-      jObject.addClass('go-star-go')
+      jObject.addClass('go-star-go');
     } else if (jObject.hasClass("art-mushroom")) {
 
       const randomTop = this.getRandomInt(250, 750);
       object.style.top = `${randomTop}px`;
       const randomLeft = this.getRandomInt(50, 1050);
       object.style.left = `${randomLeft}px`;
-      jObject.removeClass('hidden');
 
-      jObject.addClass('go-mushroom-go')
+      // object.style.opacity = 0
+
+      // object.style.transform = scale(0.2);
+      jObject.removeClass('hidden');
+      // object.style.transition = "opacity .25s ease -in -out"
+      jObject.addClass('go-mushroom-go');
     }
     
  
@@ -52,15 +57,20 @@ class GearArt extends React.Component {
 
   spawnObject () {
     
-    const selection = Object.keys(this.objects)[Math.floor(
-      Math.random() * Object.keys(this.objects).length
+    const weightedObjects = [
+      "mushroom", "mushroom", "mushroom",
+      "star",
+      "flower", "flower", 
+    ]
+    const selection = weightedObjects[Math.floor(
+      Math.random() * weightedObjects.length
     )]
 
-    const selectionId = `${selection}-${this.objects[selection][0]}`
-    
-    $(".gear-container").append(`<img id="${selectionId}" class="hidden marginify gear-art art-${selection} animated-art" src = ${this.objects[selection][1] } />`)
 
-    this.objectHandle(selectionId)
+
+    const selectionId = `${selection}-${this.objects[selection][0]}`
+
+    this.objectHandle(selection, selectionId);
     this.objects[selection][0]++;
   }
 
