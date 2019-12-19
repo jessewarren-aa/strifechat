@@ -16,7 +16,11 @@ class SplashNav extends React.Component {
 
   sendToLogin (e) {
     e.preventDefault()
-    this.props.history.push("/login") 
+    if (this.props.currentUser) {
+      this.props.logout()
+    } else {
+      this.props.history.push("/login") 
+    }
   }
 
   changeToEnglish (e) {
@@ -126,7 +130,7 @@ class SplashNav extends React.Component {
           <button
             className="splash-nav-login-button nav-right-item marginify nav-item"
             onClick={this.sendToLogin}>
-              <small>Login</small>
+            <small>{this.props.currentUser ? "Logout" : "Login"}</small>
           </button>
 
           <div className="splash-vl nav-right-item"></div>
