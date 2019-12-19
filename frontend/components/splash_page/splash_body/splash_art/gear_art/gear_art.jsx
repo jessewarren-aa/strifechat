@@ -7,8 +7,8 @@ class GearArt extends React.Component {
     this.objectHandle = this.objectHandle.bind(this)
     this.objects = {
       "mushroom": [0, window.splashMushroom],
-      // "star": [0, window.splashStar],
-      // "flower": [0, window.splashFlower],
+      "star": [0, window.splashStar],
+      "flower": [0, window.splashFlower],
     }
 
   }
