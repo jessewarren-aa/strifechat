@@ -7,7 +7,7 @@ class FooterRight extends React.Component {
 
   render() {
     return (
-      <div className="cta-footer-right">
+      <div className="cta-footer-right col-md-5">
         <div>
           <ul>
             <strong>Resources</strong>

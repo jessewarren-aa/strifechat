@@ -84,7 +84,7 @@ class GearArt extends React.Component {
           src={window.splashBomb} />
         <img
           id="coin-1"
-          className="marginify gear-art art-coin-1 animated-art"
+          className="marginify gear-art art-coin-1 animated-art first-art-hidden"
           src={window.splashCoin} />
         <img
           id="coin-2"
@@ -92,12 +92,12 @@ class GearArt extends React.Component {
           src={window.splashCoin} />
         <img
           id="cartridge-1"
-          className="marginify gear-art art-cartridge animated-art"
+          className="marginify gear-art art-cartridge animated-art first-art-hidden"
           src={window.splashCartridge} />
 
         <img
           onClick={this.spawnObject}
-          className="marginify gear-art art-block"
+          className="marginify gear-art art-block second-art-hidden"
           src={window.splashBlock} />
 
         <img 
@@ -107,21 +107,21 @@ class GearArt extends React.Component {
           className="marginify gear-art art-smartphone" 
           src={window.splashSmartphone} />
         <img 
-          className="marginify gear-art art-desktop" 
+          className="marginify gear-art art-desktop first-art-hidden" 
           src={window.splashDesktop} />
 
         <img
           className="marginify gear-art art-phone"
           src={window.splashPhone} />
         <img
-          className="marginify gear-art art-controller"
+          className="marginify gear-art art-controller first-art-hidden"
           src={window.splashController} />
 
         <img
-          className="marginify gear-art art-disc"
+          className="marginify gear-art art-disc first-art-hidden"
           src={window.splashDisc} />
         <img 
-          className="marginify gear-art art-laptop" 
+          className="marginify gear-art art-laptop second-art-hidden" 
           src={window.splashLaptop} />
         
       </div>

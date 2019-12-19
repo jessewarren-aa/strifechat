@@ -13,7 +13,7 @@ class SplashFooter extends React.Component {
   render() {
     return (
       <div className="cta-footer-wrapper">
-        <div className="cta-footer-container cta-index-push">
+        <div className="cta-footer-container cta-index-push row">
           <Route exact path="/" component={FooterLeftContainer} />
           <Route exact path="/" component={FooterRightContainer} />
         </div>

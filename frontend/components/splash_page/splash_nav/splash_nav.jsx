@@ -107,7 +107,7 @@ class SplashNav extends React.Component {
           <div className="splash-vl nav-right-item"></div>
 
           <button
-            className="splash-nav-dyslexic-button nav-right-item marginify nav-item"
+            className="splash-nav-language-button nav-right-item marginify nav-item"
             onClick={this.changeToEnglish}>
             <small>English</small>
           </button>

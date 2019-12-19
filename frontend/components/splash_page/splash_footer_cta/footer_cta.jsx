@@ -3,6 +3,12 @@ import React from 'react';
 class FooterCTA extends React.Component {
   constructor(props) {
     super(props)
+    this.visitSignup = this.visitSignup.bind(this)
+  }
+
+  visitSignup (e) {
+    e.preventDefault();
+    this.props.history.push("/signup");
   }
 
   render() {
@@ -18,7 +24,11 @@ class FooterCTA extends React.Component {
               <small className="footer-cta-small-text">JOIN OVER 250 MILLION PLAYERS TODAY</small>
           </div>
             <div className="splash-footer-cta-button-div">
-              <button className="footer-cta-button">Sign Up Now</button>
+              <button 
+                onClick={this.visitSignup}
+                className="footer-cta-button">
+                Sign Up Now
+              </button>
             </div>
           </div>
         </div>

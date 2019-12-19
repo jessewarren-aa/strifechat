@@ -1,13 +1,13 @@
 .cta-footer-right {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   // align-items: center;
   width: 100%;
 }
 
 .cta-footer-left {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   // align-items: center;
   width: 100%;
 }
@@ -30,7 +30,7 @@
 }
 
 .splash-footer-cta-container {
-  padding-bottom: 49px;
+  padding-bottom: 79px;
 }
 
 // .splash-footer-cta-container div {
@@ -67,7 +67,7 @@
 
 .cta-footer-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 80%;
 }
 
@@ -81,9 +81,11 @@
   border-radius: 3px;
   border: none;
   // display: inline-block;
+  min-width: 150px;
   color: var(--light-font);
   height: 2.5rem;
   margin-bottom: 5px;
+  
 
   // margin-right: 45px;
   padding-left: 25px;

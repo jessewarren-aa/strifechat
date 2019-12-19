@@ -15,7 +15,7 @@ class FooterLeft extends React.Component {
 
   render() {
     return (
-      <div className="cta-footer-left">
+      <div className="cta-footer-left col-md-5">
         <div className="cta-footer-logo">
           <a 
             href="#"
