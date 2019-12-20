@@ -10,9 +10,12 @@ class User < ApplicationRecord
   validates :image_url, presence: true
   validates :friend_code, presence: true, uniqueness: true
 
+  validates :unique_id, presence: true, uniqueness: true
+
   after_initialize :ensure_session_token
   after_initialize :generate_default_avatar
   after_initialize :set_last_server
+  after_initialize :set_unique_id
   after_initialize :generate_friend_code
 
   def self.find_by_credentials(email, password)
@@ -36,7 +39,6 @@ class User < ApplicationRecord
   def generate_friend_code
     counter = 0
     while not(self.valid?)
-      p self
       random_code = Array.new(5) {rand(5)}.join("")
       self.friend_code ||= "#{self.username}##{random_code}"
       counter += 1
@@ -64,5 +66,9 @@ class User < ApplicationRecord
 
   def set_last_server
     self.last_server_id = -1
+  end
+
+  def set_unique_id
+    self.unique_id = "u#{self.id}#{self.class.generate_session_token}"
   end
 end

@@ -1,0 +1,98 @@
+.conversation-bar-header-master {
+  height: 50px;
+  border-bottom: 1px solid var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5px;
+
+  margin-bottom: 15px;
+}
+
+.direct-messages-title:hover {
+  color: var(--light-font)
+}
+
+
+.conversation-search-input {
+  background: var(--background-color);
+  color: var(--light-font);
+  border: none;
+  width: 220px;
+  border-radius: 5px;
+  padding-left: 5px;
+  font-size: 13px;
+  height: 25px;
+}
+
+.conversation-button {
+  display: flex;
+  padding: 10px;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.direct-messages-add {
+  font-size: 22px;
+  padding-bottom: 5px;
+  color: var(--light-font);
+}
+
+.direct-messages-title {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+  align-items: center;
+  color: var(--medium-font);
+  justify-content: space-between;
+}
+
+.direct-messages-title small {
+  font-weight: 500;
+}
+
+.friend-selected {
+  background: var(--tertiary-background-color);
+}
+
+.conversation-button:hover {
+  background: rgba(var(--tertiary-background-color-rgb), 0.4);
+}
+
+.conversation-friends-button-text {
+  font-weight: 500;
+  color: var(--light-font);
+}
+
+.person-waving {
+  margin-right: 10px;
+}
+
+
+
+.conversation-search-input::placeholder {
+  color: var(--medium-font);
+}
+
+.conversation-bar-body-master {
+  height: 100%;
+}
+
+.conversation-footer-master {
+  background: var(--background-color);
+  z-index: 1;
+  bottom: 0;
+  width: 240px;
+  height: 50px;
+  position: absolute;
+}
+
+.conversation-bar-master {
+  background: var(--secondary-background-color);
+  width: 240px;
+}
