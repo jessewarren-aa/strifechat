@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: formUser => dispatch(signup(formUser)),
+  // receiveErrors: errors => dispatch(receiveErrors(errors.responseJSON)),
 });
 
 export default connect(

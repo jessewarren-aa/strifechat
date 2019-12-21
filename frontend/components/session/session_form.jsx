@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from "react-router-dom";
+import {omit} from 'lodash'
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -57,6 +58,10 @@ class SessionForm extends React.Component {
   }
 
   setBounceOut (e) {
+    Object.keys(this.props.errors).forEach(key => {
+      this.props.errors[key] = []
+    })
+
     const redirectURL = this.props.formType === "login" ? "/signup" : "/login"
     e.preventDefault()
     $(".session-form-landing").removeClass("bounceIn")
@@ -184,7 +189,6 @@ class SessionForm extends React.Component {
 
                       <div className="session-form-errors">
                         <small>
-                          {this.props.errors.length > 0 ? "Error signing in:" : ""}
                           <ul>
                             {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
                           </ul>
