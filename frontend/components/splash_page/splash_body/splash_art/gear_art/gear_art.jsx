@@ -49,10 +49,6 @@ class GearArt extends React.Component {
       // object.style.transition = "opacity .25s ease -in -out"
       jObject.addClass('go-mushroom-go');
     }
-    
- 
-    
-    console.log(object)
   }
 
   spawnObject () {

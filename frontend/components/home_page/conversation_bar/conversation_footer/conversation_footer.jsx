@@ -8,7 +8,8 @@ class ConversationFooter extends React.Component {
   render() {
     return (
     <div className="conversation-footer-master">
-      Conversation footer!
+        <p>Hello, {this.props.currentUser.username}</p>
+        {/* <button onClick={this.props.logout}>Log Out!</button> */}
     </div>
     )
   }

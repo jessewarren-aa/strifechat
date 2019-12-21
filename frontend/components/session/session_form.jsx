@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
     e.preventDefault()
     this.state = {
       username: "guest_account",
-      email: "guest@gmail.com",
+      email: "guest@strifechat.herokupapp.com",
       password: "password"
     }
 

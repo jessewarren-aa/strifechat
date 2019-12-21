@@ -27,11 +27,13 @@
 
 .conversation-button {
   display: flex;
-  padding: 10px;
+  // padding: 10px;
   width: 90%;
   margin: auto;
   align-items: center;
   border-radius: 5px;
+
+  
 
   cursor: pointer;
 }
@@ -80,7 +82,32 @@
 }
 
 .conversation-bar-body-master {
-  height: 100%;
+  
+}
+
+.user-avatar {
+  // height: 52px;
+  // padding: 10px;
+  // margin-top: 20px;
+  width: 38px;
+  margin-right: 10px;
+
+  // border: 2px solid black;
+  background: var(--background-color);
+  border-radius: 25px;
+}
+
+.user {
+  display: flex;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  white-space: nowrap;
+}
+
+.direct-messages-username {
+  color: var(--medium-font)
 }
 
 .conversation-footer-master {
