@@ -46,14 +46,16 @@ class User < ApplicationRecord
         id: server_user.id,
         username: server_user.username,
         image_url: server_user.image_url,
-        unique_id: server_user.unique_id
+        unique_id: server_user.unique_id,
+        friend_code: server_user.friend_code
       }
       channel_user= User.find_by(unique_id: message.channel_id)
       channel_user = {
         id: channel_user.id,
         username: channel_user.username,
         image_url: channel_user.image_url,
-        unique_id: channel_user.unique_id
+        unique_id: channel_user.unique_id,
+         friend_code: channel_user.friend_code
       }
 
       unless unique_direct_messages.include?(server_user) 

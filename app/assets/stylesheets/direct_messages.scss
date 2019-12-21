@@ -1,0 +1,18 @@
+.direct-message-main-master {
+  background: var(--tertiary-background-color);
+  display: flex;
+  flex-grow: 1;
+}
+
+.message {
+  display: flex;
+  padding: 5px;
+}
+
+.message-content {
+  margin-left: 20px;
+}
+
+.message-timestamp {
+  padding-left: 20px;
+}

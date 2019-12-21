@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import ConversationBarBody from './conversation_bar_body';
 import { messages, get_dm_users } from '../../../../actions/message_actions'
-import { user } from '../../../../actions/user_actions'
 
 
 const mapStateToProps = (state) => ({

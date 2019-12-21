@@ -3,12 +3,7 @@ import React from 'react';
 class DirectMessageItem extends React.Component {
   constructor(props) {
     super(props)
-  }
-
-  componentDidMount () {
-    if (!this.props.user.id) {
-      this.props.getUser(this.props.user[1])
-    }
+    this.friendsClicked = this.friendsClicked.bind(this)
   }
 
   friendsClicked(e) {
@@ -19,20 +14,28 @@ class DirectMessageItem extends React.Component {
     }
     const jObject = $(e.currentTarget)
     jObject.addClass("friend-selected")
+
+    // console.log(this.props)
+    this.props.history.push(`/channels/@me/${this.props.user.unique_id}`);
   }
 
 
   render() {
     const {user} = this.props
+
+    const pathArray = this.props.match.url.split("/")
+    const path = pathArray[pathArray.length - 1]
     return (
       <div
-        className="conversation-button user"
+        className={path === user.unique_id ? "conversation-button user friend-selected" : "conversation-button user"} 
         onClick={this.friendsClicked}>
         <img
           className="user-avatar"
           src={user.image_url}>
         </img>
-        <div className="direct-messages-username">
+        <div
+          data-id={user.id} 
+          className="direct-messages-username">
           {user.username.length <= 16 ? user.username : user.username.slice(0, 16) + " ..."}
         </div>
       </div>

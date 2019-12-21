@@ -58,6 +58,26 @@
   font-weight: 500;
 }
 
+.conversation-footer-friendcode {
+  margin-top: 8px;
+}
+
+.conversation-footer-addcode {
+  position: relative;
+  top: -8px;
+}
+
+.user-card-logout {
+  background: var(--secondary-background-color);
+  border: none;
+  z-index: 2;
+  box-shadow: 1px 1px 5px black;
+}
+
+.user-card-logout:hover {
+  background: var(--tertiary-background-color);
+}
+
 .friend-selected {
   background: var(--tertiary-background-color);
 }
@@ -116,6 +136,9 @@
   bottom: 0;
   width: 240px;
   height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   position: absolute;
 }
 

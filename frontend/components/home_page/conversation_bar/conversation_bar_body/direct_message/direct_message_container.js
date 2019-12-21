@@ -4,11 +4,11 @@ import { user } from '../../../../../actions/user_actions'
 
 
 const mapStateToProps = (state, ownProps) => ({
-  user: ownProps.user
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getUser: (userId) => dispatch(user(userId))
+
 });
 
 export default connect(

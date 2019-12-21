@@ -12,5 +12,6 @@
 //
 //= require rails-ujs
 //= require jquery
+//= require local-time
 //= require jquery_ujs
 //= require_tree .
