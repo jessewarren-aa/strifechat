@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ServerBarContainer from './server_bar/server_bar_container'
 import ConversationBarContainer from './conversation_bar/conversation_bar_container'
-import DirectMessageContainer from './direct_message_main/direct_message_main_container'
+import ConversationViewContainer from './conversation_view/conversation_view_container'
 
 import FourOhFourContainer from '../four_oh_four/four_oh_four_container'
 
@@ -20,7 +20,7 @@ class HomePage extends React.Component {
       <Route exact path="/channels/*" component={ConversationBarContainer} />
       {/* <Route exact path="/" component={FriendListContainer} /> */}
         {/* Containers header with online/all/pending/blocked/add friend & "new conversation", "@ pings", and "?" help */}
-      <Route path="/channels/@me/*" component={DirectMessageContainer} />
+      <Route path="/channels/@me/*" component={ConversationViewContainer} />
 
       {/* render={(props) => <PropsPage {...props} title={`Props through render`} />} */}
 

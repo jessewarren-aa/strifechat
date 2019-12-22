@@ -5,6 +5,14 @@ export const getMessages = () => {
   })
 };
 
+export const createMessage = (message) => {
+  return $.ajax({
+    method: "POST",
+    url: "/api/messages",
+    data: message
+  })
+}
+
 export const getDMUsers = () => {
   return $.ajax({
     method: "GET",

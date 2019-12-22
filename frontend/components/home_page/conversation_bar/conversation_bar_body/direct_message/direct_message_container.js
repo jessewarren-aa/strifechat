@@ -3,9 +3,13 @@ import DirectMessage from './direct_message.jsx';
 import { user } from '../../../../../actions/user_actions'
 
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => {
+  // console.log(state)
+  // console.log(ownProps)
+  return {
 
-});
+  }
+};
 
 const mapDispatchToProps = (dispatch) => ({
 

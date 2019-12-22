@@ -1,11 +1,17 @@
-import { getMessages, getDMUsers } from '../utils/message_utils'
+import { getMessages, getDMUsers, createMessage } from '../utils/message_utils'
 
 export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
 export const RECEIVE_DM_USERS = "RECEIVE_DM_USERS";
+export const RECEIVE_MESSAGE = "RECEIVE_MESSAGE"
 
 const receiveMessages = (messages) => ({
   type: RECEIVE_MESSAGES,
   messages
+})
+
+const receiveMessage = (message) => ({
+  type: RECEIVE_MESSAGE,
+  message
 })
 
 const receiveDMUsers = (users) => ({
@@ -13,6 +19,10 @@ const receiveDMUsers = (users) => ({
   users
 })
 
+export const message = (message) => dispatch => createMessage(message)
+  .then(
+    message => dispatch(receiveMessage(message))
+  )
 
 export const messages = () => dispatch => getMessages()
   .then(

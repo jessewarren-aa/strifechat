@@ -18,11 +18,10 @@ class App extends React.Component {
   render () {
     return <div>
       {/* <UserCardContainer /> */}
-
       <Switch>
-        <Route exact path="/" component={SplashPageContainer } />
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <Route exact path="/" component={ SplashPageContainer } />
+        <AuthRoute exact path="/login" component={ LoginFormContainer } />
+        <AuthRoute exact path="/signup" component={ SignupFormContainer } />
         <ProtectedRoute path="/channels" component={ HomePageContainer } />
         {/* <Route path="*" component={NotFound} /> */}
       </Switch>

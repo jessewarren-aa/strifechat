@@ -1,10 +1,12 @@
 .conversation-bar-header-master {
   height: 50px;
   border-bottom: 1px solid var(--background-color);
+  // border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 5px;
+  padding-left: 20px;
 
   margin-bottom: 15px;
 }
@@ -21,6 +23,7 @@
   width: 220px;
   border-radius: 5px;
   padding-left: 5px;
+  margin-right: 20px;
   font-size: 13px;
   height: 25px;
 }
@@ -59,7 +62,7 @@
 }
 
 .conversation-footer-friendcode {
-  margin-top: 8px;
+  // padding-top: 8px;
 }
 
 .conversation-footer-addcode {
@@ -145,4 +148,5 @@
 .conversation-bar-master {
   background: var(--secondary-background-color);
   width: 240px;
+  // padding-right: 20px;
 }

@@ -15,6 +15,8 @@ class ConversationBarBody extends React.Component {
     }
     const jObject = $(e.currentTarget)
     jObject.addClass("friend-selected")
+
+    this.props.history.push(`/channels/@me`);
   }
 
   componentDidMount () {
@@ -54,9 +56,11 @@ class ConversationBarBody extends React.Component {
       
       <div className="direct-messages-master">
           {Object.values(this.props.users).filter((user) => {
+
             if (user.id !== parseInt(window.currentUser.id)) { // [DEV] currentUser isn't just an ID right now? why?
               return user
             }
+
           }).map((user, index)=> {
             return <DirectMessageItem key={index} user={user} {...this.props}/>
           })}

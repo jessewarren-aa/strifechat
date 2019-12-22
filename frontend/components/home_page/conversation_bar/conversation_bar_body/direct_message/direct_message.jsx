@@ -21,7 +21,7 @@ class DirectMessageItem extends React.Component {
 
 
   render() {
-    const {user} = this.props
+    const user = this.props.user
 
     const pathArray = this.props.match.url.split("/")
     const path = pathArray[pathArray.length - 1]

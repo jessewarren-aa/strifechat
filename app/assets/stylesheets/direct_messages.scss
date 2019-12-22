@@ -2,17 +2,121 @@
   background: var(--tertiary-background-color);
   display: flex;
   flex-grow: 1;
+  padding-top: 10px;
+  padding-left: 10px;
+  max-height: calc(100vh - 140px);
+  overflow: auto;
+
+  // border: 1px solid black;
+}
+
+.dm-header {
+  height: 45px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.message-header {
+  display: flex;
+  padding-top: 10px;
 }
 
 .message {
   display: flex;
-  padding: 5px;
+  // justify-content: space-between;
+}
+
+.conversation-view-master {
+  background: var(--tertiary-background-color);
+  width: 100%;
+  height: 100vh;
+  // border: 1px solid black;
+  // display: flex;
+  // flex-grow: 1;
+  
+}
+
+.dm-footer-input {
+  width: 100%;
+  // border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+.dm-footer-master {
+  background: var(--tertiary-background-color);
+  border-top: 1px solid rgba(0,0,0,0.2);
+  z-index: 1;
+  bottom: 0;
+  // border: 2px solid black;
+  height: 80px;
+  width: calc(100% - 310px);
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  position: absolute;
+}
+
+.message-avatar {
+  
+}
+
+.message-header-spacer {
+  margin-right: 48px;
+}
+
+.full-message-content {
+  // border: 1px solid black;
+  width: 100%;
+}
+
+.full-message {
+  display: flex;
+  width: 100%;
+}
+
+.timestamp-header {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+}
+.timestamp-header::before, .timestamp-header::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.timestamp-header::before {
+    margin-right: .5em;
+}
+.timestamp-header::after {
+    margin-left: .5em;
 }
 
 .message-content {
-  margin-left: 20px;
+  width: 90%;
+}
+
+.message-box-input-label {
+  width: 90%;
+}
+
+.message-box-input {
+  background: var(--quaternary-background-color);
+  border: none;
+  margin-top:10px;
+  height: 50px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  // width: 90%;
+  // flex-grow: 1;
+  width: 100%;
+  padding-left: 10px;
+  color: var(--light-font);
 }
 
 .message-timestamp {
-  padding-left: 20px;
+  padding-left: 10px;
+  // border: 1px solid black;
 }

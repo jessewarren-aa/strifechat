@@ -6,8 +6,11 @@ class ConversationFooter extends React.Component {
   }
 
   render() {
-    const username = this.props.friendCode.split("#")[0]
-    const addCode = "#" + this.props.friendCode.split("#")[1]
+    let username = ""
+    let addCode = ""
+    username = this.props.friendCode.split("#")[0]
+    addCode = "#" + this.props.friendCode.split("#")[1]
+
     return (
     <div className="conversation-footer-master">
         <div className="conversation-footer-friendcode">
