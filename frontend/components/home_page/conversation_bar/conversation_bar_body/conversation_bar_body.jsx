@@ -38,9 +38,9 @@ class ConversationBarBody extends React.Component {
     const path = pathArray[pathArray.length - 1]
 
     if (!this.props.users) {
-      null
+      return null
     } else if (!window.currentUser) {
-      null
+      return null
     }
 
     return (

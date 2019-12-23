@@ -92,6 +92,8 @@
 .conversation-friends-button-text {
   font-weight: 500;
   color: var(--light-font);
+  display: flex;
+  align-items: center;
 }
 
 .person-waving {

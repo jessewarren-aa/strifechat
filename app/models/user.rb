@@ -43,8 +43,14 @@ class User < ApplicationRecord
     
     unique_direct_messages = []
     for message in messages
-      unique_ids.push(message.server_id)
-      unique_ids.push(message.channel_id)
+      if not(unique_ids.include?(message.server_id))
+        unique_ids.push(message.server_id)
+      end
+
+      if not(unique_ids.include?(message.channel_id))
+        unique_ids.push(message.channel_id)
+      end
+      
     end
 
     unique_users = User.where(unique_id: unique_ids)

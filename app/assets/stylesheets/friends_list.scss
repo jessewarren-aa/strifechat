@@ -1,0 +1,75 @@
+.friends-list-master {
+  background: var(--tertiary-background-color);
+  flex-grow: 1;
+}
+
+.friends-list-master div {
+  // border: 1px solid black;
+}
+
+.friends-list-header-master {
+  height: 50px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--medium-font);
+}
+
+.fl-header-selected {
+  background: var(--quaternary-background-color);
+  border-radius: 10px;
+}
+.fl-header-left {
+  display: flex;
+
+}
+
+.friends-list-columns-master {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+}
+
+.friends-list-columns-master small {
+  font-weight: 600;
+  color: var(--medium-font);
+}
+
+.friends-list-name-header {
+  margin-left: 20px;
+  width: 200px;
+}
+
+.friends-list-status-header {
+  
+}
+
+.fl-header-friends-logo {
+  display: flex;
+}
+
+.disabled {
+  color: var(--medium-font);
+  text-decoration: line-through;
+}
+
+.fl-header-component:hover {
+  background: rgba(var(--quaternary-background-color-rgb), 0.4);
+  border-radius: 10px;
+}
+
+.fl-header-component {
+  display: flex;
+  align-items: center;
+}
+
+.fl-header-right {
+  display: flex;
+
+}
+
+.friends-list-columns-master {
+  height: 47px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}

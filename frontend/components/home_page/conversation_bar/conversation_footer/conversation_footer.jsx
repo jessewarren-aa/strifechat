@@ -9,7 +9,7 @@ class ConversationFooter extends React.Component {
     let username = ""
     let addCode = ""
     if (!this.props.friendCode) {
-      null
+      return null
     }
     username = this.props.friendCode.split("#")[0]
     addCode = "#" + this.props.friendCode.split("#")[1]

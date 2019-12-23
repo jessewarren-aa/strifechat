@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import ServerBarContainer from './server_bar/server_bar_container'
 import ConversationBarContainer from './conversation_bar/conversation_bar_container'
 import ConversationViewContainer from './conversation_view/conversation_view_container'
+import FriendsListContainer from './friends_list/friends_list_container'
 
 import FourOhFourContainer from '../four_oh_four/four_oh_four_container'
 
@@ -21,9 +22,9 @@ class HomePage extends React.Component {
         <Route path="/channels" component={ServerBarContainer} />
       </Switch>
       <Route exact path="/channels/*" component={ConversationBarContainer} />
-      {/* <Route exact path="/" component={FriendListContainer} /> */}
+
         {/* Containers header with online/all/pending/blocked/add friend & "new conversation", "@ pings", and "?" help */}
-      {/* <Route exact path="/channels/@me" component={FriendsListContainer} /> */}
+      <Route exact path="/channels/@me" component={FriendsListContainer} />
       <Route path="/channels/@me/*" component={ConversationViewContainer} />
 
 
