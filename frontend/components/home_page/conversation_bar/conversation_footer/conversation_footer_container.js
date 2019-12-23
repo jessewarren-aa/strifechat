@@ -7,10 +7,7 @@ const mapStateToProps = (state) => {
   
 
   let user = state.entities.users[state.session.currentUser]
-  // console.log(user)
-  // if (Array.isArray(user)) {
-  //   user = user[1]
-  // }
+
 
   return {
     friendCode: user ? user.friend_code : null

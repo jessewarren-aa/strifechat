@@ -4,8 +4,6 @@ import { user } from '../../../../../actions/user_actions'
 
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state)
-  // console.log(ownProps)
   return {
 
   }

@@ -14,8 +14,7 @@ class DirectMessageItem extends React.Component {
     }
     const jObject = $(e.currentTarget)
     jObject.addClass("friend-selected")
-
-    // console.log(this.props)
+    
     this.props.history.push(`/channels/@me/${this.props.user.unique_id}`);
   }
 

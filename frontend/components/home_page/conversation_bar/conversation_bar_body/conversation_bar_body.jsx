@@ -32,7 +32,6 @@ class ConversationBarBody extends React.Component {
 
 
   render() {
-    // debugger;
     const pathArray = this.props.match.url.split("/")
     const path = pathArray[pathArray.length - 1]
 
