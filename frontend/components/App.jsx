@@ -5,7 +5,7 @@ import LoginFormContainer from '../components/session/login_form_container';
 import SignupFormContainer from '../components/session/signup_form_container';
 import SplashPageContainer from '../components/splash_page/splash_page_container';
 import HomePageContainer from '../components/home_page/home_page_container'
-// import UserCardContainer from './user_card/user_card_container';
+
 
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 

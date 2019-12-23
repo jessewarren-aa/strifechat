@@ -22,9 +22,9 @@ class HomePage extends React.Component {
       this.props.getMessages()
     }
 
-    if (!this.props.users.length) {
-      this.props.getDirectMessageUsers()
-    }
+    // if (!this.props.users.length) {
+    //   this.props.getDirectMessageUsers()
+    // }
   }
 
   render() {

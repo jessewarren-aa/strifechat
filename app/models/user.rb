@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
 
   validates :image_url, presence: true
-  validates :friend_code, presence: true, uniqueness: true
+  # validates :friend_code, presence: true, uniqueness: true
 
   validates :unique_id, presence: true, uniqueness: true
 
@@ -38,36 +38,17 @@ class User < ApplicationRecord
 
   def find_unique_direct_messages
     messages = self.direct_messages
+
+    unique_ids = []
+    
     unique_direct_messages = []
     for message in messages
-      
-      server_user = User.find_by(unique_id: message.server_id)
-      server_user = {
-        id: server_user.id,
-        username: server_user.username,
-        image_url: server_user.image_url,
-        unique_id: server_user.unique_id,
-        friend_code: server_user.friend_code
-      }
-      channel_user= User.find_by(unique_id: message.channel_id)
-      channel_user = {
-        id: channel_user.id,
-        username: channel_user.username,
-        image_url: channel_user.image_url,
-        unique_id: channel_user.unique_id,
-         friend_code: channel_user.friend_code
-      }
-
-      unless unique_direct_messages.include?(server_user) 
-        unique_direct_messages.push(server_user)
-      end
-
-      unless unique_direct_messages.include?(channel_user)
-        unique_direct_messages.push(channel_user)
-      end
+      unique_ids.push(message.server_id)
+      unique_ids.push(message.channel_id)
     end
 
-    return unique_direct_messages
+    unique_users = User.where(unique_id: unique_ids)
+    return unique_users
   end
 
   def generate_default_avatar
@@ -86,15 +67,17 @@ class User < ApplicationRecord
   end
 
   def generate_friend_code
-    counter = 0
-    while not(self.valid?)
+    # counter = 0
+    random_code = Array.new(5) {rand(5)}.join("")
+    self.friend_code ||= "#{self.username}##{random_code}"
+    while User.find_by(friend_code: random_code)
       random_code = Array.new(5) {rand(5)}.join("")
       self.friend_code ||= "#{self.username}##{random_code}"
-      counter += 1
-      if counter > 15 # [DEV] should be removeable with user_controller logic?
-        # [DEV] NOT CURRENTLY REMOVEABLE, STILL INFINITE LOOP [2019-12-18]
-        break
-      end
+      # counter += 1
+      # if counter > 15 # [DEV] should be removeable with user_controller logic?
+      #   # [DEV] NOT CURRENTLY REMOVEABLE, STILL INFINITE LOOP [2019-12-18]
+      #   break
+      # end
     end
   end
 

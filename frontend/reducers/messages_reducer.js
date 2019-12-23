@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     case RECEIVE_MESSAGES:
       return Object.assign({}, state, action.messages);
     case RECEIVE_MESSAGE:
-      return action.message
+      return Object.assign({}, state, {[action.message.id]: action.message});
     default:
       return state;
   }

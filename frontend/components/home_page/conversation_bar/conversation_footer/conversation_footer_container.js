@@ -4,7 +4,10 @@ import { logout } from '../../../../actions/session_actions';
 
 
 const mapStateToProps = (state) => {
+  
+
   let user = state.entities.users[state.session.currentUser]
+  // console.log(user)
   // if (Array.isArray(user)) {
   //   user = user[1]
   // }

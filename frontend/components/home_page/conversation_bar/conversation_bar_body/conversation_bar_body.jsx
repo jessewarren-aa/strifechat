@@ -36,6 +36,12 @@ class ConversationBarBody extends React.Component {
     const pathArray = this.props.match.url.split("/")
     const path = pathArray[pathArray.length - 1]
 
+    if (!this.props.users) {
+      return null
+    } else if (!window.currentUser) {
+      return null
+    }
+
     return (
     <div className="conversation-bar-body-master">
       <div 

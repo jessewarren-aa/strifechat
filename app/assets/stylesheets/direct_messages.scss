@@ -10,11 +10,29 @@
   // border: 1px solid black;
 }
 
+.dm-username {
+  display: flex;
+  padding-top: 5px;
+  align-content: center;
+  // border: 1px solid black;
+}
+
+.dm-functions {
+  display: flex;
+  padding-top: 5px;
+  align-content: center;
+}
+
 .dm-header {
   height: 45px;
   margin-top: 5px;
-  margin-bottom: 15px;
   border-bottom: 1px solid rgba(0,0,0,0.2);
+  // border: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .message-header {

@@ -9,12 +9,28 @@ class HomePage extends React.Component {
     super(props)
   }
 
+  componentDidMount() {
+    // if (!this.props.users.length) {
+    //   this.props.getDirectMessageUsers()
+    // }
+
+    if (!this.props.messages.length) {
+      this.props.getMessages()
+    }
+  }
+
   render() {
-    return <div className="conversation-view-master">
+    return (
+    <div className="conversation-view-master">
       <Route exact path="/channels/@me/*" component={DMHeaderContainer} />
       <Route exact path="/channels/@me/*" component={DirectMessagesContainer} />
       <Route exact path="/channels/@me/*" component={DMFooterContainer} />
+
+      {/* <Route exact path ="/channels/@me/*" render={(props) => <DMFooterContainer {...props} />} /> */}
+
+      {/* render={(props) => <PropsPage {...props} title={`Props through render`} />} */}
     </div>
+    )
   }
 }
 

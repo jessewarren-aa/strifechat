@@ -4,7 +4,7 @@ class DMFooter extends React.Component {
   constructor(props) {
     super(props)
     this.handleMessage = this.handleMessage.bind(this)
-
+    
     this.state = {
       body: "",
       server_id: undefined,
@@ -16,9 +16,9 @@ class DMFooter extends React.Component {
   }
 
   componentDidMount() {
-    if (!this.props.users.length) {
-      this.props.getDirectMessageUsers()
-    }
+    // if (!this.props.users.length) {
+    //   this.props.getDirectMessageUsers()
+    // }
   }
 
   handleMessage (e) {
@@ -37,8 +37,10 @@ class DMFooter extends React.Component {
     this.state.channel_id = messageTo.unique_id
 
     this.props.sendMessage({ message: this.state })
-    this.props.getDirectMessageUsers();
-    this.forceUpdate()
+    this.state.body = ""
+
+    // this.props.getDirectMessageUsers();
+    // this.forceUpdate()
   }
 
   handleInput(type) {
