@@ -6,6 +6,9 @@ import ConversationViewContainer from './conversation_view/conversation_view_con
 
 import FourOhFourContainer from '../four_oh_four/four_oh_four_container'
 
+// import LoaderContainer from "../../../loader/loader_container"
+// return <Route component={LoaderContainer} />
+
 class HomePage extends React.Component {
   constructor(props) {
     super(props)
@@ -20,7 +23,9 @@ class HomePage extends React.Component {
       <Route exact path="/channels/*" component={ConversationBarContainer} />
       {/* <Route exact path="/" component={FriendListContainer} /> */}
         {/* Containers header with online/all/pending/blocked/add friend & "new conversation", "@ pings", and "?" help */}
+      {/* <Route exact path="/channels/@me" component={FriendsListContainer} /> */}
       <Route path="/channels/@me/*" component={ConversationViewContainer} />
+
 
       {/* render={(props) => <PropsPage {...props} title={`Props through render`} />} */}
 

@@ -1,0 +1,59 @@
+.loading-master{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--background-color);
+}
+
+.loading-master div {
+  // border: 1px solid black;
+}
+
+.loader-logo {
+  width: 100px;
+  
+}
+
+.loading-blob {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  animation-name: loaderSpin;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.loading-text {
+  display: flex;
+  justify-content: center;
+  color: var(--light-font);
+  font-size: 24px;
+  font-weight: 600;
+  text-shadow: 2px 2px 2px #222;
+}
+
+@keyframes loaderSpin {
+  20% {
+    transform: rotate(40deg);
+    animation-timing-function: ease-in;
+  }
+  40% {
+    transform: rotate(240deg);
+    animation-timing-function: ease-in;
+  }
+  60% {
+    transform: rotate(320deg);
+    animation-timing-function: ease-in;
+  }
+  80% {
+    transform: rotate(160deg);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: rotate(360deg);
+    animation-timing-function: ease-out;
+  }
+}

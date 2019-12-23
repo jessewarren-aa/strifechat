@@ -1,5 +1,7 @@
 import React from 'react';
+
 import DirectMessageItem from "./direct_message/direct_message_container"
+
 
 class ConversationBarBody extends React.Component {
   constructor(props) {
@@ -36,9 +38,9 @@ class ConversationBarBody extends React.Component {
     const path = pathArray[pathArray.length - 1]
 
     if (!this.props.users) {
-      return null
+      null
     } else if (!window.currentUser) {
-      return null
+      null
     }
 
     return (
