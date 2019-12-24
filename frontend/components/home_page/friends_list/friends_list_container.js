@@ -3,7 +3,7 @@ import FriendsList from './friends_list';
 
 
 const mapStateToProps = (state) => ({
-
+  
 });
 
 const mapDispatchToProps = (dispatch) => ({

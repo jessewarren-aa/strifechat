@@ -3,12 +3,14 @@ import usersReducer from './users_reducer';
 import messagesReducer from './messages_reducer'
 import directMessagesReducer from './direct_messages_reducer'
 // import userReducer from './user_reducer'
+import friendsReducer from './friends_reducer'
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
   // user: userReducer,
   messages: messagesReducer,
-  users: directMessagesReducer
+  users: directMessagesReducer,
+  friends: friendsReducer
 });
 
 export default entitiesReducer;

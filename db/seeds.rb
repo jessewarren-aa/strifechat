@@ -10,11 +10,13 @@ User.create(username: "guest_account", email:"guest@strifechat.herokupapp.com", 
 
 User.create(username: "welcome_bot", email:"welcome_bot@strifechat.herokupapp.com", password:"9=mrfpGM5RT!*Mc%%!m*FBw@Xuj48tf&Nqdh8kKg2zLFYqS@R?")
 
-User.create(username: "Always Screaming Steve", email: "screamnonstop@strifechat.herokuapp.com", password:"*8RYXY$_-;quGESk", image_url: "https://avataaars.io/?accessoriesType=Prescription01&avatarStyle=Transparent&clotheColor=PastelBlue&clotheType=GraphicShirt&eyeType=Happy&eyebrowType=DefaultNatural&facialHairColor=Auburn&facialHairType=Blank&graphicType=Cumbia&hairColor=Auburn&mouthType=ScreamOpen&skinColor=Black&topType=WinterHat2")
+User.create(username: "Always Screaming Steve", email: "screamnonstop@strifechat.herokuapp.com", password:"*8RYXY$_-;quGESk", image_url: "'https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat2&accessoriesType=Prescription01&hatColor=Blue01&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Blue01&graphicType=Cumbia&eyeType=Happy&eyebrowType=RaisedExcited&mouthType=ScreamOpen&skinColor=Black'")
 
-User.create(username: "Talkative Terry", email: "mistertalkalot@strifechat.herokuapp.com", password: "k-Q:]jvA3xtU^3C~", image_url:"https://avataaars.io/?accessoriesType=Blank&avatarStyle=Transparent&clotheColor=PastelOrange&clotheType=GraphicShirt&eyeType=Surprised&eyebrowType=RaisedExcitedNatural&facialHairColor=Platinum&facialHairType=Blank&graphicType=Skull&hairColor=Auburn&hatColor=White&mouthType=Tongue&skinColor=Tanned&topType=ShortHairDreads01")
+User.create(username: "Talkative Terry", email: "mistertalkalot@strifechat.herokuapp.com", password: "k-Q:]jvA3xtU^3C~", image_url:"'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads01&accessoriesType=Blank&hairColor=Auburn&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=PastelOrange&graphicType=Skull&eyeType=Surprised&eyebrowType=RaisedExcitedNatural&mouthType=Tongue&skinColor=Tanned'")
 
-User.create(username: "Devious Daniella", email: "notplanningmutiny@strifechat.herokuapp.com", password: "w**6,BKLE`@Q2L6'", image_url:"https://avataaars.io/?accessoriesType=Prescription02&avatarStyle=Transparent&clotheColor=PastelYellow&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=AngryNatural&facialHairColor=Blonde&facialHairType=Blank&graphicType=Cumbia&hairColor=BrownDark&hatColor=PastelOrange&mouthType=Smile&skinColor=Brown&topType=LongHairStraight")
+User.create(username: "Devious Daniella", email: "notplanningmutiny@strifechat.herokuapp.com", password: "w**6,BKLE`@Q2L6'", image_url:"'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraight&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Squint&eyebrowType=AngryNatural&mouthType=Smile&skinColor=Brown'")
+
+User.create(username: "Evil Evan", email: "evilevan@strifechat.herokuapp.com", password: "pXKL@9y[>5X+>mYY", image_url:'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Wayfarers&hairColor=BrownDark&facialHairType=MoustacheMagnum&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Close&eyebrowType=AngryNatural&mouthType=Eating&skinColor=Light')
 
 welcome_bot = User.find_by(email: "welcome_bot@strifechat.herokupapp.com")
 steve = User.find_by(email: "screamnonstop@strifechat.herokuapp.com")
@@ -63,3 +65,9 @@ Message.create(user_id: target.id, server_id: target.unique_id, channel_id: dani
 
 Message.create(user_id: daniella.id, server_id: daniella.unique_id, channel_id: target.unique_id, body: "I'll see you there... at one of them.")
 Message.create(user_id: target.id, server_id: target.unique_id, channel_id: daniella.unique_id, body: "Uh oh...")
+
+FriendsList.create(sender_id: 1, receiver_id: 2, status: "PENDING")
+FriendsList.create(sender_id: 3, receiver_id: 1, status: "ACCEPTED")
+FriendsList.create(sender_id: 1, receiver_id: 4, status: "ACCEPTED")
+FriendsList.create(sender_id: 5, receiver_id: 1, status: "ACCEPTED")
+FriendsList.create(sender_id: 1, receiver_id: 6, status: "BLOCKED")

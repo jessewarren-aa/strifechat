@@ -14,7 +14,7 @@ class CTA extends React.Component {
 
   openButton (e) {
     e.preventDefault()
-    this.props.history.push("/login");
+    this.props.history.push("/channels/@me");
   }
 
   render() {
@@ -32,7 +32,7 @@ class CTA extends React.Component {
           <div className="cta-button-centering">
             <button 
               onClick={this.downloadButton}
-              className="cta-button cta-button-white">
+              className="cta-button cta-button-white disabled">
               Download<span id="cta-download-button-wide"> for Windows</span>
             </button>
             <button 

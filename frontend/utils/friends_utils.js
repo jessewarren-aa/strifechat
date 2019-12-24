@@ -1,0 +1,6 @@
+export const getFriends = () => {
+  return $.ajax({
+    method: "GET",
+    url: "/api/friends_lists"
+  })
+}

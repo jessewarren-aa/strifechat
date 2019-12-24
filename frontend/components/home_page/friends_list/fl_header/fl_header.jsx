@@ -3,6 +3,19 @@ import React from 'react';
 class FLHeader extends React.Component {
   constructor(props) {
     super(props)
+    this.filterClicked = this.filterClicked.bind(this)
+  }
+
+  filterClicked(e) {
+    e.preventDefault()
+    const removeFrom = $(".fl-header-selected")
+    if (removeFrom) {
+      removeFrom.removeClass("fl-header-selected")
+    }
+    const jObject = $(e.currentTarget)
+    jObject.addClass("fl-header-selected")
+
+    // this.props.filterFriendsList(e)
   }
 
   render() {
@@ -22,18 +35,26 @@ class FLHeader extends React.Component {
           </div>
         </div>
         <div 
+          data-status="ACCEPTED"
+          onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
           <div className="disabled">Online</div>
         </div>
         <div 
+          data-status="ACCEPTED"
+          onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component fl-header-selected">
           All
         </div>
         <div 
+          data-status="PENDING"
+          onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
           <div className="disabled">Pending</div>
         </div>
         <div 
+          data-status="BLOCKED"
+          onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
           <div className="disabled">Blocked</div>
         </div>

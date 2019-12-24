@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     resources :messages, except: [:show, :new, :edit]
     get '/messages/index_dms', to: 'messages#index_direct_messages'
+    resources :friends_lists, only: [:index]
     resources :users, except: [:new, :edit]
     resource :session, only: [:create, :destroy]
   end

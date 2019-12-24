@@ -17,7 +17,7 @@ class SplashNav extends React.Component {
   sendToLogin (e) {
     e.preventDefault()
     if (this.props.currentUser) {
-      this.props.logout()
+      this.props.history.push("/channels/@me") 
     } else {
       this.props.history.push("/login") 
     }
@@ -130,7 +130,7 @@ class SplashNav extends React.Component {
           <button
             className="splash-nav-login-button nav-right-item marginify nav-item"
             onClick={this.sendToLogin}>
-            <small>{this.props.currentUser ? "Logout" : "Login"}</small>
+            <small>{this.props.currentUser ? "Open" : "Login"}</small>
           </button>
 
           <div className="splash-vl nav-right-item"></div>
