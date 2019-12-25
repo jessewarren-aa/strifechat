@@ -1,0 +1,237 @@
+.search-bar-modal-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-result-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  padding-bottom: 5px;
+}
+
+.search-bar-modal {
+  width: 200px;
+  height: 100px;
+  background: var(--background-color);
+  z-index: 102;
+  width: 60vw;
+  border-radius: 10px;
+
+  padding: 20px;
+  padding-bottom: 10px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  position: relative;
+  top: -10px;
+}
+
+.search-bar-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  height: 60px;
+
+  margin-bottom: 10px;
+}
+
+.search-bar-modal-header {
+  color: var(--light-font);
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -10px;
+}
+
+.search-bar-modal-input {
+  width: 100%;
+  height: 100%;
+  background: var(--tertiary-background-color);
+  border: none;
+  padding-left: 10px;
+  color: var(--light-font);
+  font-size: 24px;
+}
+
+.search-bar-results {
+  height: 100%;
+  width: 100%;
+  max-height: 500px;
+}
+
+.flex {
+  display: flex;
+}
+
+.search-result-avatar {
+  width: 20px;
+  margin-right: 10px;
+  background: var(--background-color);
+  border-radius: 25px;
+}
+
+.arrow-flipper {
+  transform: rotate(180deg);
+}
+
+.arrow-one {
+  position: relative;
+  top: 20px;
+}
+
+
+
+.arrow-two {
+  position: relative;
+  top: 60px;
+}
+
+.arrow-three {
+  position: relative;
+  top: 90px;
+}
+
+
+
+.arrow-left-one {
+  animation-name: arrowLeftOne;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrowLeftOne {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate3d(10px, 0px, 0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+.arrow-left-two {
+  left: 50px;
+  animation-name: arrowLeftTwo;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrowLeftTwo {
+  0% {
+    transform: translate3d(0px, 0px, 0px) rotate(-20deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate3d(10px, -5px, 0px) rotate(-20deg);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) rotate(-20deg);
+  }
+}
+
+.arrow-left-three {
+  left: 120px;
+  animation-name: arrowLeftThree;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrowLeftThree {
+  0% {
+    transform: translate3d(0px, 0px, 0px) rotate(-60deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate3d(5px, -10px, 0px) rotate(-60deg);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) rotate(-60deg);
+  }
+}
+
+.arrow-right-one {
+  animation-name: arrowRightOne;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrowRightOne {
+  0% {
+    transform: translate3d(10px, 0px, 0px) rotate(180deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate3d(0px, 0px, 0px) rotate(180deg);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate3d(10px, 0px, 0px) rotate(180deg);
+  }
+}
+
+.arrow-right-two {
+  left: -50px;
+  transform: rotate(200deg);
+  animation-name: arrowRightTwo;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+
+
+@keyframes arrowRightTwo {
+  0% {
+    transform: translate3d(0px, 0px, 0px) rotate(220deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate3d(-10px, -5px, 0px) rotate(220deg);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) rotate(220deg);
+  }
+}
+
+.arrow-right-three {
+  left: -120px;
+  transform: rotate(240deg);
+  animation-name: arrowRightThree;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes arrowRightThree {
+  0% {
+    transform: translate3d(0px, 0px, 0px) rotate(240deg);
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: translate3d(-5px, -10px, 0px) rotate(240deg);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0px) rotate(240deg);
+  }
+}

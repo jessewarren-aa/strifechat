@@ -4,14 +4,7 @@ class FLHeader extends React.Component {
   constructor(props) {
     super(props)
     this.filterClicked = this.filterClicked.bind(this)
-    this.toggleSearchBarModal = this.toggleSearchBarModal.bind(this)
     this.clickedAddFriend = this.clickedAddFriend.bind(this)
-    this.preventBubbling = this.preventBubbling.bind(this)
-  }
-
-  preventBubbling(e) {
-    e.preventDefault()
-    e.stopPropagation()
   }
 
   filterClicked(e) {
@@ -32,12 +25,6 @@ class FLHeader extends React.Component {
     // this.props.filterFriendsList(e)
   }
 
-  toggleSearchBarModal (e) {
-    e.preventDefault()
-    const jObjectBackground = $('.search-bar-modal-background')
-    jObjectBackground.toggleClass('hidden')
-  }
-
   clickedAddFriend (e) {
     e.preventDefault()
 
@@ -53,15 +40,6 @@ class FLHeader extends React.Component {
   render() {
     return ( 
     <div className="friends-list-header-master">
-      {/* <div 
-        onClick={this.toggleSearchBarModal}
-        className="search-bar-modal-background hidden">
-        <div 
-          onClick={this.preventBubbling}
-          className="search-bar-modal">
-            test
-          </div>
-      </div> */}
       <div className="fl-header-left">
         <div 
           className="mr-4 ml-3 px-1 fl-header-component">
@@ -103,7 +81,7 @@ class FLHeader extends React.Component {
           data-status="ADDFRIEND"
           onClick={this.clickedAddFriend}
           className="mr-4 px-1 fl-add-friend-button">
-          <div className="fl-header-add-friend-button">Add Friend</div>
+          <div className="fl-header-add-friend-button disabled">Add Friend</div>
         </div>
       </div>
       <div className="fl-header-right">

@@ -59,9 +59,9 @@ class User < ApplicationRecord
 
   def generate_default_avatar
     possible_avatars = [
-      "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBun&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=PastelYellow&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Tanned'",
-      "'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairCurvy&accessoriesType=Kurt&hairColor=PastelPink&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=White&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Tanned'",
-      "'https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFroBand&accessoriesType=Kurt&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Smile&skinColor=Black",
+      "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBun&accessoriesType=Prescription01&hairColor=Red&facialHairType=Blank&clotheType=ShirtVNeck&clotheColor=PastelYellow&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Eating&skinColor=Tanned",
+      "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairCurvy&accessoriesType=Kurt&hairColor=PastelPink&facialHairType=Blank&clotheType=ShirtScoopNeck&clotheColor=White&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Tanned",
+      "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairFroBand&accessoriesType=Kurt&hairColor=BlondeGolden&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=RaisedExcitedNatural&mouthType=Smile&skinColor=Black",
       "https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairTheCaesarSidePart&accessoriesType=Round&hairColor=Red&facialHairType=MoustacheMagnum&facialHairColor=Red&clotheType=GraphicShirt&clotheColor=Black&graphicType=Skull&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Default&skinColor=Light",
       "https://avataaars.io/?avatarStyle=Transparent&topType=Hijab&accessoriesType=Wayfarers&hatColor=PastelOrange&clotheType=ShirtScoopNeck&clotheColor=Gray01&eyeType=Close&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=Black",
       "https://avataaars.io/?avatarStyle=Transparent&topType=LongHairBun&accessoriesType=Prescription02&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=ShirtVNeck&clotheColor=Blue01&eyeType=Squint&eyebrowType=RaisedExcitedNatural&mouthType=Smile&skinColor=Brown",
