@@ -7,6 +7,48 @@
   // border: 1px solid black;
 }
 
+.search-bar-modal-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.8);
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar-modal {
+  width: 200px;
+  height: 100px;
+  background: var(--background-color);
+  z-index: 102;
+}
+
+.fl-header-add-friend-button {
+  background: #43b581;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: var(--light-font);
+  border-radius: 5px;
+}
+
+.fl-header-add-friend-button:hover {
+  cursor: pointer;
+}
+
+.add-friend-selected {
+  background: #39524c;
+  color: #43b57c;
+}
+
+.fl-add-friend-button {
+  display: flex;
+  align-items: center;
+}
+
 .friends-list-header-master {
   height: 50px;
   border-bottom: 1px solid rgba(0,0,0,0.2);

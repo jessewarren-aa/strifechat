@@ -18,6 +18,7 @@ class SessionForm extends React.Component {
     this.headHome = this.headHome.bind(this);
   }
 
+
   handleGuest(e) {
     e.preventDefault()
     this.state = {
@@ -74,6 +75,8 @@ class SessionForm extends React.Component {
     }, 1200);
   }
 
+  
+
   render() {
     const lowerMargin = {
       marginTop: '120px',
@@ -94,10 +97,12 @@ class SessionForm extends React.Component {
       // // // sidebar with qr code
 
       <div className="row session-form-background">
+
         <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-2"}>
           <div className="row">
             <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-8"}>
               <div className="session-form-logo logo-font">
+
                   <img
                     className="logo-sizer shadowed"
                     src={window.logoImageUrl}>

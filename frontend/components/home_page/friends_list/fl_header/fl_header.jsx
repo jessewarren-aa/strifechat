@@ -4,6 +4,14 @@ class FLHeader extends React.Component {
   constructor(props) {
     super(props)
     this.filterClicked = this.filterClicked.bind(this)
+    this.toggleSearchBarModal = this.toggleSearchBarModal.bind(this)
+    this.clickedAddFriend = this.clickedAddFriend.bind(this)
+    this.preventBubbling = this.preventBubbling.bind(this)
+  }
+
+  preventBubbling(e) {
+    e.preventDefault()
+    e.stopPropagation()
   }
 
   filterClicked(e) {
@@ -12,15 +20,48 @@ class FLHeader extends React.Component {
     if (removeFrom) {
       removeFrom.removeClass("fl-header-selected")
     }
+
+    const removeFromAddFriend = $(".add-friend-selected")
+    if (removeFromAddFriend) {
+      removeFromAddFriend.removeClass("add-friend-selected")
+    }
+
     const jObject = $(e.currentTarget)
     jObject.addClass("fl-header-selected")
 
     // this.props.filterFriendsList(e)
   }
 
+  toggleSearchBarModal (e) {
+    e.preventDefault()
+    const jObjectBackground = $('.search-bar-modal-background')
+    jObjectBackground.toggleClass('hidden')
+  }
+
+  clickedAddFriend (e) {
+    e.preventDefault()
+
+    const removeFrom = $(".fl-header-selected")
+    if (removeFrom) {
+      removeFrom.removeClass("fl-header-selected")
+    }
+
+    const jObject = $('.fl-header-add-friend-button')
+    jObject.addClass('add-friend-selected')
+  }
+
   render() {
     return ( 
     <div className="friends-list-header-master">
+      {/* <div 
+        onClick={this.toggleSearchBarModal}
+        className="search-bar-modal-background hidden">
+        <div 
+          onClick={this.preventBubbling}
+          className="search-bar-modal">
+            test
+          </div>
+      </div> */}
       <div className="fl-header-left">
         <div 
           className="mr-4 ml-3 px-1 fl-header-component">
@@ -59,8 +100,10 @@ class FLHeader extends React.Component {
           <div className="disabled">Blocked</div>
         </div>
         <div 
-          className="mr-4 px-1 fl-header-component">
-          <div className="disabled">Add Friend</div>
+          data-status="ADDFRIEND"
+          onClick={this.clickedAddFriend}
+          className="mr-4 px-1 fl-add-friend-button">
+          <div className="fl-header-add-friend-button">Add Friend</div>
         </div>
       </div>
       <div className="fl-header-right">

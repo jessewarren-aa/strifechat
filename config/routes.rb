@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'servers/index'
+
+  get 'servers/show'
+
+  get 'servers/create'
+
+  get 'servers/update'
+
+  get 'servers/destroy'
+
   root to: 'root#root'
   namespace :api, defaults: {format: :json} do
     resources :messages, except: [:show, :new, :edit]

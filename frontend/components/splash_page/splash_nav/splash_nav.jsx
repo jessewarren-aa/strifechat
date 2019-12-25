@@ -53,17 +53,17 @@ class SplashNav extends React.Component {
           </div>
 
           <div 
-            className="marginify nav-left-download nav-item">
+            className="marginify nav-left-download nav-item disabled">
               Download
           </div>
 
           <div 
-            className="marginify nav-left-nitro nav-item">
+            className="marginify nav-left-nitro nav-item disabled">
               Nitro
           </div>
 
           <div 
-            className="marginify nav-left-jobs nav-item">
+            className="marginify nav-left-jobs nav-item disabled">
               Jobs
           </div>
 
@@ -72,11 +72,11 @@ class SplashNav extends React.Component {
             <div className="splash-nav-developers-dropdown">
               Developers&nbsp;<span className="caret"></span>
               <div className="splash-nav-developers-dropdown-content">
-                <div>Sell Your Game</div>
-                <div>Rich Presence</div>
-                <div>Verification</div>
-                <div>Developer Portal</div>
-                <div>Documentation</div>
+                <div className="disabled">Sell Your Game</div>
+                <div className="disabled">Rich Presence</div>
+                <div className="disabled">Verification</div>
+                <div className="disabled">Developer Portal</div>
+                <div className="disabled">Documentation</div>
               </div>
             </div>
           </div>
@@ -86,10 +86,10 @@ class SplashNav extends React.Component {
             <div className="splash-nav-community-dropdown">
               Community&nbsp;<span className="caret"></span>
               <div className="splash-nav-community-dropdown-content">
-                <div>Open Source</div>
-                <div>Partners</div>
-                <div>Hype Squad</div>
-                <div>Guidelines</div>
+                <div className="disabled">Open Source</div>
+                <div className="disabled">Partners</div>
+                <div className="disabled">Hype Squad</div>
+                <div className="disabled">Guidelines</div>
               </div>
             </div>
           </div>
@@ -99,10 +99,10 @@ class SplashNav extends React.Component {
             <div className="splash-nav-support-dropdown">
               Support&nbsp;<span className="caret"></span>
               <div className="splash-nav-support-dropdown-content">
-                <div>Help & Support</div>
-                <div>Status</div>
-                <div>Parent's Guide</div>
-                <div>Security</div>
+                <div className="disabled">Help & Support</div>
+                <div className="disabled">Status</div>
+                <div className="disabled">Parent's Guide</div>
+                <div className="disabled">Security</div>
               </div>
             </div>
           </div>

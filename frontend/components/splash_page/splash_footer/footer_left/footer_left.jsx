@@ -27,23 +27,23 @@ class FooterLeft extends React.Component {
         </div>
         <div>
           <ul>
-            <strong>Product</strong>
+            <strong className="disabled">Product</strong>
             <small>
-              <li>Download</li>
-              <li>Branding</li>
-              <li>Nitro</li>
+              <li className="disabled">Download</li>
+              <li className="disabled">Branding</li>
+              <li className="disabled">Nitro</li>
             </small>
           </ul>
         </div>
         <div>
           <ul>
-            <strong>Developers</strong>
+            <strong className="disabled">Developers</strong>
             <small>
-              <li>Sell Your Game</li>
-              <li>Rich Presence</li>
-              <li>Verification</li>
-              <li>Applications</li>
-              <li>Documentation</li>
+              <li className="disabled">Sell Your Game</li>
+              <li className="disabled">Rich Presence</li>
+              <li className="disabled">Verification</li>
+              <li className="disabled">Applications</li>
+              <li className="disabled">Documentation</li>
             </small>
           </ul>
         </div>

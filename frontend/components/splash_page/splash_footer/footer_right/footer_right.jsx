@@ -10,36 +10,36 @@ class FooterRight extends React.Component {
       <div className="cta-footer-right col-md-5">
         <div>
           <ul>
-            <strong>Resources</strong>
+            <strong className="disabled">Resources</strong>
             <small>
-              <li>Help & Support</li>
-              <li>Guidelines</li>
-              <li>Feedback</li>
-              <li>Terms</li>
-              <li>Privacy</li>
-              <li>Status</li>
+              <li className="disabled">Help & Support</li>
+              <li className="disabled">Guidelines</li>
+              <li className="disabled">Feedback</li>
+              <li className="disabled">Terms</li>
+              <li className="disabled">Privacy</li>
+              <li className="disabled">Status</li>
             </small>
           </ul>
         </div>
         <div>
           <ul>
-            <strong>Company</strong>
+            <strong className="disabled">Company</strong>
             <small>
-              <li>About</li>
-              <li>Blog</li>
-              <li>Jobs</li>
+              <li className="disabled">About</li>
+              <li className="disabled">Blog</li>
+              <li className="disabled">Jobs</li>
             </small>
           </ul>
         </div>
         <div>
           <ul>
-            <strong>More</strong>
+            <strong className="disabled">More</strong>
             <small>
-              <li>Partners</li>
-              <li>HypeSquad</li>
-              <li>Merch Store</li>
-              <li>Press Inquiries</li>
-              <li>Open Source</li>
+              <li className="disabled">Partners</li>
+              <li className="disabled">HypeSquad</li>
+              <li className="disabled">Merch Store</li>
+              <li className="disabled">Press Inquiries</li>
+              <li className="disabled">Open Source</li>
             </small>
           </ul>
         </div>
