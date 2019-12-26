@@ -1,7 +1,13 @@
 import { combineReducers } from 'redux';
 
-const uiReducer = combineReducers({
-  
-});
+import { FILTER_FRIENDS } from '../actions/friends_actions'
 
-export default uiReducer;
+export default (state = {}, action) => {
+  Object.freeze(state);
+  switch (action.type) {
+    case FILTER_FRIENDS:
+      return Object.assign({}, state, {friendsListFilter: action.status});
+    default:
+      return state;
+  }
+};

@@ -67,7 +67,7 @@ Message.create(user_id: daniella.id, server_id: daniella.unique_id, channel_id: 
 Message.create(user_id: target.id, server_id: target.unique_id, channel_id: daniella.unique_id, body: "Uh oh...")
 
 FriendsList.create(sender_id: 1, receiver_id: 2, status: "PENDING")
-FriendsList.create(sender_id: 3, receiver_id: 1, status: "ACCEPTED")
+FriendsList.create(sender_id: 3, receiver_id: 1, status: "PENDING")
 FriendsList.create(sender_id: 1, receiver_id: 4, status: "ACCEPTED")
 FriendsList.create(sender_id: 5, receiver_id: 1, status: "ACCEPTED")
 FriendsList.create(sender_id: 1, receiver_id: 6, status: "BLOCKED")

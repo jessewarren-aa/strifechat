@@ -1,11 +1,18 @@
 import React from 'react';
 
+import { friendSelector } from '../../../../reducers/friends_reducer'
+
 class FLHeader extends React.Component {
   constructor(props) {
     super(props)
     this.filterClicked = this.filterClicked.bind(this)
     this.clickedAddFriend = this.clickedAddFriend.bind(this)
   }
+
+  componentDidMount () {
+    this.props.filterFriends("APPROVED")
+  }
+
 
   filterClicked(e) {
     e.preventDefault()
@@ -22,7 +29,7 @@ class FLHeader extends React.Component {
     const jObject = $(e.currentTarget)
     jObject.addClass("fl-header-selected")
 
-    // this.props.filterFriendsList(e)
+    this.props.filterFriends(e.currentTarget.getAttribute('value'))
   }
 
   clickedAddFriend (e) {
@@ -35,6 +42,8 @@ class FLHeader extends React.Component {
 
     const jObject = $('.fl-header-add-friend-button')
     jObject.addClass('add-friend-selected')
+
+    this.props.filterFriends(e.currentTarget.getAttribute('value'))
   }
 
   render() {
@@ -54,34 +63,34 @@ class FLHeader extends React.Component {
           </div>
         </div>
         <div 
-          data-status="ACCEPTED"
+          value="ACCEPTED"
           onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
           <div className="disabled">Online</div>
         </div>
         <div 
-          data-status="ACCEPTED"
+          value="ACCEPTED"
           onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component fl-header-selected">
           All
         </div>
         <div 
-          data-status="PENDING"
+          value="PENDING"
           onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
-          <div className="disabled">Pending</div>
+          <div>Pending</div>
         </div>
         <div 
-          data-status="BLOCKED"
+          value="BLOCKED"
           onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
           <div className="disabled">Blocked</div>
         </div>
         <div 
-          data-status="ADDFRIEND"
+          value="ADDFRIEND"
           onClick={this.clickedAddFriend}
           className="mr-4 px-1 fl-add-friend-button">
-          <div className="fl-header-add-friend-button disabled">Add Friend</div>
+          <div className="fl-header-add-friend-button">Add Friend</div>
         </div>
       </div>
       <div className="fl-header-right">

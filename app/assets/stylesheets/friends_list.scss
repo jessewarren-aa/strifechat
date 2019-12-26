@@ -7,10 +7,14 @@
   // border: 1px solid black;
 }
 
+.display-mid {
+  padding-top: 20px;
+}
+
 .fl-header-add-friend-button {
   background: #43b581;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
   color: var(--light-font);
   border-radius: 5px;
 }
@@ -95,7 +99,7 @@
 
 .fl-header-left {
   display: flex;
-
+  height: 26px;
 }
 
 .friends-list-columns-master {

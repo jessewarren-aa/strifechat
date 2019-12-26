@@ -5,42 +5,107 @@ class FLBody extends React.Component {
   constructor(props) {
     super(props)
     this.filterFriendsList = this.filterFriendsList.bind(this)
+    this.sendFriendRequest = this.sendFriendRequest.bind(this)
   }
 
   filterFriendsList () {
-    const friendIds = []
+    const friendRequests = []
 
-    const filterType = $('.fl-header-selected').data('status')
+    const filterType = this.props.status
 
     Object.values(this.props.friends).forEach(friend => {
+      let status = friend.status
       if (friend.status === filterType) { 
         if (friend.sender_id !== this.props.currentUser) {
-          friendIds.push(friend.sender_id)
+          if (status === "PENDING") {
+            status = "INCOMING"
+          }
+          friendRequests.push({ user_id: friend.sender_id, status })
         } else {
-          friendIds.push(friend.receiver_id)
+          if (status === "PENDING") {
+            status = "OUTGOING"
+          }
+          friendRequests.push({ user_id: friend.receiver_id, status })
         }
       }
     })
-    return friendIds
+    return friendRequests
+  }
+
+  sendFriendRequest (e) {
+    e.preventDefault()
+
+    const jObject = $('.send-friend-input')
+
+    const friendObject = {
+      friend_request: {
+        sender_id: this.props.currentUser,
+        friend_code: jObject.val()
+      }
+    }
+
+    this.props.createFriend(friendObject)
   }
 
   componentDidMount () {
     if (!this.props.friends.length) {
-      this.props.getFriendsList()
+      this.props.getFriendsList(this.props.status)
     }
   }
 
   render() {
-    const filterType = $('.fl-header-selected').data('status')
+    const filterType = this.props.status
+
     if (filterType === "ADDFRIEND") {
       return (
-        <div>test</div>
+        <div>
+          <div className="friend-request-container">
+            <div className="friend-request-text-header">
+              <div className="add-friend-header pt-2">ADD FRIEND</div>
+              <div className="friend-request-text-subheader pb-2">
+                <small>
+                  You can add a friend with their StrifeTag.
+                </small>
+              </div>
+            </div>
+          </div>
+          <div className="friend-request-container">
+            <div className="send-friend-request-container">
+              <form 
+                onSubmit={this.sendFriendRequest}
+                className="send-friend-form">
+                <input 
+                  type="text" 
+                  placeholder="Enter a StrifeTag#0000"
+                  className="send-friend-input">
+                </input>
+                <button
+                  className="send-friend-request-button">
+                  Send Friend Request
+              </button>
+              </form>
+            </div>
+          </div>
+          <div className="friend-request-container">
+            <div className="session-form-errors display-mid">
+              <small>
+                <ul>
+                  {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+                </ul>
+              </small>
+            </div>
+          </div>
+          <div>
+            <div className="wumpus">
+              <img
+                src={window.wumpus} />
+            </div>
+            <small className="wumpus-text">Wumpus is lonely, but you don't have to be!</small>
+          </div>
+            
+        </div>
       )
     } else {
-      const result = this.filterFriendsList()
-      if (!result) {
-        return null
-      }
       return (
         <div>
           <div className="fl-body-master-flex">
@@ -50,15 +115,16 @@ class FLBody extends React.Component {
               </div>
               <div className="friends-list-status-header pb-0">
                 <small>STATUS</small>
-                {/* an if statement: if friend list row is status accepted, return the friend's online status - otherwise, return "PENDING" or "BLOCKED" */}
               </div>
             </div>
           </div>
           <div className="fl-body-master-flex">
             <div className="friends-list-body-master">
-              {result.map((user_id, index) => {
-                if (Object.keys(this.props.users).includes(user_id.toString())) {
-                  return <FLBodyItem key={index} {...this.props.users[user_id]} history={this.props.history} />
+              {this.filterFriendsList().map((friendRequest, index) => {
+                const {user_id, status} = friendRequest
+                const userKeys = Object.keys(this.props.users)
+                if (userKeys.includes(user_id.toString())) {
+                  return <FLBodyItem key={index} {...this.props.users[user_id]} history={this.props.history} friendStatus={status} />
                 }
               })}
             </div>

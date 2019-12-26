@@ -12,6 +12,13 @@ class FLBodyItem extends React.Component {
   }
 
   render () {
+    let statusMessage = ""
+    if (["OUTGOING", "INCOMING", "BLOCKED"].includes(this.props.friendStatus)) {
+      statusMessage = this.props.friendStatus
+    } else {
+      statusMessage = "userStatus"
+    }
+
     return (
       <div>
         <div 
@@ -26,8 +33,9 @@ class FLBodyItem extends React.Component {
             </div>
           </div>
           <div className="friends-list-status-header">
-            <small className="disabled">STATUS</small>
+            <small>{statusMessage}</small>
           </div>
+          {/* [DEV] a hidden element if statusMessage isn't INCOMING that lets you accept or reject a request */}
         </div>
       </div>
     )

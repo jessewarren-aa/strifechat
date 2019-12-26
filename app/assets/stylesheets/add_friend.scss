@@ -1,0 +1,77 @@
+.send-friend-request-button {
+  background: var(--secondary-color);
+  border: none;
+  margin-left: 20px;
+  margin-right: 10px;
+
+  color: var(--light-font);
+
+  border-radius: 5px;
+  width: 40%;
+
+}
+
+.send-friend-request-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-background-color);
+  width: 90%;
+  border-radius: 10px;
+  height: 50px;
+}
+
+.send-friend-form {
+  flex-grow: 1;
+  display: flex;
+}
+
+.send-friend-input {
+  width: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  border: none;
+  background: var(--secondary-background-color);
+
+  color: var(--light-font);
+}
+
+.wumpus {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.wumpus-text {
+  color: var(--dark-font);
+  display: flex;
+  justify-content: center;
+}
+
+.send-friend-input:focus {
+  outline: none;
+}
+
+.send-friend-input::placeholder {
+  color: var(--medium-font);
+}
+
+.friend-request-text-header {
+  width: 90%;
+  color: var(--light-font);
+}
+
+.friend-request-container {
+  display: flex;
+  justify-content: center;
+}
+
+.add-friend-header {
+  font-weight: 700;
+}
+
+.friend-request-text-subheader {
+
+}
