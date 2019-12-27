@@ -20,7 +20,7 @@ class DMHeader extends React.Component {
           <div className="dm-at-symbol">@&nbsp;&nbsp;</div>
           <div>{ currentlyMessaging.username }</div>
         </div>
-        <div className="dm-functions">function bar</div>
+        <div className="dm-functions">{/* function bar */}</div>
       </div>
     )
   }

@@ -14,7 +14,6 @@ Rails.application.routes.draw do
     resources :messages, except: [:show, :new, :edit]
     get '/messages/index_dms', to: 'messages#index_direct_messages'
     resources :friends_lists, only: [:index, :create, :update]
-    # [DEV] create update function so users can accept/reject
     resources :users, except: [:new, :edit]
     resource :session, only: [:create, :destroy]
   end

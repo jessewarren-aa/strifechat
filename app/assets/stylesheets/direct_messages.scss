@@ -10,6 +10,10 @@
   // border: 1px solid black;
 }
 
+.dm-wrapper {
+  width: 100%;
+}
+
 .dm-username {
   display: flex;
   padding-top: 5px;
@@ -78,6 +82,11 @@
 
 .message-avatar {
   
+}
+
+.message-chain {
+  // border: 1px solid black;
+  width: 100%;
 }
 
 .message-header-spacer {

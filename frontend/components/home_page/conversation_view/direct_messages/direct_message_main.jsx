@@ -38,7 +38,7 @@ class HomePage extends React.Component {
 
     return (
     <div className="direct-message-main-master">
-      <div>
+      <div className="dm-wrapper">
         {filteredMessages.map((message, index) => {
  
 

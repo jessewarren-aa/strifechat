@@ -32,7 +32,8 @@ class ConversationHeader extends React.Component {
     
     if (search !== "" && searchResults.length > 0) {
       $('.arrow-hider').addClass('hidden')
-      searchBarModal.css('height', `${baseHeight + (25 * searchResults.length)}px`)
+      const addedHeight = 35 * searchResults.length
+      searchBarModal.css('height', `${baseHeight + addedHeight}px`)
       searchResults.forEach(user => {
         const username = user.username
         const addCode = user.friend_code
@@ -53,10 +54,8 @@ class ConversationHeader extends React.Component {
         jObject.append(result)
       })
     } else {
-      $('.arrow-reset').addClass('hidden')
       $('.arrow-hider').addClass('hidden')
       setTimeout(function () {
-        $('.arrow-reset').removeClass('hidden')
         $('.arrow-hider').removeClass('hidden')
       }, 10)
       
@@ -110,14 +109,13 @@ class ConversationHeader extends React.Component {
             className="arrow-two arrow-left-two arrow-hider"
             src={window.arrowTwo} />
           <img
-            className="arrow-one arrow-left-one arrow-reset"
+            className="arrow-one arrow-left-one arrow-hider"
             src={window.arrowOne}
           />
         </div>
         <div>
           <div className="search-bar-modal-header">
               <h4>Search for <span className="disabled">servers</span>, <span className="disabled">channels</span>, or direct messages.</h4>
-              {/* [DEV] this.props will eventually have servers and channels too, which is the most efficient way of creating this search */}
           </div>
           <div
             onClick={this.preventBubbling}
@@ -140,7 +138,7 @@ class ConversationHeader extends React.Component {
         </div>
         <div className="arrows ml-4">
           <img
-              className="arrow-flipper arrow-one arrow-right-one arrow-reset"
+              className="arrow-flipper arrow-one arrow-right-one arrow-hider"
             src={window.arrowOne} />
           <img
             className="arrow-flipper arrow-two arrow-right-two arrow-hider"

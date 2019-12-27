@@ -8,7 +8,6 @@ class Api::MessagesController < ApplicationController
     @user = current_user
     @users = @user.find_unique_direct_messages
     # @users = Hash[ @users.map {|user| [user[:id], user]}]
-    # [DEV] this correctly maps the hash, just gotta not "array!"
   end
 
   def create

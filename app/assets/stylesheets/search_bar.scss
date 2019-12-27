@@ -16,7 +16,11 @@
   display: flex;
   justify-content: space-between;
 
-  padding-bottom: 5px;
+  padding: 5px;
+}
+
+.search-result-row:hover {
+  background: var(--secondary-background-color);
 }
 
 .search-bar-modal {
@@ -27,8 +31,9 @@
   width: 60vw;
   border-radius: 10px;
 
-  padding: 20px;
-  padding-bottom: 10px !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
 
   display: flex;
   align-items: center;
@@ -67,6 +72,7 @@
   color: var(--light-font);
   font-size: 24px;
 }
+
 
 .search-bar-results {
   height: 100%;

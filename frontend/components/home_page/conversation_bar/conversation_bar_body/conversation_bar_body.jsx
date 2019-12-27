@@ -64,7 +64,7 @@ class ConversationBarBody extends React.Component {
       <div className="direct-messages-master">
           {Object.values(this.props.users).filter((user) => {
 
-            if (user.id !== parseInt(window.currentUser.id)) { // [DEV] currentUser isn't just an ID right now? why?
+            if (user.id !== parseInt(window.currentUser.id)) {
               return user
             }
 

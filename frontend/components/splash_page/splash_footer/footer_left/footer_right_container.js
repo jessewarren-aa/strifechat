@@ -3,7 +3,7 @@ import FooterLeft from './footer_left';
 
 
 const mapStateToProps = (state) => ({
-
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

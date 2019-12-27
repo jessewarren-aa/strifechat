@@ -5,12 +5,22 @@ class FooterLeft extends React.Component {
     super(props)
 
     this.headHome = this.headHome.bind(this)
+    this.footerPush = this.footerPush.bind(this)
   }
 
   headHome(e) {
     e.preventDefault();
     this.props.history.push("/");
     // return <Redirect to="/"/>
+  }
+
+  footerPush (e) {
+    e.preventDefault()
+    if (this.props.currentUser) {
+      this.props.history.push("/channels/@me")
+    } else {
+      this.props.history.push("/signup")
+    }
   }
 
   render() {
@@ -27,23 +37,22 @@ class FooterLeft extends React.Component {
         </div>
         <div>
           <ul>
-            <strong className="disabled">Product</strong>
+            <strong>Product</strong>
             <small>
-              <li className="disabled">Download</li>
-              <li className="disabled">Branding</li>
-              <li className="disabled">Nitro</li>
+              <li 
+                className="cursor-hover"
+                onClick={this.footerPush}>
+                {this.props.currentUser ? "Open StrifeChat" : "Sign Up"}
+              </li>
             </small>
           </ul>
         </div>
         <div>
           <ul>
-            <strong className="disabled">Developers</strong>
+            <strong>Developer</strong>
             <small>
-              <li className="disabled">Sell Your Game</li>
-              <li className="disabled">Rich Presence</li>
-              <li className="disabled">Verification</li>
-              <li className="disabled">Applications</li>
-              <li className="disabled">Documentation</li>
+              <li className="disabled">About</li>
+              <li className="disabled">Github</li>
             </small>
           </ul>
         </div>

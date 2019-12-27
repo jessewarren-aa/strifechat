@@ -71,17 +71,11 @@ class User < ApplicationRecord
   end
 
   def generate_friend_code
-    # counter = 0
     random_code = Array.new(5) {rand(5)}.join("")
     self.friend_code ||= "#{self.username}##{random_code}"
     while User.find_by(friend_code: random_code)
       random_code = Array.new(5) {rand(5)}.join("")
       self.friend_code ||= "#{self.username}##{random_code}"
-      # counter += 1
-      # if counter > 15 # [DEV] should be removeable with user_controller logic?
-      #   # [DEV] NOT CURRENTLY REMOVEABLE, STILL INFINITE LOOP [2019-12-18]
-      #   break
-      # end
     end
   end
 

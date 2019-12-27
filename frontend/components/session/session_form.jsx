@@ -87,15 +87,6 @@ class SessionForm extends React.Component {
 
 
     return (
-      // [DEV] refactor notes
-      // logo header
-      // session form
-      // // header
-      // // inputs
-      // // submit button
-      // // footer
-      // // // sidebar with qr code
-
       <div className="row session-form-background">
 
         <div className={this.props.formType === "signup" ? "col-lg-4" : "col-lg-2"}>
@@ -108,7 +99,6 @@ class SessionForm extends React.Component {
                     src={window.logoImageUrl}>
                   </img>&nbsp;&nbsp;
                     <button className="not-a-link" onClick={this.headHome}>
-                      {/* [DEV] Has weird displacement issue? */}
                       <span className="logo-text">
                         STRIFE
                       </span>

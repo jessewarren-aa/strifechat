@@ -52,57 +52,19 @@ class SplashNav extends React.Component {
             </button>
           </div>
 
-          <div 
-            className="marginify nav-left-download nav-item disabled">
-              Download
-          </div>
-
-          <div 
-            className="marginify nav-left-nitro nav-item disabled">
-              Nitro
-          </div>
-
-          <div 
+          {/* <div 
             className="marginify nav-left-jobs nav-item disabled">
               Jobs
-          </div>
+          </div> */}
 
           <div 
             className="marginify nav-left-developers nav-left-developers-hide nav-item">
             <div className="splash-nav-developers-dropdown">
-              Developers&nbsp;<span className="caret"></span>
+              Developer&nbsp;<span className="caret"></span>
               <div className="splash-nav-developers-dropdown-content">
-                <div className="disabled">Sell Your Game</div>
-                <div className="disabled">Rich Presence</div>
-                <div className="disabled">Verification</div>
-                <div className="disabled">Developer Portal</div>
-                <div className="disabled">Documentation</div>
-              </div>
-            </div>
-          </div>
-
-          <div 
-            className="marginify nav-left-community nav-left-community-hide nav-item">
-            <div className="splash-nav-community-dropdown">
-              Community&nbsp;<span className="caret"></span>
-              <div className="splash-nav-community-dropdown-content">
-                <div className="disabled">Open Source</div>
-                <div className="disabled">Partners</div>
-                <div className="disabled">Hype Squad</div>
-                <div className="disabled">Guidelines</div>
-              </div>
-            </div>
-          </div>
-
-          <div 
-            className="marginify nav-left-support nav-left-support-hide nav-item">
-            <div className="splash-nav-support-dropdown">
-              Support&nbsp;<span className="caret"></span>
-              <div className="splash-nav-support-dropdown-content">
-                <div className="disabled">Help & Support</div>
-                <div className="disabled">Status</div>
-                <div className="disabled">Parent's Guide</div>
-                <div className="disabled">Security</div>
+                <div className="disabled">About</div>
+                <div className="disabled">Github</div>
+                <div className="disabled">Inquiries</div>
               </div>
             </div>
           </div>
@@ -111,19 +73,13 @@ class SplashNav extends React.Component {
         <div className="splash-nav-right nav-right-item marginify">
           <a href="">
             <img
-              className="icon-sizer nav-item nav-right-item marginify"
-              src={window.twitterIcon} />
+              className="github-icon nav-item nav-right-item marginify"
+              src={window.github} />
           </a>
           
           <a href="">
             <img
-              className="icon-sizer nav-item nav-right-item marginify"
-              src={window.facebookIcon} />
-          </a>
-          
-          <a href="">
-            <img
-              className="icon-sizer nav-item nav-right-item marginify"
+              className="nav-item nav-right-item marginify"
               src={window.instagramIcon} />
           </a>
 

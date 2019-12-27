@@ -3,13 +3,7 @@ import React from 'react';
 class CTA extends React.Component {
   constructor(props) {
     super(props)
-    this.downloadButton = this.downloadButton.bind(this)
     this.openButton = this.openButton.bind(this)
-  }
-
-  downloadButton (e) {
-    e.preventDefault()
-    this.props.history.push("/download");
   }
 
   openButton (e) {
@@ -31,9 +25,10 @@ class CTA extends React.Component {
 
           <div className="cta-button-centering">
             <button 
-              onClick={this.downloadButton}
-              className="cta-button cta-button-white disabled">
-              Download<span id="cta-download-button-wide"> for Windows</span>
+              className="cta-button cta-button-white">
+              <a href={window.puppy} download="puppy.jpg">
+                Download<span id="cta-download-button-wide"> for Windows</span>
+              </a>
             </button>
             <button 
               onClick={this.openButton}
