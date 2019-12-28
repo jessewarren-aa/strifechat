@@ -1,6 +1,7 @@
 import { RECEIVE_FRIENDS } from '../actions/friends_actions';
 
 export const friendSelector = (friendsList, friendStatus) => {
+  console.log(friendsList)
   return Object.values(friendsList).filter((user) => {
     return user.status === friendStatus
   })
@@ -10,7 +11,7 @@ export default (state = {}, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_FRIENDS:
-      return Object.assign({}, state, action.friends);
+      return Object.assign({}, state, action.friends.friends);
     default:
       return state;
   }

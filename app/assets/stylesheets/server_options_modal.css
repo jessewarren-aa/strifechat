@@ -1,0 +1,154 @@
+.server-options-modal-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0,0,0,0.4);
+
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.server-options-modal {
+  width: 550px;
+  height: 400px;
+  background: var(--light-font);
+
+  border-radius: 10px;
+}
+
+.server-options-title {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 30px;
+
+  font-weight: 700;
+  font-size: 20px;
+
+  color: #829EE8;
+}
+
+.server-options-control {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 20px;
+  margin-top: 20px;
+
+}
+
+.server-options-create {
+  border: 1px solid rgba(0,0,0,0.2);
+  background: rgba(255,255,255, 0.6);
+
+  border-radius: 5px;
+
+  width: 230px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.so-join-button {
+  width: 165px;
+  color: var(--light-font);
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+
+  padding: 5px;
+  border-radius: 5px;
+
+  background: #57C957;
+
+  
+}
+
+.server-options-join:hover .so-join-button {
+  background: #45A145;
+}
+
+.server-options-join:hover, .server-options-create:hover {
+  cursor: pointer;
+}
+
+.server-options-create:hover .so-create-button {
+  background: rgb(110, 133, 194);
+}
+
+.so-create-button {
+  width: 165px;
+  color: var(--light-font);
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 30px;
+
+  padding: 5px;
+  border-radius: 5px;
+
+  background: #829EE8;
+}
+
+
+
+.so-join-icon {
+  width: 52px;
+  margin-top: 20px;
+}
+
+.so-create-icon {
+  width: 37px;
+  margin-top: 20px;
+}
+
+.server-options-join {
+  border: 1px solid rgba(0,0,0,0.2);
+  background: rgba(255,255,255, 0.6);
+
+  border-radius: 5px;
+
+  width: 230px;
+  height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blue-font {
+  color: #829EE8;
+}
+
+.green-font {
+  color: #57C957;
+}
+
+.so-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.so-text {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 165px;
+  margin-top: 20px;
+}

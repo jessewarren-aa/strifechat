@@ -15,6 +15,11 @@
   color: var(--light-font)
 }
 
+.direct-messages-master {
+  // overflow: auto;
+  // max-height: calc(100vh - 190px);
+}
+
 
 .conversation-search-input {
   background: var(--background-color);
@@ -57,12 +62,25 @@
   justify-content: space-between;
 }
 
+#hidden-friend-code {
+  position: absolute;
+  left: -9999px;
+}
+
+.copy-success {
+  background: var(--quaternary-background-color);
+  z-index: 2;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
 .direct-messages-title small {
   font-weight: 500;
 }
 
 .conversation-footer-friendcode {
-  // padding-top: 8px;
+  
 }
 
 .conversation-footer-addcode {
@@ -107,7 +125,8 @@
 }
 
 .conversation-bar-body-master {
-  
+  overflow: auto;
+  max-height: calc(100vh - 115px);
 }
 
 .user-avatar {
@@ -129,6 +148,15 @@
   padding-bottom: 5px;
   padding-left: 5px;
   white-space: nowrap;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
 
 .direct-messages-username {

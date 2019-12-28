@@ -10,7 +10,7 @@ class FLHeader extends React.Component {
   }
 
   componentDidMount () {
-    this.props.filterFriends("APPROVED")
+    this.props.filterFriends("ACCEPTED")
   }
 
 

@@ -27,8 +27,8 @@ class FooterRight extends React.Component {
                 </a>
               </li>
               <li>
-                <a href="https://fontawesome.com/icons/angry?style=regular" target="_blank">
-                  Logo Icon
+                <a href="https://fontawesome.com/license" target="_blank">
+                  Fontawesome
                 </a>
               </li>
               <li>
@@ -41,17 +41,14 @@ class FooterRight extends React.Component {
                   Download Pup
                 </a>
               </li>
+
+              <li>
+                <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik's</a> Server Icons
+              </li>
             </small>
           </ul>
         </div>
-        <div>
-          <ul>
-            <strong>More</strong>
-            <small>
-              <li className="disabled">Inquiries</li>
-            </small>
-          </ul>
-        </div>
+        
       </div>
     )
   }

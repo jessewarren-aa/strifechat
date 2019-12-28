@@ -1,4 +1,5 @@
 import { RECEIVE_DM_USERS } from '../actions/message_actions';
+import { RECEIVE_FRIENDS } from '../actions/friends_actions'
 
 export default (state = {}, action) => {
   Object.freeze(state);
@@ -9,6 +10,9 @@ export default (state = {}, action) => {
         newObject[user.id] = user
       })
       return Object.assign({}, state, newObject)
+    case RECEIVE_FRIENDS:
+      debugger
+      return Object.assign({}, state, action.friends.users)
     default:
       return state;
   }

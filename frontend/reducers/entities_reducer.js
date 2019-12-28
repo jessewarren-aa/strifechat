@@ -6,7 +6,7 @@ import directMessagesReducer from './direct_messages_reducer'
 import friendsReducer from './friends_reducer'
 
 const entitiesReducer = combineReducers({
-  users: usersReducer,
+  // users: usersReducer,
   // user: userReducer,
   messages: messagesReducer,
   users: directMessagesReducer,

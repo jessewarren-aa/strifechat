@@ -6,6 +6,10 @@ class FLBody extends React.Component {
     super(props)
     this.filterFriendsList = this.filterFriendsList.bind(this)
     this.sendFriendRequest = this.sendFriendRequest.bind(this)
+
+    this.state = {
+      success: ""
+    }
   }
 
   filterFriendsList () {
@@ -45,6 +49,7 @@ class FLBody extends React.Component {
     }
 
     this.props.createFriend(friendObject)
+      .then(() => this.setState({success: "Friend request sent!"}))
   }
 
   componentDidMount () {
@@ -89,6 +94,8 @@ class FLBody extends React.Component {
           <div className="friend-request-container">
             <div className="session-form-errors display-mid">
               <small>
+                {this.state.success ? this.state.success : ""}
+                {/* [DEV] change to positive color */}
                 <ul>
                   {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
                 </ul>

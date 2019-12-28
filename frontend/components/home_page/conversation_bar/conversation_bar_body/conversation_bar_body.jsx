@@ -39,7 +39,7 @@ class ConversationBarBody extends React.Component {
 
     if (!this.props.users) {
       return null
-    } else if (!window.currentUser) {
+    } else if (!this.props.currentUser) {
       return null
     }
 
@@ -64,7 +64,7 @@ class ConversationBarBody extends React.Component {
       <div className="direct-messages-master">
           {Object.values(this.props.users).filter((user) => {
 
-            if (user.id !== parseInt(window.currentUser.id)) {
+            if (user.id !== parseInt(this.props.currentUser)) {
               return user
             }
 

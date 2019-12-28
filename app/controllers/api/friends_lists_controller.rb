@@ -1,6 +1,7 @@
 class Api::FriendsListsController < ApplicationController
   def index
-    @friends = FriendsList.where("receiver_id = #{current_user.id} OR sender_id = #{current_user.id}")
+    @friends = FriendsList.includes(:sender, :receiver).where("receiver_id = #{current_user.id} OR sender_id = #{current_user.id}")
+  
     friendIds = []
   end
 

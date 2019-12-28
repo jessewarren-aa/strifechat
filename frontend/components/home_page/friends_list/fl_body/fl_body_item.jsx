@@ -35,7 +35,12 @@ class FLBodyItem extends React.Component {
           <div className="friends-list-status-header">
             <small>{statusMessage}</small>
           </div>
-          {/* [DEV] a hidden element if statusMessage isn't INCOMING that lets you accept or reject a request */}
+
+          <div className={statusMessage === "INCOMING" ? "friends-list-status-header-buttons" : "hidden"}>
+            <div className="fl-accept-button"><small>ACCEPT</small></div>
+            <div className="fl-decline-button"><small>DECLINE</small></div>
+            {/* [DEV] remember to stop bubbling on these clicks */}
+          </div>
         </div>
       </div>
     )

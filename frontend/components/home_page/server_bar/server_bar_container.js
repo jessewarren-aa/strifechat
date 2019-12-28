@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import ServerBar from './server_bar';
 
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
 
 });
 

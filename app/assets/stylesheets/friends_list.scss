@@ -7,6 +7,24 @@
   // border: 1px solid black;
 }
 
+.fl-accept-button {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.fl-accept-button small {
+  // color: rgb(72, 189, 72) !important;
+}
+
+.fl-decline-button {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.fl-decline-button small {
+  // color: #a33835 !important;
+}
+
 .display-mid {
   padding-top: 20px;
 }
@@ -125,7 +143,14 @@
 }
 
 .friends-list-status-header {
-  width: 200px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.friends-list-status-header-buttons {
+  width: 100px;
   display: flex;
   align-items: center;
   padding: 10px;

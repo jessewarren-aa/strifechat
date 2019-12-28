@@ -13,10 +13,73 @@ import FourOhFourContainer from '../four_oh_four/four_oh_four_container'
 class HomePage extends React.Component {
   constructor(props) {
     super(props)
+
+    this.preventBubbling = this.preventBubbling.bind(this)
+    this.modalHide = this.modalHide.bind(this)
+  }
+
+  modalHide (e) {
+    e.preventDefault()
+    const jServerOptionsModal = $('.server-options-modal-background')
+    jServerOptionsModal.addClass('hidden')
+
+    const removeFrom = $(".server-selected")
+    if (removeFrom) {
+      removeFrom.removeClass("server-selected")
+    }
+
+    const jObject = $("#default-server")
+    jObject.addClass("server-selected")
+  }
+
+  preventBubbling (e) {
+    e.stopPropagation()
   }
 
   render() {
-    return <div className="home-page-master">
+    return (
+    <div className="home-page-master">
+      <div 
+        onClick={this.modalHide}
+        className="server-options-modal-background hidden">
+        <div 
+          onClick={this.preventBubbling}
+          className="server-options-modal">
+          <div className="server-options-title">REALLY? ANOTHER SERVER?</div>
+          <div className="server-options-control">
+            <div className="server-options-create">
+              <div className="so-title blue-font">CREATE</div>
+              <div className="so-text text-center">
+                <small>
+                  Create a new server and invite your friends! It's free™!
+                </small>
+              </div>
+              <div className="so-create-icon">
+                <img
+                  src={window.create}></img>
+              </div>
+              <div className="so-create-button">
+                Create a server
+              </div>
+            </div>
+            <div className="server-options-join">
+              <div className="so-title green-font">JOIN</div>
+              <div className="so-text text-center">
+                <small>
+                  Enter an invite code and join your enemy's server!
+                </small>
+              </div>
+              <div className="so-join-icon">
+                <img
+                  src={window.join}></img>
+              </div>
+              <div className="so-join-button">
+                Join a server
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <Switch>
         <Route exact path="/channels" component={FourOhFourContainer} />
         <Route path="/channels" component={ServerBarContainer} />
@@ -34,6 +97,7 @@ class HomePage extends React.Component {
         {/* Used once a friend is clicked or new message is started */}
         {/* Has a header with the user's name, plus pin message, add friend (group chat), search, "@ pings" and "?" help */}
     </div>
+    )
   }
 }
 
