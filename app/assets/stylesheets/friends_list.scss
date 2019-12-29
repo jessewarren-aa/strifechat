@@ -169,14 +169,20 @@
   align-items: center;
 }
 
+.fl-header-component-hoverless {
+  display: flex;
+  align-items: center;
+}
+
+.fl-header-component-hoverless:hover {
+  cursor: pointer;
+}
+
 .friend-on-list {
   display: flex;
   align-items: flex-end;
   padding-bottom: 10px;
-  // width: 100%;
-  // flex-grow: 1;
   height: 67px;
-  // width: 100%;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 

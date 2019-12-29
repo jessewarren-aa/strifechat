@@ -1,6 +1,10 @@
 class User < ApplicationRecord
   attr_accessor :password
 
+  current_statuses = ["ONLINE", "IDLE", "DO NOT DISTURB", "OFFLINE"]
+
+  validates :current_status, inclusion: { in: current_statuses }
+
   validates :username, presence: true
   validates :email, presence: true, uniqueness: true
   
@@ -16,6 +20,7 @@ class User < ApplicationRecord
   after_initialize :generate_default_avatar
   after_initialize :set_last_server
   after_initialize :set_unique_id
+  after_initialize :set_status
   after_initialize :generate_friend_code
 
   has_many :messages_sent,
@@ -104,6 +109,10 @@ class User < ApplicationRecord
 
   def set_last_server
     self.last_server_id = -1
+  end
+
+  def set_status
+    self.current_status = "ONLINE"
   end
 
   def set_unique_id

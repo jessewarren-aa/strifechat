@@ -1,13 +1,17 @@
 import React from 'react';
 
-import { friendSelector } from '../../../../reducers/friends_reducer'
-
 class FLHeader extends React.Component {
   constructor(props) {
     super(props)
     this.filterClicked = this.filterClicked.bind(this)
     this.clickedAddFriend = this.clickedAddFriend.bind(this)
     this.newMessagePrompt = this.newMessagePrompt.bind(this)
+    this.stopBubble = this.stopBubble.bind(this)
+  }
+
+  stopBubble (e) {
+    e.preventDefault()
+    e.stopPropagation()
   }
 
   componentDidMount () {
@@ -102,12 +106,13 @@ class FLHeader extends React.Component {
       <div className="fl-header-right">
         <div 
           onClick={this.newMessagePrompt}
-          className="ml-4 p-1 fl-header-component flex-end">
+          className="ml-4 p-1 fl-header-component-hoverless flex-end">
           <div>
             <img className="new-message-icon" src={window.convo}></img>
             <img className="smol-icon" src={window.plus}></img>
           </div>
           <div 
+            onClick={this.stopBubble}
             className="hidden start-new-message-popup-background">
             <div 
               className="start-new-message-popup">

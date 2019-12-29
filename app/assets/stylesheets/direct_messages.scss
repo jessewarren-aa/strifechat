@@ -67,8 +67,7 @@
 
 .conversation-view-master {
   background: var(--tertiary-background-color);
-  width: 100%;
-  height: 100vh;
+  flex-grow: 1;
   // border: 1px solid black;
   // display: flex;
   // flex-grow: 1;
@@ -89,7 +88,7 @@
   bottom: 0;
   // border: 2px solid black;
   height: 80px;
-  width: calc(100% - 310px);
+  width: calc(100% - 320px);
   display: flex;
   justify-content: center;
   // align-items: center;
