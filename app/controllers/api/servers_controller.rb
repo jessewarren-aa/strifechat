@@ -18,9 +18,27 @@ class ServersController < ApplicationController
   end
 
   def update
+    @server = Server.find_by(id: self.params[:id])
+
+    if @server.owner_id == current_user.id
+      if @server.update(server_params)
+        render :show
+      else
+        render json: ["Updating failed!"], status: 400
+      end
+    else
+      render json: ["Uh, you don't have permissions to do that."], status: 401
+    end
   end
 
   def destroy
+    @server = Server.find_by(id: self.params[:id])
+    if @server
+      @server.destroy
+      render json: ["Success! Server deleted."], status: 200
+    else
+      render json: ["That server wasn't found."], status: 404
+    end
   end
 
   private

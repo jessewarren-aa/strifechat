@@ -20,7 +20,7 @@ class Api::FriendsListsController < ApplicationController
     if receiver && is_new_request?(sender_id.to_i, receiver['id'].to_i)
       @request = FriendsList.new({sender_id: sender_id, receiver_id: receiver['id'], status: "PENDING"})
       if @request.save
-        render json: ["Success! Request sent."], status: 200
+        render :show
       else
         render json: ["This request couldn't be created!"], status: 400
       end
@@ -36,10 +36,8 @@ class Api::FriendsListsController < ApplicationController
   def update
     @request = FriendsList.find_by(id: request_update_params["id"])
 
-    @request["status"] = request_update_params["status"]
-
-    if @request.save
-      render json: ["Success! Request sent."], status: 200
+    if @request.update(status: request_update_params["status"])
+      render :show
     else
       render json: ["That status could not be saved!"], status: 400
     end
@@ -49,9 +47,9 @@ class Api::FriendsListsController < ApplicationController
     @request = FriendsList.find_by(id: self.params[:id])
     if @request
       @request.destroy
-      render json: ["Success! Request destroyed."], status: 200
+      render :delete
     else
-      render json: ["That friend request couldn't be found."], status: 400
+      render json: ["That friend request couldn't be found."], status: 404
     end
   end
 

@@ -18,8 +18,6 @@ class FLBodyItem extends React.Component {
     e.preventDefault()
     e.stopPropagation()
 
-    console.log(this.props.requestId)
-
     const updateObject = {
       friend_request: {
         id: this.props.requestId,

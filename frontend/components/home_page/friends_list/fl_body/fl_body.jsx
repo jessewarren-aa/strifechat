@@ -19,7 +19,7 @@ class FLBody extends React.Component {
 
     const filterType = this.props.status
 
-    Object.values(this.props.friends).forEach(friend => {
+    Object.values(this.props.friendRequests).forEach(friend => {
       let status = friend.status
       if (friend.status === filterType) { 
         if (friend.sender_id !== this.props.currentUser) {
@@ -55,7 +55,7 @@ class FLBody extends React.Component {
   }
 
   componentDidMount () {
-    if (!this.props.friends.length) {
+    if (!this.props.friendRequests.length) {
       this.props.getFriendsList(this.props.status)
     }
   }

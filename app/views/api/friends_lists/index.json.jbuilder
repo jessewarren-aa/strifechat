@@ -6,5 +6,7 @@ json.users do
 end
 
 json.friends do
-  json.array! @friends
+  @friends.each do |friend|
+    json.set! friend.id, friend
+  end
 end

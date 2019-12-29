@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :friends_lists, only: [:index, :create, :update, :destroy]
     resources :users, except: [:new, :edit]
     resource :session, only: [:create, :destroy]
+    resource :servers, only: [:index, :show, :create, :update, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
