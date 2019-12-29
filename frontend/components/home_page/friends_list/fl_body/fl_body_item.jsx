@@ -108,6 +108,15 @@ class FLBodyItem extends React.Component {
               <small>CANCEL</small>
             </div>
           </div>
+
+          <div
+            className={["OUTGOING", "INCOMING", "BLOCKED"].includes(statusMessage) ? "hidden" : "friends-list-status-header-buttons"}>
+            <div
+              onClick={this.cancelRequest}
+              className="fl-remove-button">
+              <img src="assets/remove_friend.svg"></img>
+            </div>
+          </div>
         </div>
       </div>
     )
