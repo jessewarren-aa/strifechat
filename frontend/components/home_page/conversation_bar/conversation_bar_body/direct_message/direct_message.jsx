@@ -32,8 +32,15 @@ class DirectMessageItem extends React.Component {
   render() {
     const user = this.props.user
 
+    // console.log(Object.values(this.props.messages).length)
+
     const pathArray = this.props.match.url.split("/")
     const path = pathArray[pathArray.length - 1]
+
+    if (Object.values(this.props.messages).length < 1) {
+      return null
+    }
+
     return (
       <div
         className={path === user.unique_id ? "conversation-button user friend-selected" : "conversation-button user"} 

@@ -7,6 +7,18 @@ class ConversationBarBody extends React.Component {
   constructor(props) {
     super(props)
     this.friendsClicked = this.friendsClicked.bind(this)
+    this.messageFilter = this.messageFilter.bind(this)
+  }
+
+  messageFilter (userUniqueId) {
+    const newMessages = {}
+    Object.keys(this.props.messages).forEach(key => {
+      const val = this.props.messages[key]
+      if (val.server_id == userUniqueId || val.channel_id == userUniqueId) {
+        newMessages[key] = val
+      }
+    })
+    return newMessages
   }
 
   friendsClicked (e) {
@@ -58,7 +70,7 @@ class ConversationBarBody extends React.Component {
 
       <div className="direct-messages-title">
         <small><div className="direct-messages-title-text">DIRECT MESSAGES</div></small>
-        <div className="direct-messages-add">+</div>
+        {/* <div className="direct-messages-add">+</div> */}
       </div>
       
       <div className="direct-messages-master">
@@ -69,7 +81,7 @@ class ConversationBarBody extends React.Component {
             }
 
           }).map((user, index)=> {
-            return <DirectMessageItem key={index} user={user} {...this.props}/>
+            return <DirectMessageItem key={index} user={user} {...this.props} messages={this.messageFilter(user.unique_id)} />
           })}
       </div>
 
