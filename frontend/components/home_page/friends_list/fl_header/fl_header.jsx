@@ -6,6 +6,7 @@ class FLHeader extends React.Component {
     this.filterClicked = this.filterClicked.bind(this)
     this.clickedAddFriend = this.clickedAddFriend.bind(this)
     this.newMessagePrompt = this.newMessagePrompt.bind(this)
+    this.closeMessagePrompt = this.closeMessagePrompt.bind(this)
     this.stopBubble = this.stopBubble.bind(this)
   }
 
@@ -50,10 +51,23 @@ class FLHeader extends React.Component {
     this.props.filterFriends(e.currentTarget.getAttribute('value'))
   }
 
-  newMessagePrompt (e) {
+  newMessagePrompt(e) {
     e.preventDefault()
     const jObject = $('.start-new-message-popup-background')
     jObject.toggleClass('hidden')
+
+    const jObjectBackground = $('.invisible-snmp-closer')
+    jObjectBackground.toggleClass('hidden')
+  }
+
+  closeMessagePrompt (e) {
+    e.preventDefault()
+    e.stopPropagation()
+    const jObject = $('.start-new-message-popup-background')
+    jObject.addClass('hidden')
+
+    const jObjectBackground = $('.invisible-snmp-closer')
+    jObjectBackground.addClass('hidden')
   }
 
   render() {
@@ -111,6 +125,9 @@ class FLHeader extends React.Component {
             <img className="new-message-icon" src={window.convo}></img>
             <img className="smol-icon" src={window.plus}></img>
           </div>
+          <div 
+            onClick={this.closeMessagePrompt}
+            className="hidden invisible-snmp-closer"></div>
           <div 
             onClick={this.stopBubble}
             className="hidden start-new-message-popup-background">
