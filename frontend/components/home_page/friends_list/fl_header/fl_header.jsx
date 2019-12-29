@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SNMPContainer from './snmp_modal/snmp_container'
+
 class FLHeader extends React.Component {
   constructor(props) {
     super(props)
@@ -127,39 +129,11 @@ class FLHeader extends React.Component {
           </div>
           <div 
             onClick={this.closeMessagePrompt}
-            className="hidden invisible-snmp-closer"></div>
-          <div 
-            onClick={this.stopBubble}
-            className="hidden start-new-message-popup-background">
-            <div 
-              className="start-new-message-popup">
-              <div className="snmp-text-box">
-                <div className="snmp-text-box-title">SELECT FRIENDS</div>
-                <div className="snmp-text-box-text">
-                  <small>
-                    You can add 1 more friend (group chat isn't a thing yet).
-                  </small>
-                </div>
-              </div>
-
-              <div className="snmp-input-div">
-                <form className="snmp-form-div">
-                  <input 
-                    className="snmp-input"
-                    placeholder="Type the username of a friend"></input>
-                </form>
-              </div>
-
-              <div className="snmp-friend-list">
-                friend filter!
-              </div>
-
-                <div className="snmp-button-div">
-                create message button!
-              </div>
-
-            </div>
+            className="hidden invisible-snmp-closer">
           </div>
+
+          <SNMPContainer {...this.props}/>
+
         </div>
         <div 
           className="ml-4 p-1 fl-header-component">
