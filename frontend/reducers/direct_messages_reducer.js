@@ -11,7 +11,6 @@ export default (state = {}, action) => {
       })
       return Object.assign({}, state, newObject)
     case RECEIVE_FRIENDS:
-      debugger
       return Object.assign({}, state, action.friends.users)
     default:
       return state;

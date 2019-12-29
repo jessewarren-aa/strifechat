@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import FLBody from './fl_body';
 
-import { getFriendsList, createFriend } from '../../../../actions/friends_actions'
+import { getFriendsList, createFriend, updateFriend, destroyFriend } from '../../../../actions/friends_actions'
 import { friendSelector } from '../../../../reducers/friends_reducer'
 
 
@@ -17,7 +17,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => ({
   getFriendsList: (status) => friendSelector(dispatch(getFriendsList()), status),
-  createFriend: (friend) => dispatch(createFriend(friend))
+  createFriend: (friend) => dispatch(createFriend(friend)),
+  updateFriend: (friend) => dispatch(updateFriend(friend)),
+  destroyFriend: (friendId) => dispatch(destroyFriend(friendId))
 });
 
 export default connect(

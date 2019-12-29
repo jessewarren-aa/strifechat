@@ -4,6 +4,7 @@ class DirectMessageItem extends React.Component {
   constructor(props) {
     super(props)
     this.friendsClicked = this.friendsClicked.bind(this)
+    // this.closeMessage = this.closeMessage.bind(this)
   }
 
   friendsClicked(e) {
@@ -18,6 +19,15 @@ class DirectMessageItem extends React.Component {
     this.props.history.push(`/channels/@me/${this.props.user.unique_id}`);
   }
 
+  // closeMessage (e) {
+  //   e.preventDefault()
+  //   e.stopPropagation()
+
+  //   console.log(e.target)
+
+  //   console.log("closing")
+  // }
+
 
   render() {
     const user = this.props.user
@@ -28,15 +38,23 @@ class DirectMessageItem extends React.Component {
       <div
         className={path === user.unique_id ? "conversation-button user friend-selected" : "conversation-button user"} 
         onClick={this.friendsClicked}>
-        <img
-          className="user-avatar"
-          src={user.image_url}>
-        </img>
-        <div
-          data-id={user.id} 
-          className="direct-messages-username">
-          {user.username.length <= 16 ? user.username : user.username.slice(0, 16) + " ..."}
+        <div className="display-flex">
+          <img
+            className="user-avatar"
+            src={user.image_url}>
+          </img>
+          <div
+            data-id={user.id}
+            className="direct-messages-username">
+            {user.username.length <= 12 ? user.username : user.username.slice(0, 12) + " ..."}
+          </div>
         </div>
+
+        {/* <div
+          onClick={this.closeMessage} 
+          className="dm-closer">
+          <small>X</small>
+        </div> */}
       </div>
     )
   }

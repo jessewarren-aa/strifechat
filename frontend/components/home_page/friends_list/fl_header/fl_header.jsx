@@ -7,12 +7,12 @@ class FLHeader extends React.Component {
     super(props)
     this.filterClicked = this.filterClicked.bind(this)
     this.clickedAddFriend = this.clickedAddFriend.bind(this)
+    this.newMessagePrompt = this.newMessagePrompt.bind(this)
   }
 
   componentDidMount () {
     this.props.filterFriends("ACCEPTED")
   }
-
 
   filterClicked(e) {
     e.preventDefault()
@@ -44,6 +44,12 @@ class FLHeader extends React.Component {
     jObject.addClass('add-friend-selected')
 
     this.props.filterFriends(e.currentTarget.getAttribute('value'))
+  }
+
+  newMessagePrompt (e) {
+    e.preventDefault()
+    const jObject = $('.start-new-message-popup-background')
+    jObject.toggleClass('hidden')
   }
 
   render() {
@@ -84,7 +90,7 @@ class FLHeader extends React.Component {
           value="BLOCKED"
           onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
-          <div className="disabled">Blocked</div>
+          <div>Blocked</div>
         </div>
         <div 
           value="ADDFRIEND"
@@ -95,16 +101,51 @@ class FLHeader extends React.Component {
       </div>
       <div className="fl-header-right">
         <div 
-          className="ml-4 p-1 fl-header-component">
-          <div className="disabled">New convo icon</div>
+          onClick={this.newMessagePrompt}
+          className="ml-4 p-1 fl-header-component flex-end">
+          <div>
+            <img className="new-message-icon" src={window.convo}></img>
+            <img className="smol-icon" src={window.plus}></img>
+          </div>
+          <div 
+            className="hidden start-new-message-popup-background">
+            <div 
+              className="start-new-message-popup">
+              <div className="snmp-text-box">
+                <div className="snmp-text-box-title">SELECT FRIENDS</div>
+                <div className="snmp-text-box-text">
+                  <small>
+                    You can add 1 more friend (group chat isn't a thing yet).
+                  </small>
+                </div>
+              </div>
+
+              <div className="snmp-input-div">
+                <form className="snmp-form-div">
+                  <input 
+                    className="snmp-input"
+                    placeholder="Type the username of a friend"></input>
+                </form>
+              </div>
+
+              <div className="snmp-friend-list">
+                friend filter!
+              </div>
+
+                <div className="snmp-button-div">
+                create message button!
+              </div>
+
+            </div>
+          </div>
         </div>
         <div 
           className="ml-4 p-1 fl-header-component">
-          <div className="disabled">@ notifications</div>
+          <div className="disabled">@</div>
         </div>
         <div 
           className="ml-4 mr-4 p-1 fl-header-component">
-          <div className="disabled">? help</div>
+          <div className="disabled">?</div>
         </div>
       </div>
     </div>

@@ -13,4 +13,26 @@ class FriendsList < ApplicationRecord
   belongs_to :receiver,
   foreign_key: :receiver_id,
   class_name: 'User'
+
+  def senderFiltered
+    return {
+      id: self.sender.id,
+      username: self.sender.username,
+      email: self.sender.email,
+      image_url: self.sender.image_url,
+      friend_code: self.sender.friend_code,
+      unique_id: self.sender.unique_id
+    }
+  end
+
+  def receiverFiltered
+    return {
+      id: self.receiver.id,
+      username: self.receiver.username,
+      email: self.receiver.email,
+      image_url: self.receiver.image_url,
+      friend_code: self.receiver.friend_code,
+      unique_id: self.receiver.unique_id
+    }
+  end
 end

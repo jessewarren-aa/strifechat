@@ -3,6 +3,104 @@
   flex-grow: 1;
 }
 
+.start-new-message-popup {
+
+}
+
+.snmp-friend-list {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  height: 200px;
+  border: 1px solid black;
+}
+
+.snmp-button-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+
+
+  border: 1px solid black;
+}
+
+.snmp-form-div {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+}
+
+.snmp-input {
+  border-radius: 5px;
+  border: none;
+  padding: 7px;
+  background: var(--background-color);
+  color: var(--light-font);
+  flex-grow: 1;
+}
+
+.snmp-input::placeholder {
+  color: var(--light-font);
+}
+
+.snmp-input-div {
+  padding: 20px;
+  padding-top: 0px !important;
+
+  // border: 1px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snmp-text-box {
+  padding: 20px;
+}
+
+.snmp-text-box-title {
+  color: var(--light-font);
+  font-weight: 500;
+}
+
+.snmp-text-box-text {
+  color: var(--light-font);
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.start-new-message-popup-background {
+  width: 450px;
+  height: 400px;
+  background: var(--tertiary-background-color);
+  z-index: 0;
+
+  box-shadow: 0px 0px 2px black;
+
+  border: 1px solid rgba(0,0,0,0.4);
+  border-radius: 5px;
+
+  position: absolute;
+  top: 42px;
+  // left: 20px;
+  // right: 20px;
+}
+
+.new-message-icon {
+  width: 22px;
+  padding: 2px;
+}
+
+.smol-icon {
+  width: 10px;
+  padding: 2px;
+}
+
 .friends-list-master div {
   // border: 1px solid black;
 }
@@ -151,6 +249,13 @@
 
 .friends-list-status-header-buttons {
   width: 100px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.friends-list-mutual-servers-header {
+  width: 400px;
   display: flex;
   align-items: center;
   padding: 10px;

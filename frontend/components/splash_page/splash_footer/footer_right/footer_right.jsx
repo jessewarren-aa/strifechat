@@ -43,7 +43,7 @@ class FooterRight extends React.Component {
               </li>
 
               <li>
-                <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik's</a> Server Icons
+                <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik's Icons</a> 
               </li>
             </small>
           </ul>

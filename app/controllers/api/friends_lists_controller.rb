@@ -33,8 +33,34 @@ class Api::FriendsListsController < ApplicationController
     end
   end
 
+  def update
+    @request = FriendsList.find_by(id: request_update_params["id"])
+
+    @request["status"] = request_update_params["status"]
+
+    if @request.save
+      render json: ["Success! Request sent."], status: 200
+    else
+      render json: ["That status could not be saved!"], status: 400
+    end
+  end
+
+  def destroy
+    @request = FriendsList.find_by(id: self.params[:id])
+    if @request
+      @request.destroy
+      render json: ["Success! Request destroyed."], status: 200
+    else
+      render json: ["That friend request couldn't be found."], status: 400
+    end
+  end
+
   private
   def request_params
     self.params.require(:friend_request).permit(:sender_id, :friend_code)
+  end
+
+  def request_update_params
+    self.params.require(:friend_request).permit(:id, :status)
   end
 end

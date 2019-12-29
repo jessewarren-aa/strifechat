@@ -10,6 +10,8 @@ class FLBody extends React.Component {
     this.state = {
       success: ""
     }
+
+    
   }
 
   filterFriendsList () {
@@ -24,12 +26,12 @@ class FLBody extends React.Component {
           if (status === "PENDING") {
             status = "INCOMING"
           }
-          friendRequests.push({ user_id: friend.sender_id, status })
+          friendRequests.push({ id: friend.id, user_id: friend.sender_id, status })
         } else {
           if (status === "PENDING") {
             status = "OUTGOING"
           }
-          friendRequests.push({ user_id: friend.receiver_id, status })
+          friendRequests.push({ id: friend.id, user_id: friend.receiver_id, status })
         }
       }
     })
@@ -123,15 +125,30 @@ class FLBody extends React.Component {
               <div className="friends-list-status-header pb-0">
                 <small>STATUS</small>
               </div>
+              <div className="friends-list-mutual-servers-header pb-0">
+                <small>MUTUAL SERVERS</small>
+              </div>
             </div>
           </div>
           <div className="fl-body-master-flex">
             <div className="friends-list-body-master">
               {this.filterFriendsList().map((friendRequest, index) => {
-                const {user_id, status} = friendRequest
+                const {user_id, status, id} = friendRequest
+                const user = this.props.users[user_id]
                 const userKeys = Object.keys(this.props.users)
                 if (userKeys.includes(user_id.toString())) {
-                  return <FLBodyItem key={index} {...this.props.users[user_id]} history={this.props.history} friendStatus={status} />
+                  return (
+                  <FLBodyItem 
+                    key={index} 
+                    username={user.username} 
+                    destroyFriend={this.props.destroyFriend}
+                    unique_id= { user.unique_id } 
+                    image_url={user.image_url} 
+                    history={this.props.history} 
+                    updateFriend={this.props.updateFriend}
+                    requestId={id} 
+                    friendStatus={status} />
+                  )
                 }
               })}
             </div>

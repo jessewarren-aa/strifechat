@@ -1,7 +1,6 @@
 import { RECEIVE_FRIENDS } from '../actions/friends_actions';
 
 export const friendSelector = (friendsList, friendStatus) => {
-  console.log(friendsList)
   return Object.values(friendsList).filter((user) => {
     return user.status === friendStatus
   })
