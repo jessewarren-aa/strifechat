@@ -13,7 +13,6 @@ class FourOhFourWrapperContainer extends React.Component {
   }
 
   render() {
-    console.log('404 wrapper')
     return (
       <Switch>
         <Route exact path="/channels" component={FourOhFourContainer} />

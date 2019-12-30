@@ -60,7 +60,7 @@ class FLBodyItem extends React.Component {
     if (["OUTGOING", "INCOMING", "BLOCKED"].includes(this.props.friendStatus)) {
       statusMessage = this.props.friendStatus
     } else {
-      statusMessage = "USER STATUS"
+      statusMessage = this.props.userStatus
     }
 
     return (

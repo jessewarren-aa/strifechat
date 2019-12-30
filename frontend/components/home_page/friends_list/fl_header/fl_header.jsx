@@ -88,12 +88,12 @@ class FLHeader extends React.Component {
             </div>
           </div>
         </div>
-        <div 
+        {/* <div 
           value="ACCEPTED"
           onClick={this.filterClicked}
           className="mr-4 px-1 fl-header-component">
           <div className="disabled">Online</div>
-        </div>
+        </div> */}
         <div 
           value="ACCEPTED"
           onClick={this.filterClicked}
@@ -122,7 +122,7 @@ class FLHeader extends React.Component {
       <div className="fl-header-right">
         <div 
           onClick={this.newMessagePrompt}
-          className="ml-4 p-1 fl-header-component-hoverless flex-end">
+          className="ml-4 mr-4 p-1 fl-header-component-hoverless flex-end">
           <div>
             <img className="new-message-icon" src={window.convo}></img>
             <img className="smol-icon" src={window.plus}></img>
@@ -135,14 +135,14 @@ class FLHeader extends React.Component {
           <SNMPContainer {...this.props}/>
 
         </div>
-        <div 
+        {/* <div 
           className="ml-4 p-1 fl-header-component">
           <div className="disabled">@</div>
         </div>
         <div 
           className="ml-4 mr-4 p-1 fl-header-component">
           <div className="disabled">?</div>
-        </div>
+        </div> */}
       </div>
     </div>
     )

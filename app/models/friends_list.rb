@@ -21,7 +21,8 @@ class FriendsList < ApplicationRecord
       email: self.sender.email,
       image_url: self.sender.image_url,
       friend_code: self.sender.friend_code,
-      unique_id: self.sender.unique_id
+      unique_id: self.sender.unique_id,
+      current_status: self.sender.current_status
     }
   end
 
@@ -32,7 +33,8 @@ class FriendsList < ApplicationRecord
       email: self.receiver.email,
       image_url: self.receiver.image_url,
       friend_code: self.receiver.friend_code,
-      unique_id: self.receiver.unique_id
+      unique_id: self.receiver.unique_id,
+      current_status: self.receiver.current_status
     }
   end
 end
