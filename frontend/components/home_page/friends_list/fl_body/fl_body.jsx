@@ -141,7 +141,7 @@ class FLBody extends React.Component {
                   <FLBodyItem 
                     key={index} 
                     username={user.username} 
-                    userStatus={user.current_status}
+                    userStatus={user.current_status ? user.current_status : "OFFLINE"}
                     destroyFriend={this.props.destroyFriend}
                     unique_id= { user.unique_id } 
                     image_url={user.image_url} 

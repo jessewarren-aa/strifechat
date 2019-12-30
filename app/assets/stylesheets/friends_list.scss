@@ -293,17 +293,28 @@
   width: 120px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px;
 }
 
+.friend-on-list:hover .fl-remove-button {
+  display: block;
+}
+
 .fl-remove-button {
+  display: none;
   width: 24px;
 }
 
+.user-status-icon {
+  width: 20px;
+}
+
 .friends-list-status-header-buttons {
-  width: 100px;
+  width: 175px;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   padding: 10px;
 }
 

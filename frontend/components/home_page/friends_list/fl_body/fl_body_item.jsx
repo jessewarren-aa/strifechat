@@ -60,7 +60,12 @@ class FLBodyItem extends React.Component {
     if (["OUTGOING", "INCOMING", "BLOCKED"].includes(this.props.friendStatus)) {
       statusMessage = this.props.friendStatus
     } else {
-      statusMessage = this.props.userStatus
+      if (this.props.userStatus) {
+        statusMessage = this.props.userStatus.replace(/\s/g, '')
+      } else {
+        statusMessage = this.props.userStatus
+      }
+      
     }
 
     return (
@@ -77,7 +82,11 @@ class FLBodyItem extends React.Component {
             </div>
           </div>
           <div className="friends-list-status-header">
-            <small>{statusMessage}</small>
+            {/* ["ONLINE", "IDLE", "DO NOT DISTURB", "OFFLINE"] */}
+            <div className="user-status-icon">
+              <img
+                src={`/assets/${statusMessage}.svg`}></img>
+            </div>
           </div>
 
           <div className="friends-list-mutual-servers-header pr-2">
