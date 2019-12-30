@@ -1,0 +1,43 @@
+.terms-and-privacy-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.terms-and-privacy-header {
+  padding: 100px 0px;
+}
+
+.legal-header {
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 35px;
+}
+
+.background-color {
+  background: var(--background-color);
+  padding-top: 50px;
+}
+
+.legal-body {
+  margin: 0px 140px;
+  padding: 40px 0px;
+  color: var(--dark-font);
+}
+
+.legal-text {
+  line-height: 1.6666666666666667;
+  color: var(--medium-font);
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight: inherit;
+}
+
+.legal-text a {
+  color: var(--secondary-color);
+}
+
+.legal-text a:hover {
+  text-decoration: none;
+  color: var(--dark-font);
+}

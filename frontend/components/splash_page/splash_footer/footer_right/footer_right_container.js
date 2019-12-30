@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import FooterRight from './footer_right';
 
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
 
 });
 

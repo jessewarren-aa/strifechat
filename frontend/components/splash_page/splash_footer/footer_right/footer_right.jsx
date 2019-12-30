@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class FooterRight extends React.Component {
   constructor(props) {
@@ -12,8 +13,8 @@ class FooterRight extends React.Component {
           <ul>
             <strong>Resources</strong>
             <small>
-              <li className="disabled">Terms</li>
-              <li className="disabled">Privacy</li>
+              <li><Link to="/terms">Terms of Service</Link></li>
+              <li><Link to="/privacy">Privacy Policy</Link></li>
             </small>
           </ul>
         </div>

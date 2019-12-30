@@ -34,9 +34,6 @@ class SessionForm extends React.Component {
     setTimeout(() => {
       this.handleSubmit(e)
     }, 400);
-
-
-    
   }
 
   handleSubmit(e) {
@@ -205,7 +202,7 @@ class SessionForm extends React.Component {
                 <small>{{ "Register": "Need an account? " }[verbiage]}<Link onClick={this.setBounceOut} to={redirectURL}>{verbiage}</Link> <span className={this.props.formType === "signup" ? "hidden" : ""}>or <a onClick={this.handleGuest} href="#">sign in as a guest</a></span></small>
               </div>
               <div>
-                <div className={this.props.formType === "signup" ? "session-form-disclaimer" : "session-form-disclaimer hidden"}><small>By registering, you agree to Strife's <Link to="">Terms of Service</Link> and <Link to="">Privacy Policy</Link>.</small></div>
+                <div className={this.props.formType === "signup" ? "session-form-disclaimer" : "session-form-disclaimer hidden"}><small>By registering, you agree to Strife's <Link to="/terms">Terms of Service</Link> and <Link to="/privacy">Privacy Policy</Link>.</small></div>
               </div>
             </div> { /* end of inner session-form-landing column */ }
             <div className={this.props.formType === "signup" ? "hidden session-form-qr-code-control" : "col-lg-5 session-form-qr-code-control"}>

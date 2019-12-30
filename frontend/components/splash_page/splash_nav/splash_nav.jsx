@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 class SplashNav extends React.Component {
   constructor(props) {
@@ -38,13 +39,11 @@ class SplashNav extends React.Component {
 
           <div 
             className="logo-font splash-logo marginify">
-            <a
-              href="#"
-              onClick={this.headHome}>
+            <Link to="/">
               <img
                 className="logo-sizer"
                 src={window.logoImageUrl} />
-            </a>
+            </Link>
             &nbsp;&nbsp;
             <button 
               className="splash-logo-size not-a-link">
@@ -62,25 +61,26 @@ class SplashNav extends React.Component {
             <div className="splash-nav-developers-dropdown">
               Developer&nbsp;<span className="caret"></span>
               <div className="splash-nav-developers-dropdown-content">
-                <div className="disabled">About</div>
-                <div className="disabled">Github</div>
-                <div className="disabled">Inquiries</div>
+                <div>
+                  <a href="https://jesse-warren.github.io/" target="_blank">
+                    About
+                  </a>
+                </div>
+                <div>
+                  <a href="https://github.com/jesse-warren" target="_blank">
+                    Github
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         <div className="splash-nav-right nav-right-item marginify">
-          <a href="">
-            <img
-              className="github-icon nav-item nav-right-item marginify"
-              src={window.github} />
-          </a>
-          
-          <a href="">
+          <a href="https://twitter.com/jesse__warren" target="_blank">
             <img
               className="nav-item nav-right-item marginify"
-              src={window.instagramIcon} />
+              src={window.twitterIcon} />
           </a>
 
           <button

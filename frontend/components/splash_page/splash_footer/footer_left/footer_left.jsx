@@ -27,13 +27,11 @@ class FooterLeft extends React.Component {
     return (
       <div className="cta-footer-left col-md-5">
         <div className="cta-footer-logo">
-          <a 
-            href="#"
-            onClick={this.headHome}>
-              <img
-                className="logo-sizer"
-                src={window.logoImageUrl} />
-          </a>
+          <Link to="/">
+            <img
+              className="logo-sizer"
+              src={window.logoImageUrl} />
+          </Link>
         </div>
         <div>
           <ul>
@@ -51,8 +49,21 @@ class FooterLeft extends React.Component {
           <ul>
             <strong>Developer</strong>
             <small>
-              <li className="disabled">About</li>
-              <li className="disabled">Github</li>
+              <li>
+                <a href="https://jesse-warren.github.io/" target="_blank">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/jesse-warren" target="_blank">
+                  Github
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/jesse__warren" target="_blank">
+                  Twitter
+                </a>
+              </li>
             </small>
           </ul>
         </div>

@@ -5,9 +5,9 @@ import LoginFormContainer from '../components/session/login_form_container';
 import SignupFormContainer from '../components/session/signup_form_container';
 import SplashPageContainer from '../components/splash_page/splash_page_container';
 import FourOhFourWrapperContainer from '../components/home_page/four_oh_four_wrapper_container'
-
 import FourOhFourContainer from './four_oh_four/four_oh_four_container'
-
+import TermsContainer from './terms/terms_container'
+import PrivacyContainer from './privacy/privacy_container'
 
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 
@@ -19,13 +19,27 @@ class App extends React.Component {
 
   render () {
     return <div>
-      {/* <UserCardContainer /> */}
       <Switch>
-        <Route exact path="/" component={ SplashPageContainer } />
-        <AuthRoute exact path="/login" component={ LoginFormContainer } />
-        <AuthRoute exact path="/signup" component={ SignupFormContainer } />
-        <ProtectedRoute path="/channels" component={ FourOhFourWrapperContainer } />
-        <Route path="*" component={FourOhFourContainer} />
+        <Route 
+          exact path="/" 
+          component={ SplashPageContainer } />
+        <AuthRoute 
+          exact path="/login" 
+          component={ LoginFormContainer } />
+        <AuthRoute 
+          exact path="/signup" 
+          component={ SignupFormContainer } />
+        <ProtectedRoute 
+          path="/channels" 
+          component={ FourOhFourWrapperContainer } />
+        <Route
+          exact path="/terms"
+          component={TermsContainer} />
+        <Route
+          exact path="/privacy"
+          component={PrivacyContainer} />
+        <Route path="*" 
+          component={FourOhFourContainer} />
       </Switch>
     </div>
   }
