@@ -12,6 +12,7 @@ class ConversationBar extends React.Component {
 
   render() {
     return <div className="conversation-bar-master">
+      {/* [DEV] logic here to check if this renders components, otherwise 404 */}
       <Route path="/channels/*" component={ConversationHeaderContainer} />
       <Route path="/channels/*" component={ConversationBodyContainer} />
       <Route path="/channels/*" component={ConversationFooterContainer} />

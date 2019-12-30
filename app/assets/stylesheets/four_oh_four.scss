@@ -1,0 +1,39 @@
+.four-oh-four-master {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  background: var(--quaternary-background-color);
+}
+
+.four-oh-four-text {
+  padding: 20px;
+  color: var(--dark-font);
+
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.four-oh-four-head-home {
+  padding: 10px;
+  color: var(--light-font);
+
+  margin-top: 20px;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  background: var(--secondary-background-color);
+
+  box-shadow: 0px 0px 2px black;
+
+}
+
+.four-oh-four-head-home:hover {
+  cursor: pointer;
+}

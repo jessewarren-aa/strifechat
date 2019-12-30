@@ -25,8 +25,8 @@ class FriendsList extends React.Component {
     return <div className="friends-list-master">
       {/* <Route exact path="/channels/@me" render={(props) => <FLHeaderContainer {...props} />} /> */}
 
-      <Route exact path="/channels/@me" component={FLHeaderContainer} />
-      <Route exact path="/channels/@me" component={FLBodyContainer} />
+      <Route path="/channels/" component={FLHeaderContainer} />
+      <Route path="/channels/" component={FLBodyContainer} />
     </div>
   }
 }
