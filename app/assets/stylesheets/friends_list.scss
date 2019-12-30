@@ -295,6 +295,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+
 }
 
 .friend-on-list:hover .fl-remove-button {
@@ -322,7 +323,9 @@
   width: 400px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   padding: 10px;
+
 }
 
 .fl-header-friends-logo {

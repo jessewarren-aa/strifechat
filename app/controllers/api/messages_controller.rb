@@ -12,11 +12,17 @@ class Api::MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @message.save
+
+    if message_params[:channel_id] == current_user.unique_id
+      render json: ["Why are you messaging yourself..."], status: 400
+    else
+      if @message.save
       render :show
     else
       render json: ["Message could not be sent! Please email the developer!"], status: 422
     end
+    end
+    
 
 
   end

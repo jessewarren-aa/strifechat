@@ -82,15 +82,11 @@ class FLBodyItem extends React.Component {
             </div>
           </div>
           <div className="friends-list-status-header">
-            {/* ["ONLINE", "IDLE", "DO NOT DISTURB", "OFFLINE"] */}
-            <div className="user-status-icon">
-              <img
-                src={`/assets/${statusMessage}.svg`}></img>
-            </div>
+            {["OUTGOING", "INCOMING", "BLOCKED"].includes(this.props.friendStatus) ? <div><small>{this.props.friendStatus}</small></div> : <div className="user-status-icon"><img src={`/assets/${statusMessage}.svg`}></img></div>}
           </div>
 
-          <div className="friends-list-mutual-servers-header pr-2">
-            <small>MUTUAL SERVERS</small>
+          <div className="friends-list-mutual-servers-header">
+            <small>MUTUAL SERVERS GO HERE</small>
           </div>
 
           <div 
