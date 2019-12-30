@@ -80,6 +80,24 @@
 }
 
 .conversation-footer-friendcode {
+  position: relative;
+}
+
+.conversation-footer-friendcode:hover {
+  cursor: pointer;
+}
+
+.conversation-footer-friendcode:hover::before {
+  content:"Copy StrifeTag!";
+  position: absolute;
+  width: 120px;
+
+  background: var(--background-color);
+  height: 30px;
+  padding-bottom: 40px;
+  padding-top: 10px;
+
+  z-index: 2;
   
 }
 
