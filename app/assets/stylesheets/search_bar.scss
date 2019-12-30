@@ -21,11 +21,13 @@
 
 .search-result-row:hover {
   background: var(--secondary-background-color);
+
+  cursor: pointer;
 }
 
 .search-bar-modal {
   width: 200px;
-  height: 100px;
+  height: 300px;
   background: var(--background-color);
   z-index: 102;
   width: 60vw;
@@ -97,19 +99,17 @@
 
 .arrow-one {
   position: relative;
-  top: 20px;
+  top: -110px;
 }
-
-
 
 .arrow-two {
   position: relative;
-  top: 60px;
+  top: -170px;
 }
 
 .arrow-three {
   position: relative;
-  top: 90px;
+  top: -190px;
 }
 
 
@@ -143,20 +143,20 @@
 
 @keyframes arrowLeftTwo {
   0% {
-    transform: translate3d(0px, 0px, 0px) rotate(-20deg);
+    transform: translate3d(0px, 0px, 0px) rotate(45deg);
     animation-timing-function: ease-in;
   }
   50% {
-    transform: translate3d(10px, -5px, 0px) rotate(-20deg);
+    transform: translate3d(10px, 5px, 0px) rotate(45deg);
     animation-timing-function: ease-out;
   }
   100% {
-    transform: translate3d(0px, 0px, 0px) rotate(-20deg);
+    transform: translate3d(0px, 0px, 0px) rotate(45deg);
   }
 }
 
 .arrow-left-three {
-  left: 120px;
+  left: 160px;
   animation-name: arrowLeftThree;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -164,15 +164,15 @@
 
 @keyframes arrowLeftThree {
   0% {
-    transform: translate3d(0px, 0px, 0px) rotate(-60deg);
+    transform: translate3d(0px, -10px, 0px) rotate(90deg);
     animation-timing-function: ease-in;
   }
   50% {
-    transform: translate3d(5px, -10px, 0px) rotate(-60deg);
+    transform: translate3d(0px, 0px, 0px) rotate(90deg);
     animation-timing-function: ease-out;
   }
   100% {
-    transform: translate3d(0px, 0px, 0px) rotate(-60deg);
+    transform: translate3d(0px, -10px, 0px) rotate(90deg);
   }
 }
 
@@ -197,8 +197,8 @@
 }
 
 .arrow-right-two {
-  left: -50px;
-  transform: rotate(200deg);
+  left: -40px;
+  top:-180px;
   animation-name: arrowRightTwo;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -208,21 +208,20 @@
 
 @keyframes arrowRightTwo {
   0% {
-    transform: translate3d(0px, 0px, 0px) rotate(220deg);
+    transform: translate3d(0px, 0px, 0px) rotate(135deg);
     animation-timing-function: ease-in;
   }
   50% {
-    transform: translate3d(-10px, -5px, 0px) rotate(220deg);
+    transform: translate3d(-10px, 5px, 0px) rotate(135deg);
     animation-timing-function: ease-out;
   }
   100% {
-    transform: translate3d(0px, 0px, 0px) rotate(220deg);
+    transform: translate3d(0px, 0px, 0px) rotate(135deg);
   }
 }
 
 .arrow-right-three {
-  left: -120px;
-  transform: rotate(240deg);
+  left: -160px;
   animation-name: arrowRightThree;
   animation-duration: 1s;
   animation-iteration-count: infinite;
@@ -230,14 +229,14 @@
 
 @keyframes arrowRightThree {
   0% {
-    transform: translate3d(0px, 0px, 0px) rotate(240deg);
+    transform: translate3d(0px, -10px, 0px) rotate(90deg);
     animation-timing-function: ease-in;
   }
   50% {
-    transform: translate3d(-5px, -10px, 0px) rotate(240deg);
+    transform: translate3d(0px, 0px, 0px) rotate(90deg);
     animation-timing-function: ease-out;
   }
   100% {
-    transform: translate3d(0px, 0px, 0px) rotate(240deg);
+    transform: translate3d(0px, -10px, 0px) rotate(90deg);
   }
 }

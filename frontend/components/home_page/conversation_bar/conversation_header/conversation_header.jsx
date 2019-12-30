@@ -1,16 +1,10 @@
 import React from 'react';
+import SearchBarContainer from './search_bar/search_bar_container'
 
 class ConversationHeader extends React.Component {
   constructor(props) {
     super(props)
     this.toggleSearchBarModal = this.toggleSearchBarModal.bind(this)
-    this.preventBubbling = this.preventBubbling.bind(this)
-    this.handleInput = this.handleInput.bind(this)
-    this.expandSearch = this.expandSearch.bind(this)
-
-    this.state = {
-      search: ""
-    }
   }
 
   toggleSearchBarModal(e) {
@@ -23,14 +17,10 @@ class ConversationHeader extends React.Component {
     $('.search-bar-modal-input').focus()
   }
 
-  preventBubbling(e) {
-    e.preventDefault()
-    e.stopPropagation()
-  }
-
   render() {
     return (
     <div>
+      <SearchBarContainer {...this.props} />
       <div className="conversation-bar-header-master">
         <form className="conversation-search-form">
           <label>

@@ -5,6 +5,9 @@ class SearchBar extends React.Component {
     super(props)
 
     this.handleInput = this.handleInput.bind(this)
+    this.toggleSearchBarModal = this.toggleSearchBarModal.bind(this)
+    this.filterSearch = this.filterSearch.bind(this)
+    this.preventBubbling = this.preventBubbling.bind(this)
 
     this.state = {
       search: "",
@@ -13,6 +16,10 @@ class SearchBar extends React.Component {
   }
 
   toConversation(uniqueId) {
+    const jObjectBackground = $('.search-bar-modal-background')
+    jObjectBackground.toggleClass('hidden')
+
+    this.setState({ search: "" });
     this.props.history.push(`/channels/@me/${uniqueId}`);
   }
 
@@ -30,12 +37,19 @@ class SearchBar extends React.Component {
 
       if (search.length > 0) {
         this.state.renderSearch = true
+        $('.arrow-hider').addClass('hidden')
       } else {
         this.state.renderSearch = false
+        $('.arrow-hider').removeClass('hidden')
       }
 
       this.setState({ [type]: search });
     };
+  }
+
+  preventBubbling(e) {
+    e.preventDefault()
+    e.stopPropagation()
   }
 
   filterSearch(search) {
@@ -59,7 +73,7 @@ class SearchBar extends React.Component {
                 <img className="search-result-avatar" src={avatar} />
               </div>
               <div>
-                {username.length > 8 ? username.slice(0, 8) + "..." : username}
+                {username}
               </div>
             </div>
             <div>{addCode}</div>
@@ -73,6 +87,16 @@ class SearchBar extends React.Component {
 
   stopBubbling(e) {
     e.stopPropagation()
+  }
+
+  toggleSearchBarModal(e) {
+    e.preventDefault()
+    const jObjectBackground = $('.search-bar-modal-background')
+    jObjectBackground.toggleClass('hidden')
+
+    this.setState({ search: "" });
+
+    $('.search-bar-modal-input').focus()
   }
 
   render() {
@@ -111,7 +135,7 @@ class SearchBar extends React.Component {
               </input>
             </form>
 
-            <div className="snmp-friend-list">
+            <div className="snmp-friend-list-wide">
               {this.state.renderSearch ? this.filterSearch(this.state.search) : ""}
             </div>
           </div>
