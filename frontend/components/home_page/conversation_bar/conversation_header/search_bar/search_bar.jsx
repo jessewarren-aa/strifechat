@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SNMPModal extends React.Component {
+class SearchBar extends React.Component {
   constructor(props) {
     super(props)
 
@@ -12,7 +12,7 @@ class SNMPModal extends React.Component {
     }
   }
 
-  toConversation (uniqueId) {
+  toConversation(uniqueId) {
     this.props.history.push(`/channels/@me/${uniqueId}`);
   }
 
@@ -38,20 +38,20 @@ class SNMPModal extends React.Component {
     };
   }
 
-  filterSearch (search) {
+  filterSearch(search) {
     const regexSearch = new RegExp(search, "i")
     const searchResults = []
 
     Object.values(this.props.users).forEach((user, index) => {
       if (regexSearch.test(user.friend_code) && user.id !== this.props.currentUser) {
-        
+
         const username = user.username
         const addCode = user.friend_code
         const avatar = user.image_url
         const uniqueId = user.unique_id
 
         searchResults.push(
-          <div 
+          <div
             onClick={() => this.toConversation(uniqueId)}
             key={index} className="search-result-row">
             <div className="flex">
@@ -71,51 +71,66 @@ class SNMPModal extends React.Component {
     return searchResults
   }
 
-  stopBubbling (e) {
+  stopBubbling(e) {
     e.stopPropagation()
   }
 
   render() {
     return (
-      <div 
-        onClick={this.stopBubbling}
-        className="hidden start-new-message-popup-background">
-        <div
-          className="start-new-message-popup">
-          <div className="snmp-text-box">
-            <div className="snmp-text-box-title">SELECT FRIEND</div>
-            <div className="snmp-text-box-text">
-              {/* <small>
-                You can add 1 more friend (group chat isn't a thing yet).
-              </small> */}
-              {/* [DEV] GROUP chat stuff */}
-            </div>
-          </div>
 
-          <div className="snmp-input-div">
-            <form className="snmp-form-div">
+      <div
+        onClick={this.toggleSearchBarModal}
+        className="search-bar-modal-background hidden">
+        <div className="arrows mr-4">
+          <img
+            className="arrow-three arrow-left-three arrow-hider"
+            src={window.arrowThree} />
+          <img
+            className="arrow-two arrow-left-two arrow-hider"
+            src={window.arrowTwo} />
+          <img
+            className="arrow-one arrow-left-one arrow-hider"
+            src={window.arrowOne}
+          />
+        </div>
+        <div>
+          <div className="search-bar-modal-header">
+            <h4>Search for <span className="disabled">servers</span>, <span className="disabled">channels</span>, or direct messages.</h4>
+          </div>
+          <div
+            onClick={this.preventBubbling}
+            className="search-bar-modal">
+
+            <form className="search-bar-form">
               <input
-                className="snmp-input"
+                type="text"
                 onChange={this.handleInput("search")}
-                placeholder="Type the username of a friend"></input>
+                value={this.state.search}
+                className="search-bar-modal-input">
+
+              </input>
             </form>
-          </div>
 
-          <div className="snmp-friend-list">
-            {this.state.renderSearch ? this.filterSearch(this.state.search) : ""}
-          </div>
-
-          {/* <div className="snmp-button-div">
-            <div className='disabled'>
-              Create Group DM
+            <div className="snmp-friend-list">
+              {this.state.renderSearch ? this.filterSearch(this.state.search) : ""}
             </div>
-          </div> */}
-          {/* [DEV] GROUP CHAT EVENTUALLY - remove 40px from snmp-friend-list */}
-
+          </div>
+        </div>
+        <div className="arrows ml-4">
+          <img
+            className="arrow-flipper arrow-one arrow-right-one arrow-hider"
+            src={window.arrowOne} />
+          <img
+            className="arrow-flipper arrow-two arrow-right-two arrow-hider"
+            src={window.arrowTwo} />
+          <img
+            className="arrow-flipper arrow-three arrow-right-three arrow-hider"
+            src={window.arrowThree}
+          />
         </div>
       </div>
     )
   }
 }
 
-export default SNMPModal
+export default SearchBar
