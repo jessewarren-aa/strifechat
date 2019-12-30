@@ -5,6 +5,8 @@ import ConversationBarContainer from './conversation_bar/conversation_bar_contai
 import ConversationViewContainer from './conversation_view/conversation_view_container'
 import FriendsListContainer from './friends_list/friends_list_container'
 
+import ServerPlusContainer from './server_plus/server_plus_container'
+
 
 // import LoaderContainer from "../../../loader/loader_container"
 // return <Route component={LoaderContainer} />
@@ -38,58 +40,18 @@ class HomePage extends React.Component {
   render() {
     return (
     <div className="home-page-master">
-      <div 
-        onClick={this.modalHide}
-        className="server-options-modal-background hidden">
-        <div 
-          onClick={this.preventBubbling}
-          className="server-options-modal">
-          <div className="server-options-title">REALLY? ANOTHER SERVER?</div>
-          <div className="server-options-control">
-            <div className="server-options-create">
-              <div className="so-title blue-font">CREATE</div>
-              <div className="so-text text-center">
-                <small>
-                  Create a new server and invite your friends! It's free™!
-                </small>
-              </div>
-              <div className="so-create-icon">
-                <img
-                  src={window.create}></img>
-              </div>
-              <div className="so-create-button">
-                Create a server
-              </div>
-            </div>
-            <div className="server-options-join">
-              <div className="so-title green-font">JOIN</div>
-              <div className="so-text text-center">
-                <small>
-                  Enter an invite code and join your enemy's server!
-                </small>
-              </div>
-              <div className="so-join-icon">
-                <img
-                  src={window.join}></img>
-              </div>
-              <div className="so-join-button">
-                Join a server
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ServerPlusContainer />
       <Route path="/channels/*" component={ServerBarContainer} />
       <Route exact path="/channels/*" component={ConversationBarContainer} />
+      {/* [DEV] maybe an if statement using props match to check if @me or not - to determine if displaying users or channels */}
       <Switch>
         <Route exact path="/channels/@me" component={FriendsListContainer} />
         <Route path="/channels/@me/*" component={ConversationViewContainer} />
       </Switch>
-      {/* <Route exact path="/channels/*" component={FriendsListContainer} /> */}
 
+      {/* <Route exact path="/channels/*" component={Servers} /> */}
       {/* [DEV] server views! */}
       
-
     </div>
     )
   }

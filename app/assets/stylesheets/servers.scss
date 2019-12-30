@@ -1,3 +1,138 @@
 // Place all the styles related to the servers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#slideable-join-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sjf-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 0px 80px;
+}
+
+.sjf-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sjf-header {
+  color: #57C957;
+  font-weight: 700;
+  padding-top: 30px;
+  font-size: 18px;
+}
+
+.scf-header {
+  color: #829EE8;
+  font-weight: 700;
+  padding-top: 30px;
+  font-size: 18px;
+}
+
+.sjf-info {
+  color: var(--medium-font);
+  padding-top: 20px;
+}
+
+.sjf-example-invites {
+  color: var(--secondary-color);
+  padding-top: 20px;
+}
+
+.text-center {
+  padding: 2px 0px;
+}
+
+.sjf-form-div {
+  padding-top: 80px;
+  width: 100%;
+}
+
+.scf-form-div {
+  width: 100%;
+}
+
+.sjf-input {
+  border: none;
+  width: 100%;
+  border-bottom: 2px solid rgba(0,0,0,0.4) !important;
+  background: var(--light-font);
+  outline: none;
+  padding: 0px 5px;
+  color: var(--dark-font);
+}
+
+.sjf-footer {
+  padding-top: 40px !important;
+  width: 100%;
+  padding: 0px 40px;
+}
+
+.scf-footer {
+  padding-top: 96.8px !important;
+  width: 100%;
+  padding: 0px 40px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.sjf-back-button {
+  width: 42px;
+  height: 42px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.sjf-back-button:hover {
+  cursor: pointer;
+  background: #C0C0C0;
+}
+
+.sjf-join-button {
+    width: 105px;
+    color: var(--light-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #57C957;
+}
+
+.sjf-join-button:hover {
+  background: #45A145;
+  cursor: pointer;
+}
+
+.scf-create-button {
+    width: 105px;
+    color: var(--light-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #829EE8;
+}
+
+.scf-create-button:hover {
+  background: rgb(110, 133, 194);
+  cursor: pointer;
+}
+
+.scf-title small {
+  color: var(--dark-font);
+  font-weight: 800;
+}
+
+.scf-title {
+  padding-top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
