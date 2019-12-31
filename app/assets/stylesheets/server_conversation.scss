@@ -13,7 +13,7 @@
 
 .server-conversation-bar-body-master {
   background: var(--secondary-background-color);
-  height: 100%;
+  height: calc(100vh - 100px);
 }
 
 .sch-search {
@@ -94,6 +94,14 @@
   justify-content: flex-end;
   padding-right: 20px;
   padding-left: 10px;
+
+  width: 240px;
+
+  color: var(--light-font);
+
+  z-index: 3;
+
+  position: absolute;
 }
 
 .server-conversation-view-master {
@@ -123,10 +131,10 @@
 }
 
 .server-preferences-dropdown {
-  border: 1px solid black;
   width: 100%;
-  padding: 5px;
-  z-index: 3;
+  padding: 10px;
+  z-index: 4;
+  background: var(--dark-font);
 }
 
 .server-user-list-user {

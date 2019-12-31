@@ -90,6 +90,11 @@
   left: -9999px;
 }
 
+#hidden-invite-code {
+  position: absolute;
+  left: -9999px;
+}
+
 .copy-success {
   background: var(--quaternary-background-color);
   z-index: 2;
@@ -122,7 +127,33 @@
   padding-top: 10px;
 
   z-index: 2;
-  
+}
+
+.invite-button:hover {
+  cursor: pointer;
+}
+
+.invite-button:hover::before {
+  content:"Copy Invite";
+  position: absolute;
+  width: 190px;
+
+  background: var(--dark-font-hover);
+  height: 25px;
+
+  // padding: 0px 5px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.my-dropdown-item {
+  padding: 0px 5px;
+}
+
+.my-dropdown-item:hover {
+  background: var(--dark-font-hover);
+  padding: 0px 5px;
+  border-radius: 5px;
 }
 
 .conversation-footer-addcode {

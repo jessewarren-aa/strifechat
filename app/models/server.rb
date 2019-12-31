@@ -5,7 +5,7 @@ class Server < ApplicationRecord
   validates :unique_id, presence: true, uniqueness: true
   validates :server_icon, presence: true
 
-  after_initialize :set_unique_id
+  after_initialize :set_unique_id # [DEV] doesn't put id into unique_id since it's not created yet and doesn't have an ID - same for user model
   after_initialize :generate_default_avatar
 
   belongs_to :user,
