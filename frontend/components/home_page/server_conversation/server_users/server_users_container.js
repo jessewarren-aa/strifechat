@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import ServerUsers from './server_users';
 // import { friendSelector } from '../../../../reducers/friends_reducer'
-import { sendGetServerUsers } from '../../../actions/server_users_actions'
-import { users } from '../../../actions/user_actions'
+import { sendGetServerUsers } from '../../../../actions/server_users_actions'
+import { users } from '../../../../actions/user_actions'
 
 
 const mapStateToProps = (state, ownProps) => {

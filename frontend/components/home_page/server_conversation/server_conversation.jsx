@@ -1,10 +1,7 @@
 import React from 'react';
-// import { Route } from 'react-router-dom';
-// import DirectMessagesContainer from './direct_messages/direct_messages_container'
-// import DMHeaderContainer from './dm_header/dm_header_container'
-// import DMFooterContainer from './dm_footer/dm_footer_container'
 
-import ServerUsersContainer from '../server_users/server_users_container'
+import ServerUsersContainer from './server_users/server_users_container'
+import ServerHeaderContainer from './server_header/server_header_container'
 
 class ServerConversation extends React.Component {
   constructor(props) {
@@ -19,18 +16,14 @@ class ServerConversation extends React.Component {
 
   render() {
     return (
-      <div className="server-conversation-view-master">
-        <div className="server-conversation-master">
-          server conversation
-        {/* <Route exact path="/channels/@me/*" component={DMHeaderContainer} />
-        <Route exact path="/channels/@me/*" component={DirectMessagesContainer} />
-        <Route exact path="/channels/@me/*" component={DMFooterContainer} /> */}
-
-          {/* <Route exact path ="/channels/@me/*" render={(props) => <DMFooterContainer {...props} />} /> */}
-
-          {/* render={(props) => <PropsPage {...props} title={`Props through render`} />} */}
+      <div className="server-conversation-wrapper">
+        <ServerHeaderContainer {...this.props} />
+        <div className="server-conversation-view-master">
+          <div className="server-conversation-master">
+            server conversation
         </div>
-        <ServerUsersContainer {...this.props} />
+          <ServerUsersContainer {...this.props} />
+        </div>
       </div>
     )
   }

@@ -40,8 +40,6 @@ class HomePage extends React.Component {
       <Switch>
         <Route exact path="/channels/@me" component={FriendsListContainer} />
         <Route path="/channels/@me/*" component={ConversationViewContainer} />
-
-        
         <Route path="/channels/*" component={ServerConversationContainer} />
       </Switch>
 
