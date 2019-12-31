@@ -21,7 +21,6 @@ export const user = (userId) => dispatch => getUser(userId)
   );
 
 export const users = () => dispatch => {
-  console.log("HERE")
   return getUsers()
   .then(
     users => dispatch(receiveUsers(users)),

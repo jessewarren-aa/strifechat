@@ -12,7 +12,6 @@ class ServerFriends extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className="server-friends-master">
         {Object.values(this.props.users).map((user, index) => {
