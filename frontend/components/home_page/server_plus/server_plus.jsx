@@ -93,7 +93,9 @@ class ServerPlus extends React.Component {
           className="server-options-modal">
           <div className="server-options-title">REALLY? ANOTHER SERVER?</div>
           <div className="server-options-control">
-            <div className="server-options-create">
+            <div 
+              onClick={this.slideInCreateForm}
+              className="server-options-create">
               <div className="so-title blue-font">
                 CREATE
               </div>
@@ -106,12 +108,13 @@ class ServerPlus extends React.Component {
                 <img src={window.create} />
               </div>
               <div 
-                className="so-create-button" 
-                onClick={this.slideInCreateForm}>
+                className="so-create-button">
                 Create a server
               </div>
             </div>
-            <div className="server-options-join">
+            <div 
+              onClick={this.slideInJoinForm}
+              className="server-options-join">
               <div className="so-title green-font">
                 JOIN
               </div>
@@ -124,8 +127,7 @@ class ServerPlus extends React.Component {
                 <img src={window.join} />
               </div>
               <div 
-                className="so-join-button" 
-                onClick={this.slideInJoinForm}>
+                className="so-join-button">
                 Join a server
               </div>
             </div>

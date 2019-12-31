@@ -48,7 +48,7 @@ class ConversationFooter extends React.Component {
         <button 
           className="user-card-logout" 
           onClick={this.props.logout}>
-            Log Out!
+            Log Out
         </button>
     </div>
     )

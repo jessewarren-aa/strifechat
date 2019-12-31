@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import ServerFriends from './server_friends';
+import ServerFriends from './server_users';
 // import { friendSelector } from '../../../../reducers/friends_reducer'
 
 
