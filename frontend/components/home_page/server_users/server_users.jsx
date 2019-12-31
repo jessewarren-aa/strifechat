@@ -15,7 +15,11 @@ class ServerFriends extends React.Component {
     console.log(this.props)
     return (
       <div className="server-friends-master">
-        server users
+        {Object.values(this.props.users).map((user, index) => {
+          return (
+            <div key={index}>{user.username}</div>
+          )
+        })}
       </div>
     )
   }

@@ -28,10 +28,20 @@ const mapStateToProps = (state, ownProps) => {
     newServerUsers = state.entities.serverUseres
   }
 
-
+  let filteredUsers = {}
+  if (newServerUsers) {
+    Object.values(state.entities.users).forEach(user => {
+      if (Object.values(newServerUsers).map(su => {
+        return su.user_id
+      }).includes(user.id)) {
+        filteredUsers[user.id] = user
+      }
+    })
+  }
+  
   
   return {
-    users: state.entities.users,
+    users: filteredUsers,
     serverUsers: newServerUsers,
     currentServer: currentServer
   }

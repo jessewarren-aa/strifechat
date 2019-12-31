@@ -8,9 +8,9 @@ const receiveUser = (user) => ({
   user
 })
 
-const receiveUsers = (user) => ({
+const receiveUsers = (users) => ({
   type: RECEIVE_USERS,
-  user
+  users
 })
 
 
@@ -20,8 +20,11 @@ export const user = (userId) => dispatch => getUser(userId)
     // errors => dispatch(receiveErrors(errors.responseJSON))
   );
 
-export const users = () => dispatch => getUsers()
+export const users = () => dispatch => {
+  console.log("HERE")
+  return getUsers()
   .then(
     users => dispatch(receiveUsers(users)),
     // errors => dispatch(receiveErrors(errors.responseJSON))
-  );
+  )
+}
