@@ -1,3 +1,3 @@
-json.array! @users do |user|
-  json.extract! user, :username, :id, :email, :image_url, :friend_code, :unique_id, :current_status
+@users.each do |user|
+  json.set! user.id, user.filtered
 end

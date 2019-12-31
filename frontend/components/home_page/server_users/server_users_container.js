@@ -27,9 +27,11 @@ const mapStateToProps = (state, ownProps) => {
   } else {
     newServerUsers = state.entities.serverUseres
   }
+
+
   
   return {
-    users: state.entities.dmUsers,
+    users: state.entities.users,
     serverUsers: newServerUsers,
     currentServer: currentServer
   }

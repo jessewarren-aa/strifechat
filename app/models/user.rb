@@ -45,6 +45,19 @@ class User < ApplicationRecord
     self.session_token ||= self.class.generate_session_token
   end
 
+  # :username, :id, :email, :image_url, :friend_code, :unique_id, :current_status
+  def filtered
+    return {
+      id: self.id,
+      username: self.username,
+      email: self.email,
+      image_url: self.image_url,
+      friend_code: self.friend_code,
+      unique_id: self.unique_id,
+      current_status: self.current_status
+    }
+  end
+
   def find_unique_direct_messages
     messages = self.direct_messages
 
