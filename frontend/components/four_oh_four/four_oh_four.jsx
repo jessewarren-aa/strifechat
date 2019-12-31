@@ -8,7 +8,7 @@ class FourOhFour extends React.Component {
 
   headHome (e) {
     e.preventDefault()
-    this.props.history.push("/channels/@me")
+    this.props.history.push("/")
   }
 
   render() {
