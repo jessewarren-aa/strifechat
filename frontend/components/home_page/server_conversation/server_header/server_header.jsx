@@ -42,7 +42,12 @@ class ServerHeader extends React.Component {
           </div>
         </div>
         <div className="sch-search">
-          search bar
+          <form className="sch-search-form">
+            <input 
+              placeholder="Search"
+              className="sch-search-input" 
+              type="text"></input>
+          </form>
         </div>
       </div>
     )
