@@ -7,7 +7,7 @@ import FriendsListContainer from './friends_list/friends_list_container'
 
 import ServerPlusContainer from './server_plus/server_plus_container'
 import ServerChannelContainer from './server_channels/server_channels_container'
-
+import ServerConversationContainer from './server_conversation/server_conversation_container'
 
 // import LoaderContainer from "../../../loader/loader_container"
 // return <Route component={LoaderContainer} />
@@ -40,6 +40,9 @@ class HomePage extends React.Component {
       <Switch>
         <Route exact path="/channels/@me" component={FriendsListContainer} />
         <Route path="/channels/@me/*" component={ConversationViewContainer} />
+
+        
+        <Route path="/channels/*" component={ServerConversationContainer} />
       </Switch>
 
       {/* <Route exact path="/channels/*" component={Servers} /> */}

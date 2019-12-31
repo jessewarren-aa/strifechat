@@ -38,6 +38,20 @@
   padding-left: 10px;
 }
 
+.server-conversation-view-master {
+  display: flex;
+}
+
+.server-conversation-master {
+  border: 1px solid black;
+  width: calc(100vw - 500px)
+}
+
+.server-friends-master {
+  border: 1px solid black;
+  width: 200px;
+}
+
 .invisible-preferences-wrapper {
   position: absolute;
   top: 0;
