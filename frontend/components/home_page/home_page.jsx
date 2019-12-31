@@ -32,7 +32,7 @@ class HomePage extends React.Component {
       <Route path="/channels/*" component={ServerBarContainer} />
       <Switch>
         <Route 
-          exact path="/channels/@me" 
+          path="/channels/@me" 
           component={ConversationBarContainer} />
         <Route path="/channels/*" component={ServerChannelContainer} />
       </Switch>

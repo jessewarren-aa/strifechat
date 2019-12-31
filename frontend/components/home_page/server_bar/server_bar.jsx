@@ -32,7 +32,7 @@ class ServerBar extends React.Component {
       removeFrom.removeClass("server-selected")
     }
 
-    const jObject = $(`#${this.props.match.params[0].replace("@", "")}`)
+    const jObject = $(`#${this.props.match.params[0].split("/")[0].replace("@", "")}`)
     jObject.addClass("server-selected")
   }
 
