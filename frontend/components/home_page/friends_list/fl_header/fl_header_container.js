@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import FLHeader from './fl_header';
 
-import { getFriendsList, filterFriends } from '../../../../actions/friends_actions'
+import { filterFriends } from '../../../../actions/friends_actions'
 
 const mapStateToProps = (state) => ({
 

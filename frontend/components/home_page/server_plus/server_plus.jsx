@@ -18,9 +18,16 @@ class ServerPlus extends React.Component {
     // [DEV] remember to clear the input between forms
   }
 
-  modalHide(e) {
-    e.preventDefault()
-    $('#primary-modal-server-options').show("slide", {direction: "right"}, 0);
+  componentDidUpdate () {
+    this.modalHide(false) 
+  }
+
+  modalHide (slideHide=true) {
+    
+    if (slideHide) {
+      $('#primary-modal-server-options').show("slide", { direction: "right" }, 0);
+    }
+
     $('#slideable-join-form').addClass("hidden");
     $('#slideable-create-form').addClass("hidden");
 
@@ -35,7 +42,7 @@ class ServerPlus extends React.Component {
       removeFrom.removeClass("server-selected")
     }
 
-    const jObject = $("#default-server")
+    const jObject = $(`#${this.props.match.params[0].replace("@", "")}`)
     jObject.addClass("server-selected")
   }
 

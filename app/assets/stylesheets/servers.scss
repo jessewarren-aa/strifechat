@@ -21,6 +21,44 @@
   justify-content: space-between;
 }
 
+.server-owned-preferences-icon {
+  width: 34px;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.server-owned-preferences-icon:hover {
+  background: var(--background-color);
+}
+
+.server-preferences-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+.invisible-preferences-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  z-index: 2;
+}
+
+.server-preferences-dropdown {
+  border: 1px solid black;
+
+  width: 100%;
+
+  padding: 5px;
+
+  z-index: 3;
+  
+}
+
 .sjf-header {
   color: #57C957;
   font-weight: 700;

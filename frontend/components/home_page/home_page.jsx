@@ -6,6 +6,7 @@ import ConversationViewContainer from './conversation_view/conversation_view_con
 import FriendsListContainer from './friends_list/friends_list_container'
 
 import ServerPlusContainer from './server_plus/server_plus_container'
+import ServerChannelContainer from './server_channels/server_channels_container'
 
 
 // import LoaderContainer from "../../../loader/loader_container"
@@ -16,22 +17,9 @@ class HomePage extends React.Component {
     super(props)
 
     this.preventBubbling = this.preventBubbling.bind(this)
-    this.modalHide = this.modalHide.bind(this)
   }
 
-  modalHide (e) {
-    e.preventDefault()
-    const jServerOptionsModal = $('.server-options-modal-background')
-    jServerOptionsModal.addClass('hidden')
-
-    const removeFrom = $(".server-selected")
-    if (removeFrom) {
-      removeFrom.removeClass("server-selected")
-    }
-
-    const jObject = $("#default-server")
-    jObject.addClass("server-selected")
-  }
+  
 
   preventBubbling (e) {
     e.stopPropagation()
@@ -40,9 +28,14 @@ class HomePage extends React.Component {
   render() {
     return (
     <div className="home-page-master">
-      <ServerPlusContainer />
+      <ServerPlusContainer {...this.props} />
       <Route path="/channels/*" component={ServerBarContainer} />
-      <Route exact path="/channels/*" component={ConversationBarContainer} />
+      <Switch>
+        <Route 
+          exact path="/channels/@me" 
+          component={ConversationBarContainer} />
+        <Route path="/channels/*" component={ServerChannelContainer} />
+      </Switch>
       {/* [DEV] maybe an if statement using props match to check if @me or not - to determine if displaying users or channels */}
       <Switch>
         <Route exact path="/channels/@me" component={FriendsListContainer} />

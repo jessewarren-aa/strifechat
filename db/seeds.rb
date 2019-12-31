@@ -19,6 +19,7 @@ User.create(username: "Devious Daniella", email: "notplanningmutiny@strifechat.h
 User.create(username: "Evil Evan", email: "evilevan@strifechat.herokuapp.com", password: "pXKL@9y[>5X+>mYY", image_url:'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Wayfarers&hairColor=BrownDark&facialHairType=MoustacheMagnum&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Close&eyebrowType=AngryNatural&mouthType=Eating&skinColor=Light')
 
 Server.create(name: "Test Server", description: "This is just a test server", owner_id: 1)
+Server.create(name: "Another Server", description: "Hey, look! Another server!", owner_id: 4)
 
 welcome_bot = User.find_by(email: "welcome_bot@strifechat.herokupapp.com")
 steve = User.find_by(email: "screamnonstop@strifechat.herokuapp.com")

@@ -1,10 +1,10 @@
-class ServersController < ApplicationController
+class Api::ServersController < ApplicationController
   def index
     @servers = Server.all
   end
 
   def show
-    @server = Server.all(self.params[:server_id])
+    @server = Server.find(self.params[:id])
   end
 
   def create
@@ -43,7 +43,7 @@ class ServersController < ApplicationController
 
   private
   def server_params
-    self.params.require(:server).permit(:name, :description, :owner_id)
+    self.params.require(:server).permit(:id, :name, :description, :owner_id)
     # [DEV] default blank description?
   end
 end

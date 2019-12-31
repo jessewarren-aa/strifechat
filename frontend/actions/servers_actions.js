@@ -38,11 +38,13 @@ export const sendGetServer = (server) => dispatch => ServerAPIUtils.getServer(se
     // errors => dispatch(receiveErrors(errors.responseJSON))
   )
 
-export const sendGetServers = () => dispatch => ServerAPIUtils.getServers()
+export const sendGetServers = () => dispatch => {
+  ServerAPIUtils.getServers()
   .then(
     servers => dispatch(getServers(servers)),
     // errors => dispatch(receiveErrors(errors.responseJSON))
   )
+}
 
 export const sendCreateServer = (server) => dispatch => ServerAPIUtils.postServer(server)
   .then(

@@ -1,9 +1,10 @@
 import { connect } from 'react-redux';
-import HomePage from './home_page';
+import ServerChannels from './server_channels';
+// import { friendSelector } from '../../../../reducers/friends_reducer'
 
 
 const mapStateToProps = (state, ownProps) => ({
-
+  users: state.entities.users,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -13,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomePage);
+)(ServerChannels);
