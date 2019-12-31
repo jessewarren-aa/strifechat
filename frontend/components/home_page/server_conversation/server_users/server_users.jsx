@@ -16,7 +16,12 @@ class ServerFriends extends React.Component {
       <div className="server-friends-master">
         {Object.values(this.props.users).map((user, index) => {
           return (
-            <div key={index}>{user.username}</div>
+            <div 
+              className="server-user-list-user"
+              key={index}>
+                <img className="server-user-list-avatar" src={user.image_url} />
+              {user.username.length > 12 ? user.username.slice(0, 12) + "..." : user.username}
+            </div>
           )
         })}
       </div>
