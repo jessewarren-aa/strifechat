@@ -7,6 +7,8 @@ class ConversationHeader extends React.Component {
     this.toggleSearchBarModal = this.toggleSearchBarModal.bind(this)
     this.togglePreferences = this.togglePreferences.bind(this)
     this.createInviteCode = this.createInviteCode.bind(this)
+
+    this.leaveServer = this.leaveServer.bind(this)
   }
 
   toggleSearchBarModal(e) {
@@ -20,7 +22,8 @@ class ConversationHeader extends React.Component {
   }
 
   componentDidMount() {
-
+    this.props.sendGetServerUsers()
+    this.props.getUsers()
   }
 
   togglePreferences (e) {
@@ -43,15 +46,22 @@ class ConversationHeader extends React.Component {
     document.execCommand("copy");
   }
 
+  leaveServer (e) {
+    e.preventDefault()
+    const serverUserObjectId = Object.values(this.props.serverUsers).filter(serverUser => {
+      return serverUser.user_id === this.props.currentUser
+    })[0].id
+
+    this.props.sendDeleteServerUser(serverUserObjectId)
+  }
+
 
   render() {
-    const currentServer = Object.values(this.props.servers).filter(server => {
-      return server.unique_id === this.props.match.params[0].split("/")[0]
-    })[0]
-
-    if (!currentServer) {
+    if (!this.props.currentUser) {
       return null
     }
+
+    const currentServer = this.props.currentServer
 
     const ownerDropDown = (
       <div className="server-preferences-wrapper hidden">
@@ -67,8 +77,8 @@ class ConversationHeader extends React.Component {
             </div>
           <div className="disabled my-dropdown-item">server settings</div>
           <div className="disabled my-dropdown-item">create channel</div>
-          <div className="disabled my-dropdown-item">change nickname</div>
-          <div className="disabled my-dropdown-item">hide muted servers</div>
+          <div className="disabled my-dropdown-item">hide muted channels</div>
+          <div className="disabled my-dropdown-item">delete server</div>
         </div>
       </div>
     )
@@ -76,9 +86,10 @@ class ConversationHeader extends React.Component {
     const userDropDown = (
       <div className="server-preferences-wrapper hidden">
         <div className="server-preferences-dropdown">
-          <div className="disabled my-dropdown-item">change nickname</div>
           <div className="disabled my-dropdown-item">hide muted channels</div>
-          <div className="disabled my-dropdown-item">leave server</div>
+          <div 
+            onClick={this.leaveServer}
+            className="my-dropdown-item">leave server</div>
         </div>
       </div>
     )
