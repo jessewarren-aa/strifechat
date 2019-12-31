@@ -1,5 +1,7 @@
 import React from 'react';
 
+import ServerJoinContainer from './server_join/server_join_container'
+import ServerCreateContainer from './server_create/server_create_container'
 
 class ServerPlus extends React.Component {
   constructor(props) {
@@ -12,10 +14,29 @@ class ServerPlus extends React.Component {
     this.slideInCreateForm = this.slideInCreateForm.bind(this)
     this.slideOutCreateForm = this.slideOutCreateForm.bind(this)
 
-    this.state = {
-
-    }
+    this.handleInput = this.handleInput.bind(this)
     // [DEV] remember to clear the input between forms
+  }
+  
+  handleInput(type) {
+    // [DEV] this doesn't seem to be firing off :(
+    return (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+
+      this.setState({ [type]: e.target.value });
+
+      let search = this.state[type]
+      if (search.length <= e.target.value.length) {
+        search = search + e.target.value[e.target.value.length - 1]
+      } else {
+        search = e.target.value
+      }
+
+      console.log(search)
+
+      this.setState({ [type]: search });
+    };
   }
 
   componentDidUpdate () {
@@ -79,6 +100,7 @@ class ServerPlus extends React.Component {
   }
 
   preventBubbling(e) {
+    e.preventDefault()
     e.stopPropagation()
   }
 
@@ -134,79 +156,13 @@ class ServerPlus extends React.Component {
           </div>
         </div>
 
-        <div 
-          id="slideable-join-form"
-          onClick={this.preventBubbling}
-          className="server-options-modal hidden">
-          <div className="sjf-center">
-            <div className="sjf-header">
-              JOIN A SERVER
-            </div>
+        <ServerJoinContainer {...this.props} 
+          slideOutJoinForm={this.slideOutJoinForm}
+          preventBubbling={this.preventBubbling} />
 
-            <div className="text-center sjf-info">
-              Enter an invite below to join an existing server.
-              The invite will look something like these:
-            </div>
-
-            <div className="sjf-example-invites">
-              <div className="text-center">
-                https://strifechat.gg/sqTTJj7rhrpKqL5hjJkFSMg
-              </div>
-              <div className="text-center">
-                sqTTJj7rhrpKqL5hjJkFSMg
-              </div>
-            </div>
-
-            <div className="sjf-form-div">
-              <form className="sjf-form">
-                <input className="sjf-input"></input>
-              </form>
-            </div>
-          </div>
-          <div className="sjf-footer">
-            <div 
-              onClick={this.slideOutJoinForm}>
-              <img className="sjf-back-button" src="/assets/back.svg" />
-            </div>
-            <div className="sjf-join-button">
-              Join
-            </div>
-          </div>
-        </div>
-
-        <div
-          id="slideable-create-form"
-          onClick={this.preventBubbling}
-          className="server-options-modal hidden">
-          <div className="sjf-center">
-            <div className="scf-header">
-              CREATE A SERVER
-            </div>
-
-            <div className="text-center sjf-info">
-              By creating a server, you will have access to <strong>free</strong> text chat to use amongst your friends.
-            </div>
-
-            <div className="scf-title">
-              <small>SERVER NAME</small>
-            </div>
-
-            <div className="scf-form-div">
-              <form className="sjf-form">
-                <input className="sjf-input"></input>
-              </form>
-            </div>
-          </div>
-          <div className="scf-footer">
-            <div
-              onClick={this.slideOutCreateForm}>
-              <img className="sjf-back-button" src="/assets/back.svg" />
-            </div>
-            <div className="scf-create-button">
-              Create
-            </div>
-          </div>
-        </div>
+        <ServerCreateContainer {...this.props} 
+          slideOutCreateForm={this.slideOutCreateForm}
+          preventBubbling={this.preventBubbling} />
       </div>
     )
   }

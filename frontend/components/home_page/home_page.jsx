@@ -19,6 +19,9 @@ class HomePage extends React.Component {
     this.preventBubbling = this.preventBubbling.bind(this)
   }
 
+  componentDidMount () {
+    this.props.sendGetServers()
+  }
   
 
   preventBubbling (e) {
@@ -26,6 +29,7 @@ class HomePage extends React.Component {
   }
 
   render() {
+    // console.log(this.props)
     return (
     <div className="home-page-master">
       <ServerPlusContainer {...this.props} />

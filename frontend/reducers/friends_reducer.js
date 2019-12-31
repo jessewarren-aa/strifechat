@@ -17,7 +17,6 @@ export default (state = {}, action) => {
       return Object.assign({}, state, { [action.friend.id]: action.friend })
     case DELETE_FRIEND:
       let newState = Object.assign({}, state)
-      console.log(newState)
       delete newState[action.friendId.id]
       return Object.assign({}, newState);
     default:

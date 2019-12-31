@@ -128,7 +128,13 @@ class User < ApplicationRecord
     self.current_status = "ONLINE"
   end
 
+
+  def set_temp_unique_id
+    self.unique_id ||= "u#{self.class.generate_session_token}"
+  end
+  
   def set_unique_id
     self.unique_id ||= "u#{self.id}#{self.class.generate_session_token}"
+    self.save
   end
 end

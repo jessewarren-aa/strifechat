@@ -40,6 +40,8 @@ class ServerBar extends React.Component {
     if (!this.props.servers.length) {
       this.props.sendGetServers()
     }
+
+    this.props.sendGetServerUsers()
   }
 
   serverOptions (e) {

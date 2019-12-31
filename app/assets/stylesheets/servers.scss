@@ -6,6 +6,20 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  z-index: 3;
+}
+
+#slideable-create-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  z-index: 3;
+}
+
+.form-wrapper {
+  z-index: 3;
 }
 
 .sjf-center {

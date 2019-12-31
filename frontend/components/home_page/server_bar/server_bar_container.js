@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ServerBar from './server_bar';
 
 import { sendGetServers } from '../../../actions/servers_actions'
+import { sendGetServerUsers } from '../../../actions/server_users_actions'
 
 
 const userInServer = (userId, serverId, serverUsers) => {
@@ -41,7 +42,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  sendGetServers: () => dispatch(sendGetServers())
+  sendGetServers: () => dispatch(sendGetServers()),
+  sendGetServerUsers: () => dispatch(sendGetServerUsers()),
 });
 
 export default connect(

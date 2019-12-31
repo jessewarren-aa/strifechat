@@ -1,3 +1,3 @@
-json.array! @servers do |server|
-  json.extract! server, :id, :name, :description, :server_icon, :unique_id, :owner_id
+@servers.each do |server|
+  json.set! server.id, server.filtered
 end

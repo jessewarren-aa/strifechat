@@ -21,7 +21,14 @@ User.create(username: "Evil Evan", email: "evilevan@strifechat.herokuapp.com", p
 Server.create(name: "Test Server", description: "This is just a test server", owner_id: 1)
 Server.create(name: "Another Server", description: "Hey, look! Another server!", owner_id: 4)
 
+ServerUser.create(user_id: 1, server_id: 1)
+ServerUser.create(user_id: 2, server_id: 1)
+ServerUser.create(user_id: 4, server_id: 1)
+ServerUser.create(user_id: 5, server_id: 1)
 
+ServerUser.create(user_id: 1, server_id: 2)
+ServerUser.create(user_id: 3, server_id: 2)
+ServerUser.create(user_id: 4, server_id: 2)
 
 welcome_bot = User.find_by(email: "welcome_bot@strifechat.herokupapp.com")
 steve = User.find_by(email: "screamnonstop@strifechat.herokuapp.com")
