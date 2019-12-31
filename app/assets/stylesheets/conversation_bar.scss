@@ -111,13 +111,13 @@
 }
 
 .conversation-footer-friendcode:hover::before {
-  content:"Copy StrifeTag!";
+  content:"Copy StrifeTag";
   position: absolute;
   width: 120px;
 
   background: var(--background-color);
-  height: 30px;
-  padding-bottom: 40px;
+  height: 25px;
+  padding-bottom: 30px;
   padding-top: 10px;
 
   z-index: 2;
