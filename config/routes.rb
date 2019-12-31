@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  # get 'serverusers/index'
+
+  # get 'serverusers/show'
+
+  # get 'serverusers/create'
+
+  # get 'serverusers/destroy'
+
   # get 'servers/index'
 
   # get 'servers/show'
@@ -17,6 +25,7 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit]
     resource :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
+    resources :serverusers, only: [:index, :show, :create, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

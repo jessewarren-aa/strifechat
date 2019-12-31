@@ -4,12 +4,14 @@ import directMessagesReducer from './direct_messages_reducer'
 // import userReducer from './user_reducer'
 import friendsReducer from './friends_reducer'
 import serversReducer from './servers_reducer'
+import serverUsersReducer from './server_users_reducer'
 
 const entitiesReducer = combineReducers({
   messages: messagesReducer,
   users: directMessagesReducer,
   friendRequests: friendsReducer,
-  servers: serversReducer
+  servers: serversReducer,
+  serverUsers: serverUsersReducer
 });
 
 export default entitiesReducer;
