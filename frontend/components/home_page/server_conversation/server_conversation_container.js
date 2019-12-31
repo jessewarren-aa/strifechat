@@ -5,8 +5,8 @@ import ServerConversation from './server_conversation';
 const mapStateToProps = (state, ownProps) => {
   return {
     messages: state.entities.messages,
-    users: state.entities.users,
-    currentUser: state.entities.users[state.session.currentUser]
+    users: state.entities.dmUsers,
+    currentUser: state.entities.dmUsers[state.session.currentUser]
   }
 };
 

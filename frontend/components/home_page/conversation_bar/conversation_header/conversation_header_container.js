@@ -3,7 +3,7 @@ import ConversationHeader from './conversation_header';
 
 
 const mapStateToProps = (state) => ({
-  users: state.entities.users,
+  users: state.entities.dmUsers,
   messages: state.entities.messages
 });
 

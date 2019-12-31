@@ -6,7 +6,13 @@ class ServerFriends extends React.Component {
     super(props)
   }
 
+  componentDidMount () {
+    this.props.sendGetServerUsers()
+    this.props.getUsers()
+  }
+
   render() {
+    console.log(this.props)
     return (
       <div className="server-friends-master">
         server users

@@ -17,6 +17,10 @@ class ConversationFooter extends React.Component {
     document.execCommand("copy");
   }
 
+  componentDidMount () {
+    this.props.getDirectMessageUsers()
+  }
+
   render() {
     let username = ""
     let addCode = ""

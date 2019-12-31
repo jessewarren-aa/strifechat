@@ -4,10 +4,7 @@ import { logout } from '../../../../actions/session_actions';
 
 
 const mapStateToProps = (state) => {
-  
-
-  let user = state.entities.users[state.session.currentUser]
-
+  let user = state.entities.dmUsers[state.session.currentUser]
 
   return {
     friendCode: user ? user.friend_code : null

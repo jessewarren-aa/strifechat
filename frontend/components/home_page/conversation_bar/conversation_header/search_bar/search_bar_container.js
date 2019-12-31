@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import SearchBar from './search_bar';
 
 const mapStateToProps = (state) => ({
-  users: state.entities.users,
+  users: state.entities.dmUsers,
   currentUser: state.session.currentUser
 });
 

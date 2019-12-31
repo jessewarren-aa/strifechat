@@ -4,7 +4,7 @@ import React from 'react';
 // import DMHeaderContainer from './dm_header/dm_header_container'
 // import DMFooterContainer from './dm_footer/dm_footer_container'
 
-import ServerFriendsContainer from '../server_users/server_users_container'
+import ServerUsersContainer from '../server_users/server_users_container'
 
 class ServerConversation extends React.Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class ServerConversation extends React.Component {
 
           {/* render={(props) => <PropsPage {...props} title={`Props through render`} />} */}
         </div>
-        <ServerFriendsContainer />
+        <ServerUsersContainer {...this.props} />
       </div>
     )
   }

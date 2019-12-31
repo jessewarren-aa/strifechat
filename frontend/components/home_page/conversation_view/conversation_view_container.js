@@ -5,8 +5,8 @@ import { get_dm_users, message, messages } from '../../../actions/message_action
 const mapStateToProps = (state, ownProps) => {
   return {
     messages: state.entities.messages,
-    users: state.entities.users,
-    currentUser: state.entities.users[state.session.currentUser]
+    users: state.entities.dmUsers,
+    currentUser: state.entities.dmUsers[state.session.currentUser]
   }
 };
 

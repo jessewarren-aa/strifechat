@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import SNMPModal from './snmp_modal';
 
 const mapStateToProps = (state) => ({
-  users: state.entities.users,
+  users: state.entities.dmUsers,
   currentUser: state.session.currentUser
 });
 

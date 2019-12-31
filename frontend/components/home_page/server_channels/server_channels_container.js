@@ -4,7 +4,7 @@ import ServerChannels from './server_channels';
 
 
 const mapStateToProps = (state, ownProps) => ({
-  users: state.entities.users,
+  users: state.entities.dmUsers,
 });
 
 const mapDispatchToProps = (dispatch) => ({

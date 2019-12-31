@@ -8,7 +8,7 @@ import { friendSelector } from '../../../../reducers/friends_reducer'
 const mapStateToProps = (state, ownProps) => {
   return {
     friendRequests: friendSelector(state.entities.friendRequests, state.ui.friendsListFilter),
-    users: state.entities.users,
+    users: state.entities.dmUsers,
     currentUser: state.session.currentUser,
     status: state.ui.friendsListFilter,
     errors: state.errors.friendRequests

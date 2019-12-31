@@ -33,7 +33,7 @@ class ConversationHeader extends React.Component {
 
   render() {
     const currentServer = Object.values(this.props.servers).filter(server => {
-      return server.unique_id === this.props.match.params[0]
+      return server.unique_id === this.props.match.params[0].split("/")[0]
     })[0]
 
     if (!currentServer) {

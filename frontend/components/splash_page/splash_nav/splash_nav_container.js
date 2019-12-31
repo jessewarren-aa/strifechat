@@ -4,7 +4,7 @@ import SplashNav from './splash_nav';
 
 
 const mapStateToProps = (state) => ({
-  currentUser: state.entities.users[state.session.currentUser]
+  currentUser: state.entities.dmUsers[state.session.currentUser]
 });
 
 const mapDispatchToProps = (dispatch) => ({

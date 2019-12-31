@@ -5,7 +5,7 @@ import ServerHeader from './server_header';
 
 const mapStateToProps = (state) => ({
   servers: state.entities.servers,
-  users: state.entities.users,
+  users: state.entities.dmUsers,
   currentUser: state.session.currentUser
 });
 
