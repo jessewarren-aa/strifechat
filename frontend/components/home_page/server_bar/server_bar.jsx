@@ -118,33 +118,6 @@ class ServerBar extends React.Component {
         </img>
       </div>
 
-      {/* <div
-        onClick={this.handleSelect}
-        className="server-bar-logo server-bar-icon">
-        <img
-          className="logo-sizer"
-          src={window.beach}>
-        </img>
-      </div>
-
-      <div
-        onClick={this.handleSelect}
-        className="server-bar-logo server-bar-icon">
-        <img
-          className="logo-sizer"
-          src={window.germanyFlag}>
-        </img>
-      </div>
-
-      <div
-        onClick={this.handleSelect}
-        className="server-bar-logo server-bar-icon">
-        <img
-          className="logo-sizer"
-          src={window.castle}>
-        </img>
-      </div> */}
-
     </div>
     )
   }

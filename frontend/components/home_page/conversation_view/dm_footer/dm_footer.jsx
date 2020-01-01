@@ -9,7 +9,7 @@ class DMFooter extends React.Component {
       body: "",
       server_id: undefined,
       channel_id: undefined,
-      user_id: this.props.currentUser.id
+      user_id: this.props.users[this.props.currentUser]
     }  
 
     this.handleInput = this.handleInput.bind(this)
@@ -17,7 +17,7 @@ class DMFooter extends React.Component {
 
   componentDidMount() {
     // if (!this.props.users.length) {
-    //   this.props.getDirectMessageUsers()
+    this.props.getDirectMessageUsers()
     // }
   }
 

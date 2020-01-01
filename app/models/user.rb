@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :current_status, inclusion: { in: current_statuses }
 
   validates :username, presence: true
+  validates_format_of :username, :with => /\A[a-zA-Z]+\z/i, :on => :initialize
   validates :email, presence: true, uniqueness: true
   
   validates :password, length: {minimum: 6}, allow_nil: true

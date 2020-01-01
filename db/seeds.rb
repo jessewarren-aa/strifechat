@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(username: "guest_account", email:"guest@strifechat.herokupapp.com", password:"password")
+User.create(username: "Guest Account", email:"guest@strifechat.herokupapp.com", password:"password")
 
-User.create(username: "welcome_bot", email:"welcome_bot@strifechat.herokupapp.com", password:"9=mrfpGM5RT!*Mc%%!m*FBw@Xuj48tf&Nqdh8kKg2zLFYqS@R?")
+User.create(username: "Welcome Bot", email:"welcome_bot@strifechat.herokupapp.com", password:"9=mrfpGM5RT!*Mc%%!m*FBw@Xuj48tf&Nqdh8kKg2zLFYqS@R?")
 
 User.create(username: "Always Screaming Steve", email: "screamnonstop@strifechat.herokuapp.com", password:"*8RYXY$_-;quGESk", image_url: "https://avataaars.io/?avatarStyle=Transparent&topType=WinterHat2&accessoriesType=Prescription01&hatColor=Blue01&facialHairType=Blank&clotheType=GraphicShirt&clotheColor=Blue01&graphicType=Cumbia&eyeType=Happy&eyebrowType=RaisedExcited&mouthType=ScreamOpen&skinColor=Black")
 
@@ -20,6 +20,7 @@ User.create(username: "Evil Evan", email: "evilevan@strifechat.herokuapp.com", p
 
 Server.create(name: "Test Server", description: "This is just a test server", owner_id: 1)
 Server.create(name: "Another Server", description: "Hey, look! Another server!", owner_id: 4)
+Server.create(name: "STEVE HAS A SERVER", description: "STEVE IS HAPPY", owner_id: 3)
 
 ServerUser.create(user_id: 1, server_id: 1)
 ServerUser.create(user_id: 2, server_id: 1)
@@ -29,6 +30,8 @@ ServerUser.create(user_id: 5, server_id: 1)
 ServerUser.create(user_id: 1, server_id: 2)
 ServerUser.create(user_id: 3, server_id: 2)
 ServerUser.create(user_id: 4, server_id: 2)
+
+ServerUser.create(user_id: 3, server_id: 3)
 
 welcome_bot = User.find_by(email: "welcome_bot@strifechat.herokupapp.com")
 steve = User.find_by(email: "screamnonstop@strifechat.herokuapp.com")
@@ -70,6 +73,10 @@ Message.create(user_id: welcome_bot.id, server_id: welcome_bot.unique_id, channe
 Message.create(user_id: steve.id, server_id: steve.unique_id, channel_id: target.unique_id, body: "NICE JOB WITH THE PROMOTION!!! IT'S WELL DESERVED, YOU DO A LOT FOR THE COMPANY!!")
 Message.create(user_id: target.id, server_id: target.unique_id, channel_id: steve.unique_id, body: "Hey, thanks Steve, I really appreciate that!")
 Message.create(user_id: steve.id, server_id: steve.unique_id, channel_id: target.unique_id, body: "OF COURSE!! HEY ARE YOU GOING TO THE COMPANY POTLUCK?? I'M GONNA MAKE MY GRAMMA'S MACARONI RECIPE!!")
+Message.create(user_id: target.id, server_id: target.unique_id, channel_id: steve.unique_id, body: "Definitely!")
+
+steve_server_invite = Server.find_by(id: 3).unique_id
+Message.create(user_id: steve.id, server_id: steve.unique_id, channel_id: target.unique_id, body: "GREAT!! ALSO, JOIN MY SERVER!! https://strifechat.gg/#{steve_server_invite}")
 
 Message.create(user_id: daniella.id, server_id: daniella.unique_id, channel_id: target.unique_id, body: "Are you coming to the company potluck? More importantly, will you support me when I overthrow the tech department?")
 

@@ -1,5 +1,6 @@
 class Server < ApplicationRecord
   validates :name, presence: true
+  validates_format_of :name, :with => /\A[a-zA-Z]+\z/i, :on => :initialize
   validates :description, presence: true
   validates :owner_id, presence: true
   validates :unique_id, presence: true, uniqueness: true
