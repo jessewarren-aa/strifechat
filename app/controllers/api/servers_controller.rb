@@ -36,7 +36,7 @@ class Api::ServersController < ApplicationController
     @server = Server.find_by(id: self.params[:id])
     if @server
       @server.destroy
-      render json: ["Success! Server deleted."], status: 200 # [DEV] render :show/index? - check friendlists
+      render :delete
     else
       render json: ["That server wasn't found."], status: 404
     end

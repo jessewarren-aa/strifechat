@@ -9,6 +9,7 @@ class ConversationHeader extends React.Component {
     this.createInviteCode = this.createInviteCode.bind(this)
 
     this.leaveServer = this.leaveServer.bind(this)
+    this.deleteServer = this.deleteServer.bind(this)
   }
 
   toggleSearchBarModal(e) {
@@ -46,6 +47,11 @@ class ConversationHeader extends React.Component {
     document.execCommand("copy");
   }
 
+  deleteServer (e) {
+    e.preventDefault()
+    this.props.sendDeleteServer(this.props.currentServer.id)
+  }
+
   leaveServer (e) {
     e.preventDefault()
     const serverUserObjectId = Object.values(this.props.serverUsers).filter(serverUser => {
@@ -78,7 +84,9 @@ class ConversationHeader extends React.Component {
           <div className="disabled my-dropdown-item">server settings</div>
           <div className="disabled my-dropdown-item">create channel</div>
           <div className="disabled my-dropdown-item">hide muted channels</div>
-          <div className="disabled my-dropdown-item">delete server</div>
+          <div 
+            onClick={this.deleteServer}
+            className="my-dropdown-item">delete server</div>
         </div>
       </div>
     )

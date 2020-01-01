@@ -14,7 +14,7 @@ export default (state = {}, action) => {
       return Object.assign({}, state, { [action.server.id]: action.server })
     case DELETE_SERVER:
       let newState = Object.assign({}, state)
-      delete newState[action.serverId]
+      delete newState[action.serverId.id]
       return Object.assign({}, newState);
     default:
       return state;

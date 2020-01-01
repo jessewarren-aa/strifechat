@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import ServerHeader from './server_header';
 
-import { sendDeleteServerUser } from '../../../../actions/server_users_actions'
-import { sendGetServerUsers } from '../../../../actions/server_users_actions'
+import { sendDeleteServerUser, sendGetServerUsers } from '../../../../actions/server_users_actions'
+import { sendDeleteServer } from '../../../../actions/servers_actions'
 import { users } from '../../../../actions/user_actions'
 
 
@@ -55,7 +55,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
   sendDeleteServerUser: (serverId) => dispatch(sendDeleteServerUser(serverId)),
   sendGetServerUsers: () => dispatch(sendGetServerUsers()),
-  getUsers: () => dispatch(users())
+  getUsers: () => dispatch(users()),
+  sendDeleteServer: (serverId) => dispatch(sendDeleteServer(serverId))
 });
 
 export default connect(

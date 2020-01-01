@@ -35,8 +35,6 @@ const mapStateToProps = (state, ownProps) => {
     }
   })
 
-  console.log(state.entities.servers)
-
   return {
     servers: filteredServers,
     users: state.entities.users,
