@@ -27,12 +27,15 @@ const userInServer = (userId, serverId, serverUsers) => {
 
 const mapStateToProps = (state, ownProps) => {
   const currentUserId = state.session.currentUser
+  
   const filteredServers = {}
   Object.values(state.entities.servers).forEach(server => {
     if (userInServer(currentUserId, server.id, state.entities.serverUsers)) {
       filteredServers[server.id] = server
     }
   })
+
+  console.log(state.entities.servers)
 
   return {
     servers: filteredServers,

@@ -17,10 +17,13 @@ const getServers = (servers) => ({
   servers
 })
 
-const createServer = (server) => ({
-  type: CREATE_SERVER,
-  server
-})
+const createServer = (server_and_join) => {
+  return {
+    type: CREATE_SERVER,
+    server: server_and_join.server,
+    join: server_and_join.join
+  }
+}
 
 const updateServer = (server) => ({
   type: UPDATE_SERVER,

@@ -6,10 +6,33 @@ class ServerCreate extends React.Component {
     super(props)
 
     this.handleInput = this.handleInput.bind(this)
+    this.createServer = this.createServer.bind(this)
 
     this.state = {
-      search: ""
+      search: "",
+      owner_id: this.props.currentUser
     }
+  }
+
+  componentDidMount() {
+    this.props.sendGetServers()
+  }
+
+  createServer(e) {
+    // s2SQER1xralTo9OS4Frfqldw
+    e.preventDefault()
+
+    this.props.sendCreateServer(
+      { 
+        server: { 
+          owner_id: this.state.owner_id, 
+          name: this.state.search
+        } 
+      }
+    )
+
+    this.props.sendGetServers()
+   
   }
 
   handleInput(type) {
@@ -63,7 +86,7 @@ class ServerCreate extends React.Component {
             <img className="sjf-back-button" src="/assets/back.svg" />
           </div>
           <div 
-            onClick={this.props.createServer}
+            onClick={this.createServer}
             className="scf-create-button">
             Create
           </div>

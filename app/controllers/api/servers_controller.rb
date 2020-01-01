@@ -11,6 +11,7 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
 
     if @server.save
+      @server_user = ServerUser.create(user_id: current_user.id, server_id: @server.id)
       render :show
     else
       render json: ["Server creation failed!"], status: 422
