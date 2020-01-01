@@ -11,7 +11,18 @@ class ConversationHeader extends React.Component {
     this.leaveServer = this.leaveServer.bind(this)
     this.deleteServer = this.deleteServer.bind(this)
 
-    // this.modalHide = this.modalHide.bind(this)
+    this.returnToDefaultServer = this.returnToDefaultServer.bind(this)
+  }
+
+  returnToDefaultServer() {
+    const removeFrom = $(".server-selected")
+    if (removeFrom) {
+      removeFrom.removeClass("server-selected")
+    }
+    const jObject = $("#me")
+    jObject.addClass("server-selected")
+
+    this.props.history.push("/channels/@me")
   }
 
   toggleSearchBarModal(e) {
@@ -52,6 +63,7 @@ class ConversationHeader extends React.Component {
   deleteServer (e) {
     e.preventDefault()
     this.props.sendDeleteServer(this.props.currentServer.id)
+    this.returnToDefaultServer()
     // this.modalHide()
   }
 
@@ -86,6 +98,7 @@ class ConversationHeader extends React.Component {
     })[0].id
 
     this.props.sendDeleteServerUser(serverUserObjectId)
+    this.returnToDefaultServer()
     // this.modalHide()
   }
 
