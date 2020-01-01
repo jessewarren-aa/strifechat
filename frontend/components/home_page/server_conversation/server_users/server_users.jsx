@@ -11,10 +11,19 @@ class ServerFriends extends React.Component {
     this.props.getUsers()
   }
 
+  sort_by_key (array, key) {
+    return array.sort((a, b) => {
+      let x = a[key]; let y = b[key];
+      return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+    });
+  }
+
   render() {
+    const ordered = this.sort_by_key(Object.values(this.props.users), "username");
+    
     return (
       <div className="server-friends-master">
-        {Object.values(this.props.users).map((user, index) => {
+        {Object.values(ordered).map((user, index) => {
           return (
             <div 
               className="server-user-list-user"
