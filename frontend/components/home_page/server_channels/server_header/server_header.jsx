@@ -10,6 +10,8 @@ class ConversationHeader extends React.Component {
 
     this.leaveServer = this.leaveServer.bind(this)
     this.deleteServer = this.deleteServer.bind(this)
+
+    // this.modalHide = this.modalHide.bind(this)
   }
 
   toggleSearchBarModal(e) {
@@ -50,7 +52,32 @@ class ConversationHeader extends React.Component {
   deleteServer (e) {
     e.preventDefault()
     this.props.sendDeleteServer(this.props.currentServer.id)
+    // this.modalHide()
   }
+
+  // modalHide(slideHide = true) {
+
+  //   if (slideHide) {
+  //     $('#primary-modal-server-options').show("slide", { direction: "right" }, 0);
+  //   }
+
+  //   $('#slideable-join-form').addClass("hidden");
+  //   $('#slideable-create-form').addClass("hidden");
+
+  //   $('#slideable-join-form').removeClass("animated bounceIn");
+  //   $('#slideable-create-form').removeClass("animated bounceIn");
+
+  //   const jServerOptionsModal = $('.server-options-modal-background')
+  //   jServerOptionsModal.addClass('hidden')
+
+  //   const removeFrom = $(".server-selected")
+  //   if (removeFrom) {
+  //     removeFrom.removeClass("server-selected")
+  //   }
+
+  //   const jObject = $(`#${this.props.match.params[0].split("/")[0].replace("@", "")}`)
+  //   jObject.addClass("server-selected")
+  // }
 
   leaveServer (e) {
     e.preventDefault()
@@ -59,6 +86,7 @@ class ConversationHeader extends React.Component {
     })[0].id
 
     this.props.sendDeleteServerUser(serverUserObjectId)
+    // this.modalHide()
   }
 
 

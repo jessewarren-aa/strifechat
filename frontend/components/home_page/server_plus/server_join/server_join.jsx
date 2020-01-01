@@ -31,6 +31,8 @@ class ServerJoin extends React.Component {
     } else {
       this.props.sendCreateServerUser({ server_user: { user_id: this.state.user_id, server_id: null } })
     }
+
+    this.props.modalHide()
   }
 
   handleInput(type) {

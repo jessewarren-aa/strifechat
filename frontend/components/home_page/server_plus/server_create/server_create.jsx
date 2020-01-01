@@ -32,6 +32,7 @@ class ServerCreate extends React.Component {
     )
 
     this.props.sendGetServers()
+    this.props.modalHide()
    
   }
 

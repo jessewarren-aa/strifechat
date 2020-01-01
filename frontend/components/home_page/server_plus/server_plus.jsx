@@ -158,10 +158,12 @@ class ServerPlus extends React.Component {
 
         <ServerJoinContainer {...this.props} 
           slideOutJoinForm={this.slideOutJoinForm}
+          modalHide={this.modalHide}
           preventBubbling={this.preventBubbling} />
 
         <ServerCreateContainer {...this.props} 
           slideOutCreateForm={this.slideOutCreateForm}
+          modalHide={this.modalHide}
           preventBubbling={this.preventBubbling} />
       </div>
     )
