@@ -23,6 +23,13 @@ class ServerBarBody extends React.Component {
     this.props.history.push(`/channels/${this.props.match.params[0].split("/")[0]}/${path}`)
   }
 
+  showChannelOptions (e) {
+    e.preventDefault()
+    e.stopPropagation()
+
+    $('.update-channel-modal-background').removeClass('hidden')
+  }
+
   render() {
     const params = this.props.match.params[0].split('/')
     if (params[1] == "") {
@@ -45,6 +52,10 @@ class ServerBarBody extends React.Component {
               onClick={this.handleSelect}
               className={params[1] === channel.unique_id ? "sbb-channel noselect sbb-channel-selected" : "sbb-channel noselect"}>
                 # {channel.name}
+                <img 
+                  onClick={this.showChannelOptions}
+                  className="sbb-channel-options-button" 
+                  src="/assets/options.svg" />
             </div>
           )
         })}

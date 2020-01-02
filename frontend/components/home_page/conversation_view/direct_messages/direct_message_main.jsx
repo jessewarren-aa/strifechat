@@ -27,6 +27,12 @@ class HomePage extends React.Component {
     if (!this.props.users.length) {
       this.props.sendGetUsers()
     }
+
+    const objDiv = $("#direct-message-main-master");
+    // console.log(objDiv.scrollTop())
+    // console.log(objDiv.prop('scrollHeight'))
+    objDiv.scrollTop(objDiv.prop('scrollHeight'))
+    // console.log(objDiv.scrollTop())
   }
 
   render() {
@@ -40,7 +46,9 @@ class HomePage extends React.Component {
 
     return (
     <div>
-        <div className="direct-message-main-master">
+        <div 
+          id="direct-message-main-master"
+          className="direct-message-main-master">
           <div className="dm-wrapper">
             {filteredMessages.map((message, index) => {
 

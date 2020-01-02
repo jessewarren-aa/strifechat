@@ -24,9 +24,11 @@ class ServerJoin extends React.Component {
     // s2SQER1xralTo9OS4Frfqldw
     e.preventDefault()
 
-    const currentServer = this.props.servers[this.state.search[1]]
+    const inviteCode = this.state.search.split("/")[this.state.search.split("/").length - 1]
+    console.log(inviteCode)
+    const currentServer = this.props.servers[inviteCode[1]]
 
-    if (currentServer.unique_id === this.state.search) {
+    if (currentServer.unique_id === inviteCode) {
       this.props.sendCreateServerUser({ server_user: { user_id: this.state.user_id, server_id: currentServer.id } })
     } else {
       this.props.sendCreateServerUser({ server_user: { user_id: this.state.user_id, server_id: null } })

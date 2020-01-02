@@ -18,7 +18,11 @@ class Api::ChannelsController < ApplicationController
   end
 
   def update
-    @channel = Channel.find_by(id: self.params[:id])
+    if self.params[:id] != "undefined"
+      @channel = Channel.find_by(id: self.params[:id])
+    else
+      @channel = Channel.find_by(unique_id: channel_params[:unique_id])
+    end
 
     if @channel.server.owner_id == current_user.id
       if @channel.update(channel_params)
@@ -43,7 +47,7 @@ class Api::ChannelsController < ApplicationController
 
   private
   def channel_params
-    self.params.require(:channel).permit(:name, :description, :server_id)
+    self.params.require(:channel).permit(:name, :description, :server_id, :unique_id)
     # [DEV] do I need to permit :id? I do it in servercontroller
   end
 end

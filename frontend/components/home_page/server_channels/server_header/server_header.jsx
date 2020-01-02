@@ -87,6 +87,10 @@ class ConversationHeader extends React.Component {
     this.returnToDefaultServer()
   }
 
+  showCreateChannel (e) {
+    e.preventDefault()
+  }
+
   showServerOptions (e) {
     e.preventDefault()
     $('.update-server-modal-background').removeClass('hidden')
@@ -117,11 +121,13 @@ class ConversationHeader extends React.Component {
           <div 
             onClick={this.showServerOptions}
             className="my-dropdown-item">Server Settings</div>
-          <div className="disabled my-dropdown-item">create channel</div>
+          <div 
+            onClick={this.showCreateChannel}
+            className="disabled my-dropdown-item">Create Channel</div>
           {/* <div className="disabled my-dropdown-item">hide muted channels</div> */}
           <div 
             onClick={this.deleteServer}
-            className="my-dropdown-item">delete server</div>
+            className="my-dropdown-item">Delete Server</div>
         </div>
       </div>
     )
@@ -137,7 +143,7 @@ class ConversationHeader extends React.Component {
           {/* <div className="disabled my-dropdown-item">hide muted channels</div> */}
           <div 
             onClick={this.leaveServer}
-            className="my-dropdown-item">leave server</div>
+            className="my-dropdown-item">Leave Server</div>
         </div>
       </div>
     )
