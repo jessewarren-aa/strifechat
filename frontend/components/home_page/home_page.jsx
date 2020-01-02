@@ -9,8 +9,7 @@ import ServerPlusContainer from './server_plus/server_plus_container'
 import ServerChannelContainer from './server_channels/server_channels_container'
 import ServerConversationContainer from './server_conversation/server_conversation_container'
 
-// import LoaderContainer from "../../../loader/loader_container"
-// return <Route component={LoaderContainer} />
+import ServerUpdateComponent from './server_update/server_update'
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -28,41 +27,10 @@ class HomePage extends React.Component {
     e.stopPropagation()
   }
 
-  hideServerUpdate (e) {
-    e.preventDefault()
-    $('.update-server-modal-background').addClass('hidden')
-  }
-
   render() {
     return (
     <div className="home-page-master">
-      {/* move to component */}
-      <div 
-        onClick={this.hideServerUpdate}
-        className="update-server-modal-background">
-        <div 
-          onClick={this.preventBubbling}
-          className="update-server-modal">
-          <div className="usm-esc-button">
-            <img 
-              onClick={this.hideServerUpdate}
-              className="usm-esc-icon" src="/assets/esc.svg" />
-          </div>
-          <div className="usm-name-form-wrapper">
-            <div className="usm-name-form-text">
-              <small>SERVER NAME</small>
-            </div>
-            <div className="usm-name-form-div">
-              <form className="usm-name-form">
-                <input className="usm-name-input"></input>
-              </form>
-            </div>
-            <div className="usm-update-button">
-              Save Changes
-            </div>
-          </div>
-        </div>
-      </div>
+      <ServerUpdateComponent {...this.props} />
 
       <ServerPlusContainer {...this.props} />
       <Route path="/channels/*" component={ServerBarContainer} />

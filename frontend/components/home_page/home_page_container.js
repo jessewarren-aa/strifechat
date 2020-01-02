@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import HomePage from './home_page';
 
-import {sendGetServers} from '../../actions/servers_actions'
+import { sendGetServers, sendUpdateServer } from '../../actions/servers_actions'
 
 
 const mapStateToProps = (state, ownProps) => ({
@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  sendGetServers: () => dispatch(sendGetServers())
+  sendGetServers: () => dispatch(sendGetServers()),
+  sendUpdateServer: (server) => dispatch(sendUpdateServer(server))
 });
 
 export default connect(

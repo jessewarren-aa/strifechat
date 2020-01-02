@@ -87,6 +87,13 @@ class ConversationHeader extends React.Component {
     this.returnToDefaultServer()
   }
 
+  showServerOptions (e) {
+    e.preventDefault()
+    $('.update-server-modal-background').removeClass('hidden')
+    $('.server-preferences-wrapper').addClass('hidden')
+    $('.invisible-preferences-wrapper').addClass('hidden')
+  }
+
 
   render() {
     if (!this.props.currentUser) {
@@ -106,10 +113,12 @@ class ConversationHeader extends React.Component {
             className="invite-button my-dropdown-item" 
             onClick={this.createInviteCode}>
               Invite People
-            </div>
-          <div className="disabled my-dropdown-item">server settings</div>
+          </div>
+          <div 
+            onClick={this.showServerOptions}
+            className="my-dropdown-item">Server Settings</div>
           <div className="disabled my-dropdown-item">create channel</div>
-          <div className="disabled my-dropdown-item">hide muted channels</div>
+          {/* <div className="disabled my-dropdown-item">hide muted channels</div> */}
           <div 
             onClick={this.deleteServer}
             className="my-dropdown-item">delete server</div>
@@ -120,7 +129,12 @@ class ConversationHeader extends React.Component {
     const userDropDown = (
       <div className="server-preferences-wrapper hidden">
         <div className="server-preferences-dropdown">
-          <div className="disabled my-dropdown-item">hide muted channels</div>
+          <div
+            className="invite-button my-dropdown-item"
+            onClick={this.createInviteCode}>
+            Invite People
+          </div>
+          {/* <div className="disabled my-dropdown-item">hide muted channels</div> */}
           <div 
             onClick={this.leaveServer}
             className="my-dropdown-item">leave server</div>
