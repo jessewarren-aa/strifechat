@@ -22,6 +22,11 @@ Server.create(name: "Test Server", description: "This is just a test server", ow
 Server.create(name: "Another Server", description: "Hey, look! Another server!", owner_id: 4)
 Server.create(name: "STEVE HAS A SERVER", description: "STEVE IS HAPPY", owner_id: 3)
 
+Channel.create(name: "general", server_id: 1)
+Channel.create(name: "test general", server_id: 1)
+Channel.create(name: "general", server_id: 2)
+Channel.create(name: "GENERAL CHAT", server_id: 3)
+
 ServerUser.create(user_id: 1, server_id: 1)
 ServerUser.create(user_id: 2, server_id: 1)
 ServerUser.create(user_id: 4, server_id: 1)
