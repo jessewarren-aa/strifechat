@@ -45,7 +45,8 @@ class ServerHeader extends React.Component {
         <div className="sch-search">
           <form className="sch-search-form">
             <input 
-              placeholder="Search"
+              placeholder="Search... eventually"
+              disabled
               className="sch-search-input" 
               type="text"></input>
           </form>

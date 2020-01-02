@@ -1,4 +1,5 @@
 import React from 'react';
+import {Redirect} from 'react-router'
 
 class ServerBarBody extends React.Component {
   constructor(props) {
@@ -7,6 +8,7 @@ class ServerBarBody extends React.Component {
     this.handleSelect = this.handleSelect.bind(this)
   }
 
+  
   handleSelect (e) {
     e.preventDefault()
 
@@ -22,6 +24,15 @@ class ServerBarBody extends React.Component {
   }
 
   render() {
+    const params = this.props.match.params[0].split('/')
+    if (params[1] == "") {
+      params.splice(1, 1)
+    }
+    if (params.length < 2 && Object.values(this.props.channels).length > 0) {
+      const path = Object.values(this.props.channels)[0].unique_id
+      return <Redirect to={`/channels/${params[0]}/${path}`} />
+    }
+
     return (
       <div className="server-conversation-bar-body-master">
 
@@ -32,7 +43,7 @@ class ServerBarBody extends React.Component {
               key={index}
               value={channel.unique_id}
               onClick={this.handleSelect}
-              className={index === 0 ? "sbb-channel noselect sbb-channel-selected" : "sbb-channel noselect"}>
+              className={params[1] === channel.unique_id ? "sbb-channel noselect sbb-channel-selected" : "sbb-channel noselect"}>
                 # {channel.name}
             </div>
           )

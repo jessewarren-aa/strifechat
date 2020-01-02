@@ -3,7 +3,7 @@ import ServerBarBody from './server_bar_body';
 
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   let user = state.entities.dmUsers[state.session.currentUser]
 
   return {
