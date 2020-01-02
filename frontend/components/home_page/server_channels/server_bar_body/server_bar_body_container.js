@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import ServerBarBody from './server_bar_body';
 
 
+
 const mapStateToProps = (state) => {
   let user = state.entities.dmUsers[state.session.currentUser]
 

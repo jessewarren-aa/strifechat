@@ -5,7 +5,9 @@ class ServerBarBody extends React.Component {
     super(props)
   }
 
+
   render() {
+    console.log(this.props.channels)
     return (
       <div className="server-conversation-bar-body-master">
         server channels

@@ -23,16 +23,11 @@ class DirectMessageItem extends React.Component {
   //   e.preventDefault()
   //   e.stopPropagation()
 
-  //   console.log(e.target)
-
-  //   console.log("closing")
   // }
 
 
   render() {
     const user = this.props.user
-
-    // console.log(Object.values(this.props.messages).length)
 
     const pathArray = this.props.match.url.split("/")
     const path = pathArray[pathArray.length - 1]

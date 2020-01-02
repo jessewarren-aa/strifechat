@@ -32,8 +32,6 @@ class ServerPlus extends React.Component {
         search = e.target.value
       }
 
-      console.log(search)
-
       this.setState({ [type]: search });
     };
   }

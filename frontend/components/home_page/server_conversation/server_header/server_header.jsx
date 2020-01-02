@@ -13,11 +13,9 @@ class ServerHeader extends React.Component {
     const serverConvo = $('.server-conversation-master')
 
     if (serverUsers.hasClass('hidden')) {
-      console.log('removing hidden')
       serverUsers.removeClass('hidden');
       serverConvo.width('calc(100vw - 520px)')
     } else {
-      console.log('adding hidden')
       serverUsers.addClass('hidden');
       serverConvo.width('calc(100vw - 320px)')
     }

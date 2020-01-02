@@ -10,10 +10,14 @@ class ServerChannels extends React.Component {
     super(props)
   }
 
+  componentDidMount () {
+    this.props.sendGetChannels()
+  }
+
   render() {
     return <div className="server-channels-master">
       <ServerHeaderContainer {...this.props} />
-      <ServerBodyContainer />
+      <ServerBodyContainer {...this.props} />
       <ServerFooterContainer />
     </div>
   }

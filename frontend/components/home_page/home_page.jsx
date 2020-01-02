@@ -29,7 +29,6 @@ class HomePage extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     return (
     <div className="home-page-master">
       <ServerPlusContainer {...this.props} />
