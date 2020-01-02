@@ -1,5 +1,4 @@
 import React from 'react';
-// import SearchBarContainer from './search_bar/search_bar_container'
 
 class ConversationHeader extends React.Component {
   constructor(props) {
@@ -12,6 +11,13 @@ class ConversationHeader extends React.Component {
     this.deleteServer = this.deleteServer.bind(this)
 
     this.returnToDefaultServer = this.returnToDefaultServer.bind(this)
+
+    this.state = {
+      update: {
+        name: "",
+        // description: ""
+      }
+    }
   }
 
   returnToDefaultServer() {
@@ -64,32 +70,12 @@ class ConversationHeader extends React.Component {
     e.preventDefault()
     this.props.sendDeleteServer(this.props.currentServer.id)
     this.returnToDefaultServer()
-    // this.modalHide()
   }
 
-  // modalHide(slideHide = true) {
+  updateServer (e) {
+    e.preventDefault()
+  }
 
-  //   if (slideHide) {
-  //     $('#primary-modal-server-options').show("slide", { direction: "right" }, 0);
-  //   }
-
-  //   $('#slideable-join-form').addClass("hidden");
-  //   $('#slideable-create-form').addClass("hidden");
-
-  //   $('#slideable-join-form').removeClass("animated bounceIn");
-  //   $('#slideable-create-form').removeClass("animated bounceIn");
-
-  //   const jServerOptionsModal = $('.server-options-modal-background')
-  //   jServerOptionsModal.addClass('hidden')
-
-  //   const removeFrom = $(".server-selected")
-  //   if (removeFrom) {
-  //     removeFrom.removeClass("server-selected")
-  //   }
-
-  //   const jObject = $(`#${this.props.match.params[0].split("/")[0].replace("@", "")}`)
-  //   jObject.addClass("server-selected")
-  // }
 
   leaveServer (e) {
     e.preventDefault()
@@ -99,7 +85,6 @@ class ConversationHeader extends React.Component {
 
     this.props.sendDeleteServerUser(serverUserObjectId)
     this.returnToDefaultServer()
-    // this.modalHide()
   }
 
 
