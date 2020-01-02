@@ -1,0 +1,23 @@
+.sbb-channel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 5px 10px;
+
+  margin-bottom: 5px;
+  border-radius: 5px;
+
+  color: var(--medium-font);
+  font-weight: 600;
+}
+
+.sbb-channel:hover {
+  cursor: pointer;
+  background: var(--tertiary-background-color);
+  color: var(--light-font);
+}
+
+.sbb-channel-selected {
+  background: var(--tertiary-background-color);
+  color: var(--light-font);
+}

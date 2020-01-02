@@ -18,13 +18,19 @@ User.create(username: "Devious Daniella", email: "notplanningmutiny@strifechat.h
 
 User.create(username: "Evil Evan", email: "evilevan@strifechat.herokuapp.com", password: "pXKL@9y[>5X+>mYY", image_url:'https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads02&accessoriesType=Wayfarers&hairColor=BrownDark&facialHairType=MoustacheMagnum&facialHairColor=BrownDark&clotheType=BlazerSweater&eyeType=Close&eyebrowType=AngryNatural&mouthType=Eating&skinColor=Light')
 
+welcome_bot = User.find_by(email: "welcome_bot@strifechat.herokupapp.com")
+steve = User.find_by(email: "screamnonstop@strifechat.herokuapp.com")
+daniella = User.find_by(email: "notplanningmutiny@strifechat.herokuapp.com")
+target = User.find_by(email: "guest@strifechat.herokupapp.com")
+terry = User.find_by(email: "mistertalkalot@strifechat.herokuapp.com")
+
 Server.create(name: "Test Server", description: "This is just a test server", owner_id: 1)
 Server.create(name: "Another Server", description: "Hey, look! Another server!", owner_id: 4)
 Server.create(name: "STEVE HAS A SERVER", description: "STEVE IS HAPPY", owner_id: 3)
 
 Channel.create(name: "general", server_id: 1)
-Channel.create(name: "test general", server_id: 1)
-Channel.create(name: "general", server_id: 2)
+Channel.create(name: "test channel", server_id: 1)
+Channel.create(name: "talking room", server_id: 2)
 Channel.create(name: "GENERAL CHAT", server_id: 3)
 
 ServerUser.create(user_id: 1, server_id: 1)
@@ -32,17 +38,23 @@ ServerUser.create(user_id: 2, server_id: 1)
 ServerUser.create(user_id: 4, server_id: 1)
 ServerUser.create(user_id: 5, server_id: 1)
 
+first_channel = Channel.find(1)
+first_server = Server.find(1)
+
+Message.create(user_id: daniella.id, server_id: first_server.unique_id, channel_id: first_channel.unique_id, body: "Can I leave blueprints in this server?")
+
 ServerUser.create(user_id: 1, server_id: 2)
 ServerUser.create(user_id: 3, server_id: 2)
 ServerUser.create(user_id: 4, server_id: 2)
 
+third_channel = Channel.find(3)
+second_server = Server.find(2)
+
+Message.create(user_id: steve.id, server_id: second_server.unique_id, channel_id: third_channel.unique_id, body: "WOW THIS IS MEGA COOL!")
+
 ServerUser.create(user_id: 3, server_id: 3)
 
-welcome_bot = User.find_by(email: "welcome_bot@strifechat.herokupapp.com")
-steve = User.find_by(email: "screamnonstop@strifechat.herokuapp.com")
-daniella = User.find_by(email: "notplanningmutiny@strifechat.herokuapp.com")
-target = User.find_by(email: "guest@strifechat.herokupapp.com")
-terry = User.find_by(email: "mistertalkalot@strifechat.herokuapp.com")
+
 
 Message.create(user_id: terry.id, server_id: terry.unique_id, channel_id: target.unique_id, body: "Hey buddy, it's Terry. I was thinking about starting up an after-hours soccer game between our department and data... ")
 Message.create(user_id: terry.id, server_id: terry.unique_id, channel_id: target.unique_id, body: "Would you be interested in rounding up some players?")
