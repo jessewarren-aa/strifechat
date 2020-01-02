@@ -21,13 +21,12 @@ class Server < ApplicationRecord
   class_name: 'ServerUser',
   dependent: :destroy
 
-  # [DEV]
-  # has_many :channels,
-  # foreign_key: :server_id,
-  # class_name: 'Channel',
-  # dependent: :destroy
+  has_many :channels,
+  foreign_key: :server_id,
+  class_name: 'Channel',
+  dependent: :destroy
 
-  def self.generate_session_token
+  def self.generate_token
     SecureRandom.urlsafe_base64
   end
 
@@ -69,11 +68,11 @@ class Server < ApplicationRecord
   end
 
   def set_temp_unique_id
-    self.unique_id ||= "s#{self.class.generate_session_token}"
+    self.unique_id ||= "s#{self.class.generate_token}"
   end
 
   def set_unique_id
-    self.unique_id = "s#{self.id}#{self.class.generate_session_token}"
+    self.unique_id = "s#{self.id}#{self.class.generate_token}"
     self.save
   end
 

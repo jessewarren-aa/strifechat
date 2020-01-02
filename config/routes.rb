@@ -1,38 +1,4 @@
 Rails.application.routes.draw do
-  namespace :api do
-    get 'channels/index'
-  end
-
-  namespace :api do
-    get 'channels/create'
-  end
-
-  namespace :api do
-    get 'channels/update'
-  end
-
-  namespace :api do
-    get 'channels/destroy'
-  end
-
-  # get 'serverusers/index'
-
-  # get 'serverusers/show'
-
-  # get 'serverusers/create'
-
-  # get 'serverusers/destroy'
-
-  # get 'servers/index'
-
-  # get 'servers/show'
-
-  # get 'servers/create'
-
-  # get 'servers/update'
-
-  # get 'servers/destroy'
-
   root to: 'root#root'
   namespace :api, defaults: {format: :json} do
     resources :messages, except: [:show, :new, :edit]
@@ -42,6 +8,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :servers, only: [:index, :show, :create, :update, :destroy]
     resources :serverusers, only: [:index, :show, :create, :destroy]
+    resources :channels, only: [:index, :show, :create, :update, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
