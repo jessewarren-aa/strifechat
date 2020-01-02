@@ -25,7 +25,7 @@ class ServerBarBody extends React.Component {
 
   showChannelOptions (e) {
     e.preventDefault()
-    e.stopPropagation()
+    // e.stopPropagation()
 
     $('.update-channel-modal-background').removeClass('hidden')
     $('.server-preferences-wrapper').addClass('hidden')

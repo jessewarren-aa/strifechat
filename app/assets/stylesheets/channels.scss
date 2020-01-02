@@ -17,16 +17,16 @@
   color: var(--light-font);
 }
 
-.sbb-channel:hover .sbb-channel-options-button {
+.sbb-channel-selected {
+  background: var(--tertiary-background-color);
+  color: var(--light-font);
+}
+
+.sbb-channel-selected:hover .sbb-channel-options-button {
   display: block;
 }
 
 .sbb-channel-options-button {
   display: none;
   width: 16px;
-}
-
-.sbb-channel-selected {
-  background: var(--tertiary-background-color);
-  color: var(--light-font);
 }

@@ -44,6 +44,10 @@ class Api::ChannelsController < ApplicationController
 
   def destroy
     @channel = Channel.find_by(id: self.params[:id])
+    if not(@channel)
+      @channel = Channel.find_by(unique_id: self.params[:id])
+    end
+
     if @channel
       @channel.destroy
       render :delete

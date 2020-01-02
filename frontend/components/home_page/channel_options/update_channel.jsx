@@ -10,6 +10,7 @@ class UpdateChannelModal extends React.Component {
 
     this.handleInput = this.handleInput.bind(this)
     this.updateChannel = this.updateChannel.bind(this)
+    this.deleteChannel = this.deleteChannel.bind(this)
   }
 
   preventBubbling(e) {
@@ -31,7 +32,12 @@ class UpdateChannelModal extends React.Component {
     e.preventDefault()
     this.props.sendUpdateChannel({ channel: this.state })
       .then(() => this.hideChannelUpdate(e))
+  }
 
+  deleteChannel(e) {
+    e.preventDefault()
+    this.props.sendDeleteChannel(this.state.unique_id)
+      .then(() => this.hideChannelUpdate(e))
   }
 
   render() {
@@ -58,11 +64,19 @@ class UpdateChannelModal extends React.Component {
                   className="ucm-name-input"></input>
               </form>
             </div>
-            <div
-              onClick={this.updateChannel}
-              className="ucm-update-button">
-              Save Changes
-          </div>
+            <div className="ucm-option-buttons">
+              <div
+                onClick={this.updateChannel}
+                className="ucm-update-button">
+                Save Changes
+              </div>
+              <hr />
+              <div
+                onClick={this.deleteChannel}
+                className="ucm-delete-button">
+                Delete Channel
+              </div>
+            </div>
           </div>
         </div>
       </div>
