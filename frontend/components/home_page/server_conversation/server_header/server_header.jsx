@@ -11,18 +11,20 @@ class ServerHeader extends React.Component {
     e.preventDefault()
     const serverUsers = $('.server-friends-master')
     const serverConvo = $('.server-conversation-master')
+    const serverConvoFooter = $('.dm-footer-master ')
 
     if (serverUsers.hasClass('hidden')) {
       serverUsers.removeClass('hidden');
       serverConvo.width('calc(100vw - 520px)')
+      serverConvoFooter.width('calc(100vw - 520px)')
     } else {
       serverUsers.addClass('hidden');
       serverConvo.width('calc(100vw - 320px)')
+      serverConvoFooter.width('calc(100vw - 320px)')
     }
   }
 
   render() {
-    console.log(this.props.channels)
     return (
       <div className="server-conversation-header-master">
         <div className="sch-main">

@@ -22,7 +22,7 @@ class ServerFriends extends React.Component {
     const ordered = this.sort_by_key(Object.values(this.props.users), "username");
     
     return (
-      <div className="server-friends-master">
+      <div className="server-friends-master hidden">
         {Object.values(ordered).map((user, index) => {
           return (
             <div 

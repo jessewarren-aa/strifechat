@@ -16,10 +16,10 @@ class Api::MessagesController < ApplicationController
       render json: ["Why are you messaging yourself..."], status: 400
     else
       if @message.save
-      render :show
-    else
-      render json: ["Message could not be sent! Please email the developer!"], status: 422
-    end
+        render :show
+      else
+        render json: ["Message could not be sent! Please email the developer!"], status: 422
+      end
     end
     
 

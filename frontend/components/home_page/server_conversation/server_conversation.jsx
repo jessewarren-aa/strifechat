@@ -22,7 +22,7 @@ class ServerConversation extends React.Component {
         <div className="server-conversation-view-master">
           <div className="server-conversation-master">
             <MessagesContainer {...this.props}/>
-        </div>
+          </div>
           <ServerUsersContainer {...this.props} />
         </div>
       </div>
