@@ -25,10 +25,6 @@ class HomePage extends React.Component {
       <Route exact path="/channels/@me/*" component={DMHeaderContainer} />
       <Route exact path="/channels/@me/*" component={DirectMessagesContainer} />
       <Route exact path="/channels/@me/*" component={DMFooterContainer} />
-
-      {/* <Route exact path ="/channels/@me/*" render={(props) => <DMFooterContainer {...props} />} /> */}
-
-      {/* render={(props) => <PropsPage {...props} title={`Props through render`} />} */}
     </div>
     )
   }

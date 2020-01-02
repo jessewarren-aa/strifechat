@@ -1,7 +1,6 @@
 class Api::MessagesController < ApplicationController
   def index
-    @user = current_user
-    @messages = @user.direct_messages
+    @messages = Message.all
   end
 
   def index_direct_messages

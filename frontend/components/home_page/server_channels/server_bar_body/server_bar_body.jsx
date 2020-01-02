@@ -32,7 +32,7 @@ class ServerBarBody extends React.Component {
               key={index}
               value={channel.unique_id}
               onClick={this.handleSelect}
-              className="sbb-channel noselect">
+              className={index === 0 ? "sbb-channel noselect sbb-channel-selected" : "sbb-channel noselect"}>
                 # {channel.name}
             </div>
           )

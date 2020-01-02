@@ -22,12 +22,14 @@ class HomePage extends React.Component {
       this.props.getMessages()
     }
 
-    // if (!this.props.users.length) {
-    //   this.props.getDirectMessageUsers()
-    // }
+    if (!this.props.users.length) {
+      this.props.getDirectMessageUsers()
+    }
   }
 
   render() {
+
+    console.log(this.props)
 
     const pathArray = this.props.match.url.split("/")
     const uniqueId = pathArray[pathArray.length - 1]

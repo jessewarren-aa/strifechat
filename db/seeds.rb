@@ -43,6 +43,8 @@ first_server = Server.find(1)
 
 Message.create(user_id: daniella.id, server_id: first_server.unique_id, channel_id: first_channel.unique_id, body: "Can I leave blueprints in this server?")
 
+Message.create(user_id: target.id, server_id: first_server.unique_id, channel_id: first_channel.unique_id, body: "Uhm...")
+
 ServerUser.create(user_id: 1, server_id: 2)
 ServerUser.create(user_id: 3, server_id: 2)
 ServerUser.create(user_id: 4, server_id: 2)

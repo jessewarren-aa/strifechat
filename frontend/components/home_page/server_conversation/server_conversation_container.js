@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ServerConversation from './server_conversation';
-// import { get_dm_users, message, messages } from '../../../actions/message_actions'
+import { messages, get_dm_users, message } from '../../../actions/message_actions'
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -12,9 +12,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // getDirectMessageUsers: () => dispatch(get_dm_users()),
-    // sendMessage: (theMessage) => dispatch(message(theMessage)),
-    // getMessages: () => dispatch(messages())
+    getMessages: () => dispatch(messages()),
+    getDirectMessageUsers: () => dispatch(get_dm_users()),
+    sendMessage: (theMessage) => dispatch(message(theMessage))
   }
 };
 
