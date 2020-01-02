@@ -127,7 +127,7 @@ class ConversationHeader extends React.Component {
             className="my-dropdown-item">Server Settings</div>
           <div 
             onClick={this.showCreateChannel}
-            className="disabled my-dropdown-item">Create Channel</div>
+            className="my-dropdown-item">Create Channel</div>
           {/* <div className="disabled my-dropdown-item">hide muted channels</div> */}
           <div 
             onClick={this.deleteServer}
