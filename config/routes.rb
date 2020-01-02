@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  namespace :api do
+    get 'channels/index'
+  end
+
+  namespace :api do
+    get 'channels/create'
+  end
+
+  namespace :api do
+    get 'channels/update'
+  end
+
+  namespace :api do
+    get 'channels/destroy'
+  end
+
   # get 'serverusers/index'
 
   # get 'serverusers/show'
