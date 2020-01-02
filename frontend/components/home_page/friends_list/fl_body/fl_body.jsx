@@ -96,8 +96,7 @@ class FLBody extends React.Component {
           <div className="friend-request-container">
             <div className="session-form-errors display-mid">
               <small>
-                {this.state.success ? this.state.success : ""}
-                {/* [DEV] change to positive color */}
+                {this.state.success ? <div className="success-text">{this.state.success}</div> : ""}
                 <ul>
                   {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
                 </ul>

@@ -152,7 +152,6 @@ class ConversationHeader extends React.Component {
             className="server-owned-preferences-icon">
               <img src="/assets/down.svg" />
           </div>
-          {/* [DEV] have option triangle next to this, space-between justified */}
         </div>
         <div 
           onClick={this.togglePreferences}

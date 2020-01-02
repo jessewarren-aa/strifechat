@@ -45,6 +45,5 @@ class Api::ServersController < ApplicationController
   private
   def server_params
     self.params.require(:server).permit(:id, :name, :description, :owner_id)
-    # [DEV] default blank description?
   end
 end

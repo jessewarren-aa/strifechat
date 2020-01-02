@@ -19,7 +19,6 @@ class ServerPlus extends React.Component {
   }
   
   handleInput(type) {
-    // [DEV] this doesn't seem to be firing off :(
     return (e) => {
       e.preventDefault()
       e.stopPropagation()

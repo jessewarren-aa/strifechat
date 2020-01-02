@@ -40,16 +40,11 @@ class HomePage extends React.Component {
           component={ConversationBarContainer} />
         <Route path="/channels/*" component={ServerChannelContainer} />
       </Switch>
-      {/* [DEV] maybe an if statement using props match to check if @me or not - to determine if displaying users or channels */}
       <Switch>
         <Route exact path="/channels/@me" component={FriendsListContainer} />
         <Route path="/channels/@me/*" component={ConversationViewContainer} />
         <Route path="/channels/*" component={ServerConversationContainer} />
       </Switch>
-
-      {/* <Route exact path="/channels/*" component={Servers} /> */}
-      {/* [DEV] server views! */}
-      
     </div>
     )
   }

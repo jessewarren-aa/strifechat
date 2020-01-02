@@ -49,9 +49,6 @@ const mapStateToProps = (state, ownProps) => {
   }
 };
 
-// [DEV] eventually, servers should be filtered by if the user is in them or not
-// [DEV] right now, all servers are visible to all users
-
 const mapDispatchToProps = (dispatch) => ({
   sendDeleteServerUser: (serverId) => dispatch(sendDeleteServerUser(serverId)),
   sendGetServerUsers: () => dispatch(sendGetServerUsers()),
