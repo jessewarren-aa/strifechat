@@ -34,6 +34,7 @@ class HomePage extends React.Component {
     <div className="home-page-master">
       <ServerUpdateComponent {...this.props} />
       <UpdateChannelComponent {...this.props}/>
+      <CreateChannelComponent {...this.props} />
 
       <ServerPlusContainer {...this.props} />
       <Route path="/channels/*" component={ServerBarContainer} />

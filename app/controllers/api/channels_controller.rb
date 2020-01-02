@@ -8,7 +8,14 @@ class Api::ChannelsController < ApplicationController
   end
 
   def create
-    @channel = Channel.new(channel_params)
+    new_channel_data = channel_params
+
+    if channel_params[:unique_id]
+      new_channel_data[:server_id] = Server.find_by(unique_id: channel_params[:unique_id]).id
+    end
+
+    
+    @channel = Channel.new(new_channel_data)
 
     if @channel.save
       render :show
@@ -48,7 +55,6 @@ class Api::ChannelsController < ApplicationController
   private
   def channel_params
     self.params.require(:channel).permit(:name, :description, :server_id, :unique_id)
-    # [DEV] do I need to permit :id? I do it in servercontroller
   end
 end
 

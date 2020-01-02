@@ -13,7 +13,6 @@ class ServerJoin extends React.Component {
       user_id: this.props.currentUser,
       server_id: undefined
     }
-    // [DEV] remember to clear the input between forms
   }
 
   componentDidMount () {
@@ -25,7 +24,6 @@ class ServerJoin extends React.Component {
     e.preventDefault()
 
     const inviteCode = this.state.search.split("/")[this.state.search.split("/").length - 1]
-    console.log(inviteCode)
     const currentServer = this.props.servers[inviteCode[1]]
 
     if (currentServer.unique_id === inviteCode) {

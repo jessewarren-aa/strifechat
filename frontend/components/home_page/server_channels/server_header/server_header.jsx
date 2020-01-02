@@ -89,6 +89,10 @@ class ConversationHeader extends React.Component {
 
   showCreateChannel (e) {
     e.preventDefault()
+
+    $('.create-channel-modal-background').removeClass('hidden')
+    $('.server-preferences-wrapper').addClass('hidden')
+    $('.invisible-preferences-wrapper').addClass('hidden')
   }
 
   showServerOptions (e) {

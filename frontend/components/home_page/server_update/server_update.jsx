@@ -29,7 +29,6 @@ class ServerUpdate extends React.Component {
 
   updateServer (e) {
     e.preventDefault()
-    console.log({server: this.state})
     this.props.sendUpdateServer({ server: this.state })
       .then(() => this.hideServerUpdate(e))
     

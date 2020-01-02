@@ -26,20 +26,9 @@ class DMFooter extends React.Component {
     const uniqueId = pathArray[pathArray.length - 1]
 
     const serverId = pathArray[0]
-
-    // [DEV] should be fine to send messages without this 
-    // 
-    // const messageTo = Object.values(this.props.users).filter((user) => {
-    //   if (user.unique_id === uniqueId) {
-    //     return user
-    //   }
-    // })[0]
-
     
     this.state.server_id = serverId === "@me" ? this.props.currentUser.unique_id : serverId
     this.state.channel_id = uniqueId
-
-    console.log(this.state)
 
     this.props.sendMessage({ message: this.state })
     this.state.body = ""

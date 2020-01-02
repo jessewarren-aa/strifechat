@@ -9,6 +9,7 @@ class CreateChannelModal extends React.Component {
     }
 
     this.handleInput = this.handleInput.bind(this)
+    this.createChannel = this.createChannel.bind(this)
   }
 
   preventBubbling(e) {
@@ -21,47 +22,46 @@ class CreateChannelModal extends React.Component {
     };
   }
 
-  hideServerUpdate(e) {
+  hideCreateChannel(e) {
     e.preventDefault()
-    $('.update-server-modal-background').addClass('hidden')
+    $('.create-channel-modal-background').addClass('hidden')
   }
 
-  updateServer(e) {
+  createChannel(e) {
     e.preventDefault()
-    console.log({ server: this.state })
-    this.props.sendUpdateServer({ server: this.state })
-      .then(() => this.hideServerUpdate(e))
+    this.props.sendCreateChannel({ channel: this.state })
+      .then(() => this.hideCreateChannel(e))
 
   }
 
   render() {
     return (
       <div
-        onClick={this.hideServerUpdate}
-        className="update-server-modal-background hidden">
+        onClick={this.hideCreateChannel}
+        className="create-channel-modal-background hidden">
         <div
           onClick={this.preventBubbling}
-          className="update-server-modal">
-          <div className="usm-esc-button">
+          className="create-channel-modal">
+          <div className="ucm-esc-button">
             <img
-              onClick={this.hideServerUpdate}
-              className="usm-esc-icon" src="/assets/esc.svg" />
+              onClick={this.hideCreateChannel}
+              className="ucm-esc-icon" src="/assets/esc.svg" />
           </div>
-          <div className="usm-name-form-wrapper">
-            <div className="usm-name-form-text">
-              <small>SERVER NAME</small>
+          <div className="ucm-name-form-wrapper">
+            <div className="ucm-name-form-text">
+              <small>CHANNEL NAME</small>
             </div>
-            <div className="usm-name-form-div">
-              <form className="usm-name-form">
+            <div className="ucm-name-form-div">
+              <form className="ucm-name-form">
                 <input
                   onChange={this.handleInput("name")}
-                  className="usm-name-input"></input>
+                  className="ucm-name-input"></input>
               </form>
             </div>
             <div
-              onClick={this.updateServer}
-              className="usm-update-button">
-              Save Changes
+              onClick={this.createChannel}
+              className="ucm-update-button">
+              Create Channel
           </div>
           </div>
         </div>

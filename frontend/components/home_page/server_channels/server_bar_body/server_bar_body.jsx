@@ -28,6 +28,8 @@ class ServerBarBody extends React.Component {
     e.stopPropagation()
 
     $('.update-channel-modal-background').removeClass('hidden')
+    $('.server-preferences-wrapper').addClass('hidden')
+    $('.invisible-preferences-wrapper').addClass('hidden')
   }
 
   render() {
