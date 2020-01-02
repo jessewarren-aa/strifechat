@@ -22,6 +22,7 @@ class ServerHeader extends React.Component {
   }
 
   render() {
+    console.log(this.props.channels)
     return (
       <div className="server-conversation-header-master">
         <div className="sch-main">
@@ -29,7 +30,7 @@ class ServerHeader extends React.Component {
             <img
               className="hashtag-icon"
               src="/assets/hashtag.svg" />
-            channel_name
+            {Object.values(this.props.channels)[0].name}
           </div>
 
           <div>

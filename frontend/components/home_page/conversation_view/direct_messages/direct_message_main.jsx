@@ -29,8 +29,6 @@ class HomePage extends React.Component {
 
   render() {
 
-    console.log(this.props)
-
     const pathArray = this.props.match.url.split("/")
     const uniqueId = pathArray[pathArray.length - 1]
     const filteredMessages = this.pullMessages(uniqueId)
