@@ -31,8 +31,12 @@ Next time you log into [StrifeChat](https://strifechat.herokuapp.com/), watch th
     def set_temp_unique_id
       self.unique_id ||= "s#{self.class.generate_token}"
     end
-    ...
+
+    def set_unique_id
+      self.unique_id = "s#{self.id}#{self.class.generate_token}"
+      self.save
+    end
   end
 ```
 
-
+### 
