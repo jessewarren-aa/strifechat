@@ -4,6 +4,7 @@ class ConversationFooter extends React.Component {
   constructor(props) {
     super(props)
     this.copyFriendCode = this.copyFriendCode.bind(this)
+    this.changeStatus = this.changeStatus.bind(this)
   }
 
   copyFriendCode (e) {
@@ -19,6 +20,23 @@ class ConversationFooter extends React.Component {
 
   componentDidMount () {
     this.props.getDirectMessageUsers()
+  }
+
+  changeStatusPopUp(e) {
+    e.preventDefault()
+    e.stopPropagation()
+    $('.status-changer-popup').toggleClass('hidden')
+  }
+
+  closeStatusPopUp() {
+    $('.status-changer-popup').addClass('hidden')
+  }
+
+  changeStatus(e) {
+    e.preventDefault()
+    const newStatus = $(e.currentTarget).attr('value').replace(/\s/g, "")
+    this.props.sendUpdateUser({ user: { current_status: newStatus }, id: this.props.currentUser })
+      .then(() => this.closeStatusPopUp())
   }
 
   render() {
@@ -38,6 +56,33 @@ class ConversationFooter extends React.Component {
           type="text"
           id="hidden-friend-code"
           defaultValue={`${username}${addCode}`} />
+
+        <div className="status-changer-popup hidden">
+          <div
+            onClick={this.changeStatus}
+            className="user-status-icon status-changer-option"
+            value="ONLINE">
+            <img src="/assets/ONLINE.svg" />
+          </div>
+          <div
+            onClick={this.changeStatus}
+            className="user-status-icon status-changer-option"
+            value="IDLE">
+            <img src="/assets/IDLE.svg" />
+          </div>
+          <div
+            onClick={this.changeStatus}
+            className="user-status-icon status-changer-option"
+            value="DO NOT DISTURB">
+            <img src="/assets/DONOTDISTURB.svg" />
+          </div>
+          <div
+            onClick={this.changeStatus}
+            className="user-status-icon status-changer-option"
+            value="OFFLINE">
+            <img src="/assets/OFFLINE.svg" />
+          </div>
+        </div>
         
         <div
           className="user-status-icon">
