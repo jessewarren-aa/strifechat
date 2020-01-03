@@ -14,13 +14,14 @@ Back-end Development: Ruby on Rails
 ## Sample Features
 ### Direct Messages & Server Channels
 
-A great example of reusable components is found in StrifeChat's conversational view. Here, it renders either direct messages between users or public messages to channels. 
+A great example of reusable components is found in [StrifeChat's](https://strifechat.herokuapp.com/) conversational view. Here, it renders either direct messages between users or public messages to channels. 
   
-To succeed at this solution, a unique_id has to be created for servers, channels, and users.  
+To succeed at this solution, a unique id has to be created for servers, channels, and users.  
   
-Thus, the route `/:server_id/:channel_id` can not only reference a server/channel conversation view, but can also be "tricked" into displaying private messages without compromising privacy.
+Thus, the route `/:server_id/:channel_id` can not only reference a server/channel conversation view, but can also be "tricked" into displaying private messages without compromising privacy.  
+  
+Next time you log into [StrifeChat](https://strifechat.herokuapp.com/), watch the URL bar!
 
-![Unique ID](/app/assets/images/unique_id_code.png)
 ```ruby
   class Server < ApplicationRecord
     ...
