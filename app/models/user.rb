@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :password
 
-  current_statuses = ["ONLINE", "IDLE", "DO NOT DISTURB", "OFFLINE"]
+  current_statuses = ["ONLINE", "IDLE", "OFFLINE", "DONOTDISTURB"]
 
   validates :current_status, inclusion: { in: current_statuses }
 
@@ -126,7 +126,7 @@ class User < ApplicationRecord
   end
 
   def set_status
-    self.current_status = "ONLINE"
+    self.current_status ||= "ONLINE"
   end
 
 

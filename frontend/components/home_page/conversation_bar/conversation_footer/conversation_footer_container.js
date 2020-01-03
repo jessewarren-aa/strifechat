@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import ConversationFooter from './conversation_footer';
 import { logout } from '../../../../actions/session_actions';
+import { sendUpdateUser } from '../../../../actions/user_actions'
 
 
 const mapStateToProps = (state) => {
@@ -8,12 +9,15 @@ const mapStateToProps = (state) => {
 
   return {
     friendCode: user ? user.friend_code : null,
-    currentStatus: user ? user.current_status : "OFFLINE"
+    currentStatus: user ? user.current_status : "OFFLINE",
+    users: state.entities.users,
+    currentUser: state.session.currentUser
   }
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  sendUpdateUser: (user) => dispatch(sendUpdateUser(user))
 });
 
 export default connect(

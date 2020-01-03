@@ -1,7 +1,8 @@
-import { getUser, getUsers } from '../utils/user_utils'
+import { getUser, getUsers, patchUser } from '../utils/user_utils'
 
 export const RECEIVE_USER = "RECEIVE_USER";
-export const RECEIVE_USERS = "RECEIVE_USERS"
+export const RECEIVE_USERS = "RECEIVE_USERS";
+export const UPDATE_USER = "UPDATE_USER";
 
 const receiveUser = (user) => ({
   type: RECEIVE_USER,
@@ -13,6 +14,10 @@ const receiveUsers = (users) => ({
   users
 })
 
+const updateUser = (user) => ({
+  type: UPDATE_USER,
+  user
+})
 
 export const user = (userId) => dispatch => getUser(userId)
   .then(
@@ -26,4 +31,12 @@ export const users = () => dispatch => {
     users => dispatch(receiveUsers(users)),
     // errors => dispatch(receiveErrors(errors.responseJSON))
   )
+}
+
+export const sendUpdateUser = (user) => dispatch => {
+  return patchUser(user)
+    .then(
+      user => dispatch(updateUser(user)),
+      // errors => dispatch(receiveErrors(errors.responseJSON))
+    )
 }

@@ -1,0 +1,26 @@
+.status-changer {
+
+}
+
+.status-changer:hover {
+  cursor: pointer;
+}
+
+.status-changer-popup {
+  position: absolute;
+  top: -140px;
+  left: -2px;
+
+  background: var(--background-color);
+  padding: 10px;
+
+  border: 1px solid rgba(0,0,0,0.3);
+}
+
+.status-changer-option {
+  margin-top: 5px;
+}
+
+.status-changer-option:hover {
+  cursor: pointer;
+}

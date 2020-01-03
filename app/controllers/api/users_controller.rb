@@ -24,10 +24,20 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    # @user = User.find_by()
+    @user = current_user
+    if @user.update(user_update_params)
+      render :update
+    else
+      render json: ["Updating failed!"], status: 400
+    end
   end
 
+  private
   def user_params
     self.params.require(:user).permit(:username, :email, :password)
+  end
+
+  def user_update_params
+    self.params.require(:user).permit(:current_status)
   end
 end
