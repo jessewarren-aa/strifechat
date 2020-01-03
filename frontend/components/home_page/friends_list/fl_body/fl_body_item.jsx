@@ -9,6 +9,8 @@ class FLBodyItem extends React.Component {
     this.acceptRequest = this.acceptRequest.bind(this)
     this.declineRequest = this.declineRequest.bind(this)
     this.cancelRequest = this.cancelRequest.bind(this)
+
+    this.handleSelect = this.handleSelect.bind(this)
     // this.state = {
     //   success: ""
     // }
@@ -50,6 +52,26 @@ class FLBodyItem extends React.Component {
     this.props.updateFriend(updateObject)
   }
 
+  handleSelect(unique_id) {
+    return (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      const removeFrom = $(".server-selected")
+      if (removeFrom) {
+        removeFrom.removeClass("server-selected")
+      }
+      const jObject = $(`#${unique_id}`)
+      jObject.addClass("server-selected")
+
+      const jServerOptionsModal = $('.server-options-modal-background')
+      jServerOptionsModal.addClass('hidden')
+
+      const path = jObject.attr('value')
+
+      this.props.history.push(`/channels/${path}`)
+    }
+  }
+
   friendsClicked(e) {
     e.preventDefault()
     this.props.history.push(`/channels/@me/${this.props.unique_id}`);
@@ -86,7 +108,17 @@ class FLBodyItem extends React.Component {
           </div>
 
           <div className="friends-list-mutual-servers-header">
-            <small>MUTUAL SERVERS GO HERE</small>
+            {Object.values(this.props.mutualServers).map((server, index) => {
+              return (
+                <div 
+                  key={index}
+                  value={server.unique_id}
+                  onClick={this.handleSelect(server.unique_id)}
+                  className="fl-server-bar-icon">
+                  <img className="fl-logo-sizer" src={`/assets/${server.server_icon}`} />
+                </div>
+              )
+            })}
           </div>
 
           <div 

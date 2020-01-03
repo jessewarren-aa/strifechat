@@ -6,7 +6,8 @@ import { sendUpdateChannel, sendCreateChannel, sendDeleteChannel } from '../../a
 
 
 const mapStateToProps = (state, ownProps) => ({
-  servers: state.entities.servers
+  servers: state.entities.servers,
+  serverUsers: state.entities.serverUsers
 });
 
 const mapDispatchToProps = (dispatch) => ({

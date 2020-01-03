@@ -60,8 +60,36 @@ class FLBody extends React.Component {
     }
   }
 
+  userInServer (userId, serverId, serverUsers) {
+    const serverUserObjects = Object.values(serverUsers).filter(serverUser => {
+      if (serverUser.user_id === userId) {
+        if (serverUser.server_id === serverId) {
+          return true
+        } else {
+          return false
+        }
+      } else {
+        return false
+      }
+    })
+
+    if (serverUserObjects.length > 0) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   render() {
     const filterType = this.props.status
+
+    
+    const filteredServers = {}
+    Object.values(this.props.servers).forEach(server => {
+      if (this.userInServer(this.props.currentUser, server.id, this.props.serverUsers)) {
+        filteredServers[server.id] = server
+      }
+    })
 
     if (filterType === "ADDFRIEND") {
       return (
@@ -135,11 +163,20 @@ class FLBody extends React.Component {
                 const {user_id, status, id} = friendRequest
                 const user = this.props.users[user_id]
                 const userKeys = Object.keys(this.props.users)
+
+                const mutualServers = {}
+                Object.values(filteredServers).forEach(server => {
+                  if (this.userInServer(user_id, server.id, this.props.serverUsers)) {
+                    mutualServers[server.id] = server
+                  }
+                })
+
                 if (userKeys.includes(user_id.toString())) {
                   return (
                   <FLBodyItem 
                     key={index} 
                     username={user.username} 
+                    mutualServers={mutualServers}
                     userStatus={user.current_status ? user.current_status : "OFFLINE"}
                     destroyFriend={this.props.destroyFriend}
                     unique_id= { user.unique_id } 

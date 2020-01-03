@@ -3,6 +3,10 @@
   flex-grow: 1;
 }
 
+.friends-list-mutual-server {
+
+}
+
 .start-new-message-popup {
   width: 450px;
   height: 400px;
@@ -227,8 +231,8 @@
 
 .friend-on-list {
   display: flex;
-  align-items: flex-end;
-  padding-bottom: 10px;
+  align-items: center;
+  padding: 10px;
   height: 67px;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
@@ -326,7 +330,7 @@
 .friends-list-mutual-servers-header {
   width: 400px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: flex-start;
   padding: 10px;
 

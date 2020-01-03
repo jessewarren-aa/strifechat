@@ -11,7 +11,9 @@ const mapStateToProps = (state, ownProps) => {
     users: state.entities.dmUsers,
     currentUser: state.session.currentUser,
     status: state.ui.friendsListFilter,
-    errors: state.errors.friendRequests
+    errors: state.errors.friendRequests,
+    servers: state.entities.servers,
+    serverUsers: state.entities.serverUsers
   }
 };
 
