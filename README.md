@@ -10,8 +10,12 @@ Database Management: Postgresql
 Front-end Development: React, AJAX, HTML5, CSS4, JS ES6, jQuery  
 Back-end Development: Ruby on Rails  
 
-## Sample Major Features
+## Sample Features
 ### Direct Messages & Server Channels
+
+A great example of reusable components is found in StrifeChat's conversational view. Here, it renders either direct messages between users or public messages to channels.  
+To succeed at this solution, a unique_id had to be created for servers, channels, and users.  
+Thus, the route `/:server_id/:channel_id` could not only reference a server/channel conversation view, but could also be "tricked" into displaying private messages.
 
 ![Unique ID](/app/assets/images/unique_id_code.png)
 ```ruby
@@ -23,10 +27,7 @@ Back-end Development: Ruby on Rails
     def set_temp_unique_id
       self.unique_id ||= "s#{self.class.generate_token}"
     end
-    def set_unique_id
-      self.unique_id = "s#{self.id}#{self.class.generate_token}"
-      self.save
-    end
+    ...
   end
 ```
 
