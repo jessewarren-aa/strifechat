@@ -8,6 +8,10 @@ class ConversationFooter extends React.Component {
 
   }
 
+  componentDidMount () {
+    this.props.sendGetUsers()
+  }
+
   copyFriendCode (e) {
     e.preventDefault()
     let textToCopy = document.getElementById('hidden-friend-code');

@@ -3,7 +3,7 @@ import Serverfooter from './server_footer';
 import { logout } from '../../../../actions/session_actions';
 
 import { get_dm_users} from '../../../../actions/message_actions'
-import { sendUpdateUser } from '../../../../actions/user_actions'
+import { sendUpdateUser, users} from '../../../../actions/user_actions'
 
 
 const mapStateToProps = (state) => {
@@ -20,7 +20,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   getDirectMessageUsers: () => dispatch(get_dm_users()),
-  sendUpdateUser: (user) => dispatch(sendUpdateUser(user))
+  sendUpdateUser: (user) => dispatch(sendUpdateUser(user)),
+  sendGetUsers: () => dispatch(users())
 });
 
 export default connect(

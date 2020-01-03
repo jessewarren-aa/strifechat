@@ -20,6 +20,7 @@ class ConversationFooter extends React.Component {
 
   componentDidMount () {
     this.props.getDirectMessageUsers()
+    this.props.sendGetUsers()
   }
 
   changeStatusPopUp(e) {
