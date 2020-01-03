@@ -14,7 +14,6 @@ class User < ApplicationRecord
 
   validates :image_url, presence: true
   validates :friend_code, presence: true, uniqueness: true
-  # [DEV] does uncommenting this break anything?
 
   validates :unique_id, presence: true, uniqueness: true
 

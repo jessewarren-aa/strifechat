@@ -1,5 +1,8 @@
 import React from 'react';
 
+import CreateChannelContainer from '../../channel_options/create_channel_container'
+import UpdateChannelContainer from '../../channel_options/update_channel_container'
+
 class ConversationHeader extends React.Component {
   constructor(props) {
     super(props)
@@ -154,6 +157,8 @@ class ConversationHeader extends React.Component {
 
     return (
       <div>
+        <UpdateChannelContainer {...this.props} />
+        <CreateChannelContainer {...this.props} />
         <div className="server-bar-header-master">
           <div>{currentServer.name}</div>
           <div 

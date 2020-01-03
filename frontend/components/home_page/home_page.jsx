@@ -10,8 +10,8 @@ import ServerChannelContainer from './server_channels/server_channels_container'
 import ServerConversationContainer from './server_conversation/server_conversation_container'
 
 import ServerUpdateComponent from './server_update/server_update'
-import CreateChannelComponent from './channel_options/create_channel'
-import UpdateChannelComponent from './channel_options/update_channel'
+import CreateChannelContainer from './channel_options/create_channel_container'
+import UpdateChannelContainer from './channel_options/update_channel_container'
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -33,8 +33,8 @@ class HomePage extends React.Component {
     return (
     <div className="home-page-master">
       <ServerUpdateComponent {...this.props} />
-      <UpdateChannelComponent {...this.props}/>
-      <CreateChannelComponent {...this.props} />
+      {/* <UpdateChannelContainer />
+      <CreateChannelContainer /> */}
 
       <ServerPlusContainer {...this.props} />
       <Route path="/channels/*" component={ServerBarContainer} />
