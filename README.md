@@ -3,7 +3,7 @@
 ---
 ## Introduction
 Link: [StrifeChat](https://strifechat.herokuapp.com/)  
-Explanation of app
+StrifeChat is a MIT licensed application and digital platform designed for programming communities, that specializes in text communication between users in a chat channel. [Synopsis Credit](https://en.wikipedia.org/wiki/Discord_(software))
 
 ## Technologies
 Database Management: Postgresql  
