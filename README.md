@@ -39,7 +39,7 @@ Next time you log into [StrifeChat](https://strifechat.herokuapp.com/), watch th
   end
 ```
 
-### Abstracted JBuilder filters 
+### Abstracted JBuilder Filters 
 
 To simplify our state receiving various views, the decision was made to remove most Rails view-level filtering (via json extraction) and instead implement it at the model.  
   
