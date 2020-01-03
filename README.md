@@ -45,6 +45,8 @@ To simplify our state receiving various views, the decision was made to remove m
   
 This allows us to create slices of state succinctly inside of the Jbuilder view, as seen below.
 
+This also will allow us to perform model-level mutations, abstractions, and other filter-like functionality, such as adding fields that don't depend on columns inside the relevant database's table.
+
 ```ruby
 class User < ApplicationRecord
   ...
