@@ -3,6 +3,7 @@
 ---
 ## Introduction
 Link: [StrifeChat](https://strifechat.herokuapp.com/)  
+  
 StrifeChat is a MIT licensed application and digital platform designed for programming communities, that specializes in text communication between users in a chat channel. [Synopsis Credit](https://en.wikipedia.org/wiki/Discord_(software))
 
 ## Technologies
@@ -15,9 +16,9 @@ Back-end Development: Ruby on Rails
 
 A great example of reusable components is found in StrifeChat's conversational view. Here, it renders either direct messages between users or public messages to channels. 
   
-To succeed at this solution, a unique_id had to be created for servers, channels, and users.  
+To succeed at this solution, a unique_id has to be created for servers, channels, and users.  
   
-Thus, the route `/:server_id/:channel_id` could not only reference a server/channel conversation view, but could also be "tricked" into displaying private messages.
+Thus, the route `/:server_id/:channel_id` can not only reference a server/channel conversation view, but can also be "tricked" into displaying private messages.
 
 ![Unique ID](/app/assets/images/unique_id_code.png)
 ```ruby
