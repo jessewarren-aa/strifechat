@@ -39,4 +39,31 @@ Next time you log into [StrifeChat](https://strifechat.herokuapp.com/), watch th
   end
 ```
 
-### 
+### Model leveling JBuilder view filtering
+
+To simplify our state receiving various views, the decision was made to remove most Rails view-level filtering (via json extraction) and instead implement it at the model.  
+  
+This allows us to create slices of state succinctly inside of the Jbuilder view, as seen below.
+
+```ruby
+class User < ApplicationRecord
+  ...
+  def filtered
+    return {
+      id: self.id,
+      username: self.username,
+      email: self.email,
+      image_url: self.image_url,
+      friend_code: self.friend_code,
+      unique_id: self.unique_id
+    }
+  end
+  ...
+end
+```
+  
+```javascript
+@users.each do |user|
+  json.set! user.id, user.filtered
+end
+```

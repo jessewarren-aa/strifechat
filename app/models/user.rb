@@ -45,8 +45,7 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= self.class.generate_session_token
   end
-
-  # :username, :id, :email, :image_url, :friend_code, :unique_id, :current_status
+  
   def filtered
     return {
       id: self.id,
