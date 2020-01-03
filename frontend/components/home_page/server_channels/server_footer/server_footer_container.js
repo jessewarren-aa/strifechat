@@ -9,7 +9,8 @@ const mapStateToProps = (state) => {
   let user = state.entities.dmUsers[state.session.currentUser]
 
   return {
-    friendCode: user ? user.friend_code : null
+    friendCode: user ? user.friend_code : null,
+    currentStatus: user ? user.current_status : "OFFLINE"
   }
 };
 

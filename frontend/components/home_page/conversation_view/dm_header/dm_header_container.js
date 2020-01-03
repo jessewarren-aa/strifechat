@@ -4,7 +4,7 @@ import DMHeader from './dm_header';
 const mapStateToProps = (state) => {
   
   return {
-    users: state.entities.dmUsers,
+    users: state.entities.dmUsers
   } 
 };
 

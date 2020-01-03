@@ -10,7 +10,17 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
+    user_blocked = false
     @message = Message.new(message_params)
+    if message_params[:channel_id][0] == "u"
+      sender_id = message_params[:user_id]
+      receiver_id = User.find_by(unique_id: message_params[:channel_id]).id
+      if FriendsList.where("((sender_id = #{sender_id} AND receiver_id = #{receiver_id}) OR (sender_id = #{receiver_id} AND receiver_id = #{sender_id})) AND status = 'BLOCKED'").size > 0
+        render json: ["Message could not be delivered. This user may not accept private messages."], status: 418
+        return
+      end
+    end
+
 
     if message_params[:channel_id] == current_user.unique_id
       render json: ["Why are you messaging yourself..."], status: 400

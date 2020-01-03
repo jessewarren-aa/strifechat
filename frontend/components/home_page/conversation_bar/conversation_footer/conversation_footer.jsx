@@ -17,6 +17,11 @@ class ConversationFooter extends React.Component {
     document.execCommand("copy");
   }
 
+  changeStatus (e) {
+    e.preventDefault()
+    e.stopPropagation()
+  }
+
   render() {
     let username = ""
     let addCode = ""
@@ -35,6 +40,12 @@ class ConversationFooter extends React.Component {
           id="hidden-friend-code"
           defaultValue={`${username}${addCode}`} />
         
+        <div 
+          onClick={this.changeStatus}
+          className="user-status-icon">
+          <img src={this.props.currentStatus ? `/assets/${this.props.currentStatus}.svg` : `/assets/OFFLINE.svg`} />
+        </div>
+
         <div 
           onClick={this.copyFriendCode}
           className="conversation-footer-friendcode noselect">

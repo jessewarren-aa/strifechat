@@ -19,6 +19,12 @@ class DMFooter extends React.Component {
     this.props.sendGetUsers()
   }
 
+  componentDidUpdate (prevProps) {
+    if (this.props.match.params[0] !== prevProps.match.params[0]) {
+      this.props.clearErrors()
+    }
+  }
+
   handleMessage (e) {
     e.preventDefault()
 
@@ -43,6 +49,15 @@ class DMFooter extends React.Component {
   render() {
     return (
       <div className="dm-footer-master">
+
+        {this.props.errors.length > 0 ? <div className="session-form-errors display-mid">
+          <small>
+            <ul>
+              {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+            </ul>
+          </small>
+        </div> : ""}
+
         <form 
           className="dm-footer-input"
           onSubmit={this.handleMessage}>
@@ -53,7 +68,6 @@ class DMFooter extends React.Component {
               onChange={this.handleInput("body")}
               className="message-box-input"></input>
           </label>
-
           <input 
             type="submit" 
             style={{display: "none"}} />

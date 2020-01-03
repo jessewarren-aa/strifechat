@@ -39,6 +39,11 @@ class ConversationFooter extends React.Component {
           id="hidden-friend-code"
           defaultValue={`${username}${addCode}`} />
         
+        <div
+          className="user-status-icon">
+          <img src={this.props.currentStatus ? `/assets/${this.props.currentStatus}.svg` : `/assets/OFFLINE.svg`} />
+        </div>
+
         <div 
           onClick={this.copyFriendCode}
           className="conversation-footer-friendcode noselect">
