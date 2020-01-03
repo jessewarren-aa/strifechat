@@ -85,7 +85,8 @@ class ConversationFooter extends React.Component {
         </div>
         
         <div
-          className="user-status-icon">
+          onClick={this.changeStatusPopUp}
+          className="user-status-icon status-changer">
           <img src={this.props.currentStatus ? `/assets/${this.props.currentStatus}.svg` : `/assets/OFFLINE.svg`} />
         </div>
 
