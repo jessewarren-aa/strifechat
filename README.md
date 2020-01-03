@@ -18,7 +18,7 @@ A great example of reusable components is found in StrifeChat's conversational v
   
 To succeed at this solution, a unique_id has to be created for servers, channels, and users.  
   
-Thus, the route `/:server_id/:channel_id` can not only reference a server/channel conversation view, but can also be "tricked" into displaying private messages.
+Thus, the route `/:server_id/:channel_id` can not only reference a server/channel conversation view, but can also be "tricked" into displaying private messages without compromising privacy.
 
 ![Unique ID](/app/assets/images/unique_id_code.png)
 ```ruby
